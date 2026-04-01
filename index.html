@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta color-scheme="light">
+    <title>La Tisane de Jo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,900;1,9..144,400;1,9..144,900&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --marron: #7D6B5C;
+            --cream: #F0EBDE;
+            --sage: #8B9F7A;
+            --sage-dark: #6B7F5A;
+            --purple: #6B5194;
+            --purple-dark: #523D78;
+            --warm-black: #2C2520;
+            --dark-brown: #4A3F36;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--warm-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--cream);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--dark-brown);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-logo {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--cream);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--purple);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--cream);
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Shopify Buy Button container */
+        .shopify-btn-container {
+            margin-top: 1rem;
+            min-height: 50px;
+        }
+
+        .shopify-btn-placeholder {
+            display: inline-block;
+            padding: 0.8rem 2.5rem;
+            background-color: var(--purple);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .shopify-btn-placeholder:hover {
+            background-color: var(--purple-dark);
+        }
+
+        /* Main content area */
+        main {
+            margin-top: 70px;
+            min-height: calc(100vh - 70px);
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Hero Section - Accueil */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(44, 37, 32, 0.7), rgba(44, 37, 32, 0.7)), 
+                        url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--cream);
+            position: relative;
+        }
+
+        /* no fade */
+
+        .hero-content {
+            max-width: 700px;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+        }
+
+        /* no title underline */
+
+        .hero-tagline {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-size: 2.2rem;
+            color: var(--sage);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle {
+            font-weight: 700;
+            font-size: 1.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            opacity: 0.95;
+            letter-spacing: 0.3px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2.5rem;
+            background-color: var(--purple);
+            color: white;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background-color: var(--purple-dark);
+        }
+
+        .btn-white {
+            background-color: transparent;
+            color: var(--cream);
+            border: 2px solid var(--sage);
+            padding: 0.9rem 2.8rem;
+        }
+
+        .btn-white:hover {
+            background-color: var(--sage);
+            border-color: var(--sage);
+        }
+
+        /* Mot de Jo Section */
+        .mot-de-jo-section {
+            background-color: var(--cream);
+            padding: 3rem 2rem;
+        }
+
+        .mot-de-jo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .mot-de-jo-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arch-image {
+            width: 300px;
+            height: 400px;
+            border-radius: 120px 120px 10px 10px;
+            object-fit: cover;
+            object-position: 45% center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mot-de-jo-text {
+            border-left: 3px solid var(--sage);
+            padding-left: 2rem;
+        }
+
+        .mot-de-jo-title {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+            color: var(--marron);
+        }
+
+        .quote-mark {
+            font-family: 'Fraunces', serif;
+            font-size: 3rem;
+            color: var(--sage);
+            opacity: 0.45;
+            line-height: 1;
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 400;
+        }
+
+        .quote-mark.closing {
+            text-align: right;
+            margin-top: -1rem;
+            margin-bottom: 0;
+        }
+
+        .mot-de-jo-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4A3F36;
+            margin-bottom: 0.8rem;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .signature {
+            color: var(--marron);
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            background-color: #6B5B4E;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-title {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            color: var(--cream);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--sage);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: var(--sage-dark);
+        }
+
+        /* Product Cards - Nos Tisanes */
+        .products-section {
+            padding: 3rem 2rem;
+            background-color: var(--cream);
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+            padding: 1rem;
+            background: transparent;
+            border-radius: 12px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 500px;
+            border-radius: 120px 120px 10px 10px;
+            object-fit: cover;
+            object-position: center 30%;
+            margin-bottom: 0.8rem;
+            background-color: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--marron);
+            font-size: 1.2rem;
+        }
+
+        .product-name {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+            color: var(--marron);
+            margin-bottom: 0.2rem;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            color: var(--marron);
+            margin-bottom: 0.15rem;
+        }
+
+        .product-weight {
+            font-size: 1rem;
+            color: #7A7A7A;
+            margin-bottom: 0.6rem;
+        }
+
+        .btn-discover {
+            display: inline-block;
+            padding: 0.7rem 2rem;
+            background-color: var(--purple);
+            color: white;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            letter-spacing: 1px;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+        }
+
+        .btn-discover:hover {
+            background-color: var(--purple-dark);
+        }
+
+        /* Tea Detail Pages */
+        .detail-section {
+            padding: 2.5rem 2rem;
+            background-color: var(--cream);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--purple);
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .detail-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 120px 120px 10px 10px;
+        }
+
+        .detail-image {
+            width: 100%;
+            height: auto;
+            max-height: 700px;
+            border-radius: 120px 120px 10px 10px;
+            object-fit: cover;
+            object-position: center;
+            background-color: var(--cream);
+            transition: opacity 0.4s ease;
+        }
+
+        .detail-image-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 120px 120px 10px 10px;
+            opacity: 0;
+        }
+
+        .detail-image-container:hover .detail-image-main {
+            opacity: 0;
+        }
+
+        .detail-image-container:hover .detail-image-hover {
+            opacity: 1;
+        }
+
+        .detail-info h1 {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            font-size: 3rem;
+            margin-bottom: 1.2rem;
+            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+            color: var(--marron);
+        }
+
+        .detail-price {
+            font-size: 1.3rem;
+            color: var(--purple);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .detail-description {
+            font-size: 1.25rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            color: #4A3F36;
+            font-weight: 600;
+        }
+
+        .detail-composition {
+            background-color: transparent;
+            padding: 0;
+            border-top: 2px solid var(--sage);
+            padding-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .detail-composition h3 {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+
+        .detail-composition p {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Notre Univers Section — Proposition C */
+        .univers-section {
+            padding: 4rem 2rem;
+            background-color: var(--cream);
+        }
+
+        .univers-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .univers-row {
+            margin-bottom: 4rem;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .univers-row.reversed {
+            flex-direction: row-reverse;
+        }
+
+        .univers-image-wrapper {
+            position: relative;
+            flex-shrink: 0;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .univers-watermark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.08;
+            font-size: 200px;
+            z-index: 0;
+        }
+
+        .univers-image {
+            width: 110%;
+            height: 110%;
+            margin: -5%;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .univers-image-wrapper.sage-glow {
+            box-shadow: 0 0 50px 15px rgba(139, 159, 122, 0.3);
+        }
+
+        .univers-image-wrapper.violet-glow {
+            box-shadow: 0 0 50px 15px rgba(107, 81, 148, 0.25);
+        }
+
+        .univers-text {
+            flex: 1;
+            padding-top: 1rem;
+        }
+
+        .univers-text h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+        }
+
+        .univers-text p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+            color: #4A3F36;
+        }
+
+        .univers-divider {
+            width: 100px;
+            height: 2px;
+            background: var(--purple);
+            margin: 3rem auto;
+        }
+
+        .univers-convictions {
+            margin-top: 3rem;
+            padding: 3rem 0;
+        }
+
+        .univers-convictions h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 3rem;
+            color: var(--marron);
+            text-align: center;
+            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+        }
+
+        .univers-convictions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .univers-conviction-item {
+            text-align: center;
+            padding: 0 1rem;
+            border-right: 1px solid var(--marron);
+        }
+
+        .univers-conviction-item:last-child {
+            border-right: none;
+        }
+
+        .univers-conviction-title {
+            font-family: 'Fraunces', serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--marron);
+            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+        }
+
+        .univers-conviction-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--warm-black);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .faq-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faq-message {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #4A3F36;
+        }
+
+        .faq-section .btn {
+            background-color: transparent;
+            color: var(--purple);
+            border: 2px solid var(--purple);
+            padding: 0.9rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-section .btn:hover {
+            background-color: var(--purple);
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 2rem;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--warm-black);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-brown);
+            color: var(--cream);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .footer-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .footer-links svg {
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--purple);
+        }
+
+        .footer-copyright {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.8rem 1rem;
+            }
+
+            .nav-logo {
+                font-size: 1.2rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: var(--dark-brown);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                z-index: 999;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+                letter-spacing: 3px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .mot-de-jo-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .arch-image {
+                width: 200px;
+                height: 260px;
+            }
+
+            .mot-de-jo-text {
+                padding-left: 1.5rem;
+            }
+
+            .mot-de-jo-text p {
+                font-size: 1rem;
+            }
+
+            /* Produits : 2 colonnes sur mobile */
+            .products-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .product-image {
+                height: 250px;
+                border-radius: 80px 80px 8px 8px;
+            }
+
+            .product-name {
+                font-size: 1.3rem;
+            }
+
+            .product-price {
+                font-size: 1.1rem;
+            }
+
+            .product-weight {
+                font-size: 0.9rem;
+            }
+
+            .btn-discover {
+                padding: 0.5rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            /* Détail produit */
+            .detail-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .detail-image {
+                max-height: 350px;
+            }
+
+            .detail-image-container {
+                border-radius: 80px 80px 8px 8px;
+            }
+
+            .detail-image, .detail-image-hover {
+                border-radius: 80px 80px 8px 8px;
+            }
+
+            .detail-info h1 {
+                font-size: 2rem;
+            }
+
+            .detail-description {
+                font-size: 1.05rem;
+            }
+
+            /* Notre Univers */
+            .univers-row {
+                flex-direction: row !important;
+                gap: 1.5rem;
+                align-items: center;
+            }
+
+            .univers-image-wrapper {
+                width: 150px;
+                height: 150px;
+                min-width: 150px;
+                margin: 0;
+            }
+
+            .univers-text h2 {
+                font-size: 1.5rem;
+            }
+
+            .univers-text p {
+                font-size: 0.95rem;
+            }
+
+            .univers-convictions h2 {
+                font-size: 1.8rem;
+            }
+
+            .univers-convictions-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+            }
+
+            .univers-conviction-title {
+                font-size: 1.2rem;
+            }
+
+            .univers-conviction-text {
+                font-size: 0.85rem;
+                line-height: 1.5;
+            }
+
+            .univers-conviction-item {
+                padding: 0 0.5rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input {
+                min-width: auto;
+            }
+
+            .footer-links {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: center;
+            }
+        }
+
+        /* Très petit écran (< 420px) */
+        @media (max-width: 420px) {
+            .products-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+
+            .product-image {
+                height: 180px;
+                border-radius: 60px 60px 6px 6px;
+            }
+
+            .product-name {
+                font-size: 1.1rem;
+            }
+
+            .univers-image-wrapper {
+                width: 120px;
+                height: 120px;
+                min-width: 120px;
+            }
+
+            .univers-text h2 {
+                font-size: 1.3rem;
+            }
+
+            .univers-convictions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .univers-conviction-item {
+                border-right: none;
+                border-bottom: 1px solid var(--marron);
+                padding-bottom: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .univers-conviction-item:last-child {
+                border-bottom: none;
+            }
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-logo" style="cursor:pointer;" onclick="showPage('accueil')">La Tisane de Jo</div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a onclick="showPage('accueil'); closeMenu()">Accueil</a></li>
+            <li><a onclick="showPage('tisanes'); closeMenu()">Nos Tisanes</a></li>
+            <li><a onclick="showPage('univers'); closeMenu()">Notre Univers</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- PAGE 1: ACCUEIL -->
+        <div id="page-accueil" class="page active">
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">La Tisane de Jo</h1>
+                    <p class="hero-tagline">Un secret de famille à partager</p>
+                    <h2 class="hero-subtitle">Le bien-être par le goût, un savoir-faire familial.</h2>
+                    <p class="hero-description">À l'origine, Jo notre beau-père pharmacien passionné de tisanes parfumées. Aujourd'hui, une nouvelle génération prête à reprendre le flambeau des infusions.</p>
+                    <button class="btn" onclick="document.querySelector('.mot-de-jo-section').scrollIntoView({behavior: 'smooth'})">Découvrir</button>
+                </div>
+            </div>
+
+            <!-- Mot de Jo Section -->
+            <section class="mot-de-jo-section">
+                <div class="mot-de-jo-container">
+                    <div class="mot-de-jo-image">
+                        <img src="images/mot-de-jo.jpg" alt="Mot de Jo" class="arch-image">
+                    </div>
+                    <div class="mot-de-jo-text">
+                        <h2 class="mot-de-jo-title">Le mot de Jo</h2>
+                        <div class="quote-mark">&#x201C;</div>
+                        <p>Pendant mes années d'officine à Chartres, j'ai imaginé une tisane pour faciliter la digestion des patients et de mon entourage.</p>
+                        <p>Avec la perspective de ma retraite et une fois mes derniers stocks écoulés, ma famille m'a proposé de recréer la recette originale et d'imaginer ensemble de nouveaux mélanges savoureux. Pour nous mais pas seulement !</p>
+                        <div class="quote-mark closing">&#x201D;</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- La Lettre de Jo Newsletter -->
+            <section class="newsletter-section">
+                <div class="newsletter-content">
+                    <h3 class="newsletter-title">La lettre de Jo</h3>
+                    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                        <input type="email" placeholder="Votre email" required>
+                        <button type="submit">S'inscrire</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE 2: NOS TISANES -->
+        <div id="page-tisanes" class="page">
+            <section class="products-section">
+                <div class="products-container">
+                    <!-- Product 1: L'Originale -->
+                    <div class="product-card" onclick="showPage('tisane-originale')">
+                        <img src="images/originale-card.jpg" alt="L'Originale" class="product-image">
+                        <h3 class="product-name">L'Originale</h3>
+                        <p class="product-price">12,00€</p>
+                        <p class="product-weight">100g</p>
+                        <button class="btn-discover">Découvrir</button>
+                    </div>
+
+                    <!-- Product 2: La Sirocco -->
+                    <div class="product-card" onclick="showPage('tisane-sirocco')">
+                        <img src="images/sirocco-card.jpg" alt="La Sirocco" class="product-image">
+                        <h3 class="product-name">La Sirocco</h3>
+                        <p class="product-price">14,00€</p>
+                        <p class="product-weight">100g</p>
+                        <button class="btn-discover">Découvrir</button>
+                    </div>
+
+                    <!-- Product 3: La Motte -->
+                    <div class="product-card" onclick="showPage('tisane-lamotte')">
+                        <div class="product-image">La Motte - Bientôt</div>
+                        <h3 class="product-name">La Motte</h3>
+                        <p class="product-price">Bientôt</p>
+                        <p class="product-weight">100g</p>
+                        <button class="btn-discover">Découvrir</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE 3: TISANE DETAIL - L'ORIGINALE -->
+        <div id="page-tisane-originale" class="page">
+            <section class="detail-section">
+                <a class="back-link" onclick="showPage('tisanes')">← Retour aux tisanes</a>
+                <div class="detail-container">
+                    <div class="detail-image-container">
+                        <img src="images/originale-detail.jpg" alt="L'Originale" class="detail-image detail-image-main">
+                        <img src="images/originale-hover.jpg" alt="L'Originale gros plan" class="detail-image detail-image-hover">
+                    </div>
+                    <div class="detail-info">
+                        <h1>L'Originale</h1>
+                        <p class="detail-price">12,00€ - 100g</p>
+                        <p class="detail-description">Comme son nom l'indique, c'est LA première tisane imaginée par Jo dans sa pharmacie.<br><br>Cette recette facilite la digestion à toute heure de la journée.<br><br>Composition 100% bio : Anis, Réglisse, Fenouil, Romarin, Thym, Badiane</p>
+                        <!-- SHOPIFY BUY BUTTON: L'Originale -->
+                        <div id="product-component-1775039782949" class="shopify-btn-container"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE 4: TISANE DETAIL - LA SIROCCO -->
+        <div id="page-tisane-sirocco" class="page">
+            <section class="detail-section">
+                <a class="back-link" onclick="showPage('tisanes')">← Retour aux tisanes</a>
+                <div class="detail-container">
+                    <div class="detail-image-container">
+                        <img src="images/sirocco-detail.jpg" alt="La Sirocco" class="detail-image detail-image-main">
+                        <img src="images/sirocco-hover.jpg" alt="La Sirocco gros plan" class="detail-image detail-image-hover">
+                    </div>
+                    <div class="detail-info">
+                        <h1>La Sirocco</h1>
+                        <p class="detail-price">14,00€ - 100g</p>
+                        <p class="detail-description">Nommée d'après le vent méditerranéen, cette tisane aussi tonique que rafraîchissante est parfaite pour remplacer le café.<br><br>À déguster du matin au soir, avec modération pour les personnes sujettes à l'hypertension.<br><br>Composition 100% bio : Menthe, Réglisse</p>
+                        <!-- SHOPIFY BUY BUTTON: La Sirocco -->
+                        <div id="product-component-1775039996144" class="shopify-btn-container"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE 5: TISANE DETAIL - LA MOTTE -->
+        <div id="page-tisane-lamotte" class="page">
+            <section class="detail-section">
+                <a class="back-link" onclick="showPage('tisanes')">← Retour aux tisanes</a>
+                <div class="detail-container">
+                    <div>
+                        <div class="product-image" style="border-radius: 120px 120px 10px 10px; height: 400px;">La Motte</div>
+                    </div>
+                    <div class="detail-info">
+                        <h1>La Motte</h1>
+                        <p class="detail-price">Prix à venir</p>
+                        <p class="detail-description">À côté de notre maison familiale, le chemin de La Motte est notre promenade préférée avant de passer à table. Un nom prédestiné pour cette tisane qui met en appétit.<br><br>Composition 100% bio : Menthe, Gentiane</p>
+                        <div class="detail-composition">
+                            <h3>Composition</h3>
+                            <p>Menthe, Gentiane</p>
+                        </div>
+                        <!-- SHOPIFY BUY BUTTON: La Motte (à activer plus tard) -->
+                        <div id="shopify-btn-lamotte" class="shopify-btn-container">
+                            <button class="shopify-btn-placeholder" disabled style="opacity:0.5;cursor:not-allowed;">Bientôt disponible</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE 6: NOTRE UNIVERS -->
+        <div id="page-univers" class="page">
+            <section class="univers-section">
+                <div class="univers-content">
+                    <!-- Une histoire familiale -->
+                    <div class="univers-row">
+                        <div class="univers-image-wrapper sage-glow">
+                            <div class="univers-watermark">🌱</div>
+                            <img src="images/histoire-familiale.jpg" alt="Une histoire familiale" class="univers-image">
+                        </div>
+                        <div class="univers-text">
+                            <h2 style="color: var(--sage);">Une histoire<br>familiale</h2>
+                            <p>Autour de José, le beau-père pharmacien à la retraite et passionné de plantes, toute la famille s'est réunie pour perpétuer son savoir-faire. C'est à Grignan, dans la Drôme, que la magie opère.</p>
+                            <p>En complément de la tisane préférée « L'Originale », la nouvelle génération imagine des recettes spéciales.</p>
+                        </div>
+                    </div>
+
+                    <div class="univers-divider"></div>
+
+                    <!-- L'alchimie des plantes -->
+                    <div class="univers-row reversed">
+                        <div class="univers-image-wrapper violet-glow">
+                            <div class="univers-watermark">🌿</div>
+                            <img src="images/alchimie-plantes.jpg" alt="L'alchimie des plantes" class="univers-image">
+                        </div>
+                        <div class="univers-text">
+                            <h2 style="color: var(--purple);">L'alchimie<br>des plantes</h2>
+                            <p>Ici pas de « pisse-mémé » mais des mélanges parfumés avec des bienfaits prouvés pour agir sur la qualité de notre digestion, de notre énergie, de notre respiration...</p>
+                        </div>
+                    </div>
+
+                    <div class="univers-divider"></div>
+
+                    <!-- Nos convictions -->
+                    <div class="univers-convictions">
+                        <h2>Nos convictions</h2>
+                        <div class="univers-convictions-grid">
+                            <div class="univers-conviction-item">
+                                <div class="univers-conviction-title">Bio</div>
+                                <div class="univers-conviction-text">Nous sourçons des plantes issues à 100% de l'agriculture biologique. La culture conventionnelle des plantes est exposée à une forte pollution liée aux pesticides que nous souhaitons éviter.</div>
+                            </div>
+                            <div class="univers-conviction-item">
+                                <div class="univers-conviction-title">Local</div>
+                                <div class="univers-conviction-text">Autant que possible, nous jouons local en Drôme provençale. Certaines de nos plantes, comme la badiane par exemple, ne sont pas cultivées en France et leurs origines sont toujours précisées dans la composition des tisanes.</div>
+                            </div>
+                            <div class="univers-conviction-item">
+                                <div class="univers-conviction-title">Vrac</div>
+                                <div class="univers-conviction-text">Nous privilégions le vrac, la meilleure manière de préserver toute la richesse gustative et les propriétés des plantes.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE 7: FAQ -->
+        <div id="page-faq" class="page">
+            <section class="faq-section">
+                <div class="faq-content">
+                    <h1 class="mot-de-jo-title">FAQ</h1>
+                    <p class="faq-message">En construction</p>
+                    <button class="btn" onclick="showPage('contact')">Nous contacter</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- PAGE 8: CONTACT -->
+        <div id="page-contact" class="page">
+            <section class="contact-section">
+                <div class="contact-container">
+                    <h1 class="contact-title">Nous contacter</h1>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Envoyer</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a onclick="showPage('accueil')">Accueil</a></li>
+                <li><a onclick="showPage('tisanes')">Nos Tisanes</a></li>
+                <li><a onclick="showPage('univers')">Notre Univers</a></li>
+                <li><a onclick="showPage('faq')">FAQ</a></li>
+                <li><a onclick="showPage('contact')">Contact</a></li>
+                <li><a href="https://www.instagram.com/latisanedejo/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> Instagram</a></li>
+            </ul>
+            <p class="footer-copyright">&copy; 2026 La Tisane de Jo. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Show page function
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Show selected page
+            const selectedPage = document.getElementById('page-' + pageId);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+
+            // Trigger reveal animations
+            triggerRevealAnimations();
+        }
+
+        // Newsletter handler
+        function handleNewsletter(event) {
+            event.preventDefault();
+            alert('Merci de votre intérêt ! Vous serez bientôt inscrit à la lettre de Jo.');
+            event.target.reset();
+        }
+
+        // Contact form handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+
+                    const mailtoLink = `mailto:latisanedejo@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Nom: ' + name + '\nEmail: ' + email + '\n\n' + message)}`;
+
+                    window.location.href = mailtoLink;
+                    this.reset();
+                });
+            }
+
+            // Setup Intersection Observer for reveal animations
+            setupRevealAnimations();
+        });
+
+        // Setup reveal animations
+        function setupRevealAnimations() {
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            revealElements.forEach(el => observer.observe(el));
+        }
+
+        function triggerRevealAnimations() {
+            setupRevealAnimations();
+        }
+
+        // Hamburger menu
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('active');
+        }
+
+        // Set initial page
+        showPage('accueil');
+    </script>
+
+    <!-- Shopify Buy Button SDK -->
+    <script type="text/javascript">
+    /*<![CDATA[*/
+    (function () {
+      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+      if (window.ShopifyBuy) {
+        if (window.ShopifyBuy.UI) {
+          ShopifyBuyInit();
+        } else {
+          loadScript();
+        }
+      } else {
+        loadScript();
+      }
+      function loadScript() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = scriptURL;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+        script.onload = ShopifyBuyInit;
+      }
+
+      var sharedOptions = {
+        "product": {
+          "styles": {
+            "product": {
+              "@media (min-width: 601px)": { "max-width": "calc(25% - 20px)", "margin-left": "20px", "margin-bottom": "50px" }
+            },
+            "title": { "font-family": "Lato, sans-serif" },
+            "button": {
+              "font-family": "Montserrat, sans-serif", "font-weight": "bold",
+              ":hover": { "background-color": "#8e71a7" },
+              "background-color": "#9e7eb9",
+              ":focus": { "background-color": "#8e71a7" }
+            },
+            "price": { "font-family": "Lato, sans-serif" },
+            "compareAt": { "font-family": "Lato, sans-serif" },
+            "unitPrice": { "font-family": "Lato, sans-serif" },
+            "description": { "font-family": "Montserrat, sans-serif" }
+          },
+          "contents": { "img": false, "title": false, "price": false },
+          "text": { "button": "Ajouter au panier" },
+          "googleFonts": ["Lato", "Montserrat"]
+        },
+        "productSet": {
+          "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "-20px" } } }
+        },
+        "modalProduct": {
+          "contents": { "img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true },
+          "styles": {
+            "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
+            "button": {
+              "font-family": "Montserrat, sans-serif", "font-weight": "bold",
+              ":hover": { "background-color": "#8e71a7" },
+              "background-color": "#9e7eb9",
+              ":focus": { "background-color": "#8e71a7" }
+            },
+            "title": { "font-family": "Helvetica Neue, sans-serif", "font-weight": "bold", "font-size": "26px", "color": "#4c4c4c" },
+            "price": { "font-family": "Helvetica Neue, sans-serif", "font-weight": "normal", "font-size": "18px", "color": "#4c4c4c" },
+            "compareAt": { "font-family": "Helvetica Neue, sans-serif", "font-weight": "normal", "font-size": "15.3px", "color": "#4c4c4c" },
+            "unitPrice": { "font-family": "Helvetica Neue, sans-serif", "font-weight": "normal", "font-size": "15.3px", "color": "#4c4c4c" },
+            "description": { "font-family": "Helvetica Neue, sans-serif", "font-weight": "normal", "font-size": "14px", "color": "#4c4c4c" }
+          },
+          "googleFonts": ["Montserrat"],
+          "text": { "button": "Add to cart" }
+        },
+        "option": {},
+        "cart": {
+          "styles": {
+            "button": {
+              "font-family": "Montserrat, sans-serif", "font-weight": "bold",
+              ":hover": { "background-color": "#8e71a7" },
+              "background-color": "#9e7eb9",
+              ":focus": { "background-color": "#8e71a7" }
+            }
+          },
+          "text": { "total": "Subtotal", "button": "Checkout" },
+          "googleFonts": ["Montserrat"]
+        },
+        "toggle": {
+          "styles": {
+            "toggle": {
+              "font-family": "Montserrat, sans-serif", "font-weight": "bold",
+              "background-color": "#9e7eb9",
+              ":hover": { "background-color": "#8e71a7" },
+              ":focus": { "background-color": "#8e71a7" }
+            }
+          },
+          "googleFonts": ["Montserrat"]
+        }
+      };
+
+      function ShopifyBuyInit() {
+        var client = ShopifyBuy.buildClient({
+          domain: '1b32ns-tw.myshopify.com',
+          storefrontAccessToken: 'f37045444ef326a682c6d404ea71f388',
+        });
+        ShopifyBuy.UI.onReady(client).then(function (ui) {
+          // L'Originale
+          ui.createComponent('product', {
+            id: '10817207763275',
+            node: document.getElementById('product-component-1775039782949'),
+            moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
+            options: sharedOptions,
+          });
+          // La Sirocco
+          ui.createComponent('product', {
+            id: '14852838949195',
+            node: document.getElementById('product-component-1775039996144'),
+            moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
+            options: sharedOptions,
+          });
+        });
+      }
+    })();
+    /*]]>*/
+    </script>
+</body>
+</html>
