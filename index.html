@@ -185,8 +185,9 @@
             background-position: center;
             background-attachment: scroll;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             text-align: center;
             color: var(--cream);
             position: relative;
@@ -197,17 +198,25 @@
         .hero-content {
             max-width: 700px;
             padding: 2rem;
-            padding-top: 25vh;
+            padding-top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
         }
 
         .hero-title {
             font-family: 'Fraunces', serif;
             font-weight: 900;
             font-size: 5rem;
-            margin-top: -20vh;
-            margin-bottom: 8vh;
+            margin-top: 15vh;
+            margin-bottom: auto;
             font-variation-settings: 'WONK' 1, 'SOFT' 100;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-bottom {
+            margin-bottom: 8vh;
         }
 
         /* no title underline */
@@ -906,13 +915,12 @@
                 letter-spacing: 3px;
             }
 
-            .hero-content {
-                padding-top: 20vh;
-            }
-
             .hero-title {
                 font-size: 2.5rem;
-                margin-top: -16vh;
+                margin-top: 12vh;
+            }
+
+            .hero-bottom {
                 margin-bottom: 6vh;
             }
 
@@ -1062,14 +1070,13 @@
 
         /* Très petit écran (< 420px) */
         @media (max-width: 420px) {
-            .hero-content {
-                padding-top: 18vh;
-            }
-
             .hero-title {
                 font-size: 2rem;
-                margin-top: -14vh;
-                margin-bottom: 5vh;
+                margin-top: 10vh;
+            }
+
+            .hero-bottom {
+                margin-bottom: 4vh;
             }
 
             .hero-tagline {
@@ -1211,10 +1218,12 @@
             <div class="hero">
                 <div class="hero-content">
                     <h1 class="hero-title">La Tisane de Jo</h1>
-                    <p class="hero-tagline">Un secret de famille à partager</p>
-                    <h2 class="hero-subtitle">Le bien-être par le goût, un savoir-faire familial.</h2>
-                    <p class="hero-description">À l'origine, Jo notre beau-père pharmacien passionné de tisanes parfumées. Aujourd'hui, une nouvelle génération prête à reprendre le flambeau des infusions.</p>
-                    <button class="btn" onclick="showPage('tisanes')">Découvrir nos tisanes</button>
+                    <div class="hero-bottom">
+                        <p class="hero-tagline">Un secret de famille à partager</p>
+                        <h2 class="hero-subtitle">Le bien-être par le goût, un savoir-faire familial.</h2>
+                        <p class="hero-description">À l'origine, Jo notre beau-père pharmacien passionné de tisanes parfumées. Aujourd'hui, une nouvelle génération prête à reprendre le flambeau des infusions.</p>
+                        <button class="btn" onclick="showPage('tisanes')">Découvrir nos tisanes</button>
+                    </div>
                 </div>
             </div>
 
