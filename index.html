@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta color-scheme="light">
+    <meta name="google-site-verification" content="L5175DETMYp3d90KAxwCMftEfJO47Iv58lHJL7n-ivM" />
     <title>La Tisane de Jo | Tisanes bio artisanales de Grignan</title>
     <meta name="description" content="Tisanes bio artisanales imaginées par Jo, pharmacien passionné. Recettes familiales à base de plantes 100% bio, cultivées en Drôme provençale. Livraison en France.">
     <meta name="keywords" content="tisane bio, infusion artisanale, Grignan, Drôme, plantes bio, tisane digestive, herboristerie">
@@ -13,10 +14,13 @@
     <meta property="og:url" content="https://www.latisanedejo.com">
     <meta property="og:image" content="https://www.latisanedejo.com/images/hero-bg.jpg">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="La Tisane de Jo — Un secret de famille à partager">
+    <meta name="twitter:description" content="Tisanes bio artisanales imaginées par Jo, pharmacien passionné de plantes. Recettes familiales 100% bio de Grignan.">
+    <meta name="twitter:image" content="https://www.latisanedejo.com/images/hero-bg.jpg">
     <link rel="canonical" href="https://www.latisanedejo.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,900;1,9..144,400;1,9..144,900&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,900&display=swap" rel="stylesheet">
     <style>
         html {
             scroll-behavior: smooth;
@@ -30,17 +34,17 @@
 
         :root {
             --marron: #7D6B5C;
-            --cream: #F0EBDE;
+            --cream: #F5F0E3;
             --sage: #8B9F7A;
             --sage-dark: #6B7F5A;
-            --purple: #6B5194;
-            --purple-dark: #523D78;
+            --purple: #8B5CC6;
+            --purple-dark: #7344B0;
             --warm-black: #2C2520;
             --dark-brown: #4A3F36;
         }
 
         body {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Fraunces', serif;
             color: var(--warm-black);
             line-height: 1.6;
             overflow-x: hidden;
@@ -127,6 +131,7 @@
         .shopify-btn-container {
             margin-top: 1rem;
             min-height: 50px;
+            text-align: left;
         }
 
         .shopify-btn-placeholder {
@@ -136,7 +141,7 @@
             color: white;
             border: none;
             cursor: pointer;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Fraunces', serif;
             font-size: 1.1rem;
             letter-spacing: 1px;
             border-radius: 4px;
@@ -174,7 +179,7 @@
         /* Hero Section - Accueil */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(44, 37, 32, 0.7), rgba(44, 37, 32, 0.7)), 
+            background: linear-gradient(rgba(44, 37, 32, 0.15), rgba(44, 37, 32, 0.25)),
                         url('images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
@@ -192,14 +197,17 @@
         .hero-content {
             max-width: 700px;
             padding: 2rem;
+            padding-top: 25vh;
         }
 
         .hero-title {
             font-family: 'Fraunces', serif;
             font-weight: 900;
             font-size: 5rem;
-            margin-bottom: 1rem;
+            margin-top: -20vh;
+            margin-bottom: 8vh;
             font-variation-settings: 'WONK' 1, 'SOFT' 100;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
         }
 
         /* no title underline */
@@ -208,8 +216,12 @@
             font-family: 'Fraunces', serif;
             font-style: italic;
             font-size: 2.2rem;
-            color: var(--sage);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #A4C26A;
+            background: none;
+            display: inline-block;
+            padding: 0;
+            border-radius: 0;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
             margin-bottom: 2rem;
         }
 
@@ -218,6 +230,7 @@
             font-size: 1.9rem;
             margin-bottom: 1.5rem;
             line-height: 1.4;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.35);
         }
 
         .hero-description {
@@ -226,6 +239,7 @@
             line-height: 1.8;
             opacity: 0.95;
             letter-spacing: 0.3px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
         }
 
         /* Buttons */
@@ -237,7 +251,7 @@
             text-decoration: none;
             border: none;
             cursor: pointer;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Fraunces', serif;
             font-size: 1.1rem;
             letter-spacing: 1px;
             transition: background-color 0.3s;
@@ -303,7 +317,7 @@
             font-size: 2.2rem;
             margin-bottom: 1.2rem;
             font-variation-settings: 'WONK' 1, 'SOFT' 100;
-            color: var(--marron);
+            color: var(--sage);
         }
 
         .quote-mark {
@@ -326,7 +340,7 @@
         .mot-de-jo-text p {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #4A3F36;
+            color: #6B5B4E;
             margin-bottom: 0.8rem;
             font-style: italic;
             font-weight: 500;
@@ -374,24 +388,24 @@
             padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 4px;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Fraunces', serif;
             font-size: 1rem;
         }
 
         .newsletter-form button {
             padding: 0.8rem 1.5rem;
-            background-color: var(--sage);
+            background-color: var(--purple);
             color: white;
             border: none;
             cursor: pointer;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Fraunces', serif;
             font-size: 1rem;
             border-radius: 4px;
             transition: background-color 0.3s;
         }
 
         .newsletter-form button:hover {
-            background-color: var(--sage-dark);
+            background-color: var(--purple-dark);
         }
 
         /* Product Cards - Nos Tisanes */
@@ -411,15 +425,14 @@
         .product-card {
             text-align: center;
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             padding: 1rem;
-            background: transparent;
+            background: var(--cream);
             border-radius: 12px;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
         }
 
         .product-image {
@@ -443,7 +456,7 @@
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
             font-variation-settings: 'WONK' 1, 'SOFT' 100;
-            color: var(--marron);
+            color: var(--sage);
             margin-bottom: 0.2rem;
         }
 
@@ -467,7 +480,7 @@
             text-decoration: none;
             border: none;
             cursor: pointer;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Fraunces', serif;
             font-size: 1.05rem;
             letter-spacing: 1px;
             transition: background-color 0.3s;
@@ -548,7 +561,7 @@
             font-size: 3rem;
             margin-bottom: 1.2rem;
             font-variation-settings: 'WONK' 1, 'SOFT' 100;
-            color: var(--marron);
+            color: var(--sage);
         }
 
         .detail-price {
@@ -562,8 +575,8 @@
             font-size: 1.25rem;
             line-height: 1.9;
             margin-bottom: 2rem;
-            color: #4A3F36;
-            font-weight: 600;
+            color: #6B5B4E;
+            font-weight: 400;
         }
 
         .detail-composition {
@@ -667,7 +680,7 @@
             font-size: 1.1rem;
             line-height: 1.9;
             margin-bottom: 1rem;
-            color: #4A3F36;
+            color: #6B5B4E;
         }
 
         .univers-divider {
@@ -737,7 +750,7 @@
         .faq-message {
             font-size: 1.3rem;
             margin-bottom: 2rem;
-            color: #4A3F36;
+            color: #6B5B4E;
         }
 
         .faq-section .btn {
@@ -789,7 +802,7 @@
             padding: 0.8rem;
             border: 1px solid #ddd;
             border-radius: 4px;
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'Fraunces', serif;
             font-size: 1rem;
         }
 
@@ -893,8 +906,14 @@
                 letter-spacing: 3px;
             }
 
+            .hero-content {
+                padding-top: 20vh;
+            }
+
             .hero-title {
                 font-size: 2.5rem;
+                margin-top: -16vh;
+                margin-bottom: 6vh;
             }
 
             .hero-tagline {
@@ -1043,6 +1062,24 @@
 
         /* Très petit écran (< 420px) */
         @media (max-width: 420px) {
+            .hero-content {
+                padding-top: 18vh;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+                margin-top: -14vh;
+                margin-bottom: 5vh;
+            }
+
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
             .products-container {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 0.8rem;
@@ -1095,6 +1132,62 @@
             transition: all 0.6s ease-out;
         }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "La Tisane de Jo",
+      "description": "Tisanes bio artisanales imaginées par Jo, pharmacien passionné. Recettes familiales à base de plantes 100% bio, cultivées en Drôme provençale.",
+      "url": "https://www.latisanedejo.com",
+      "image": "https://www.latisanedejo.com/images/hero-bg.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Grignan",
+        "addressRegion": "Drôme",
+        "addressCountry": "FR"
+      },
+      "email": "latisanedejo@gmail.com",
+      "priceRange": "€",
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "L'Originale",
+            "description": "Tisane bio digestive aux plantes. Cette recette facilite la digestion à toute heure de la journée. Composition 100% bio : Anis, Réglisse, Fenouil, Romarin, Thym, Badiane.",
+            "image": "https://www.latisanedejo.com/images/originale-card.jpg",
+            "brand": { "@type": "Brand", "name": "La Tisane de Jo" },
+            "weight": { "@type": "QuantitativeValue", "value": "100", "unitCode": "GRM" },
+            "offers": {
+              "@type": "Offer",
+              "price": "14.00",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.latisanedejo.com"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "La Sirocco",
+            "description": "Tisane bio tonique et rafraîchissante, nommée d'après le vent méditerranéen. Parfaite pour remplacer le café. Composition 100% bio : Menthe, Réglisse.",
+            "image": "https://www.latisanedejo.com/images/sirocco-card.jpg",
+            "brand": { "@type": "Brand", "name": "La Tisane de Jo" },
+            "weight": { "@type": "QuantitativeValue", "value": "100", "unitCode": "GRM" },
+            "offers": {
+              "@type": "Offer",
+              "price": "14.00",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://www.latisanedejo.com"
+            }
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -1121,7 +1214,7 @@
                     <p class="hero-tagline">Un secret de famille à partager</p>
                     <h2 class="hero-subtitle">Le bien-être par le goût, un savoir-faire familial.</h2>
                     <p class="hero-description">À l'origine, Jo notre beau-père pharmacien passionné de tisanes parfumées. Aujourd'hui, une nouvelle génération prête à reprendre le flambeau des infusions.</p>
-                    <button class="btn" onclick="document.querySelector('.mot-de-jo-section').scrollIntoView({behavior: 'smooth'})">Découvrir</button>
+                    <button class="btn" onclick="showPage('tisanes')">Découvrir nos tisanes</button>
                 </div>
             </div>
 
@@ -1129,7 +1222,7 @@
             <section class="mot-de-jo-section">
                 <div class="mot-de-jo-container">
                     <div class="mot-de-jo-image">
-                        <img src="images/mot-de-jo.jpg" alt="Mot de Jo" class="arch-image">
+                        <img src="images/mot-de-jo.jpg" alt="Jo, pharmacien passionné créateur des tisanes bio artisanales" loading="lazy" class="arch-image">
                     </div>
                     <div class="mot-de-jo-text">
                         <h2 class="mot-de-jo-title">Le mot de Jo</h2>
@@ -1159,16 +1252,16 @@
                 <div class="products-container">
                     <!-- Product 1: L'Originale -->
                     <div class="product-card" onclick="showPage('tisane-originale')">
-                        <img src="images/originale-card.jpg" alt="L'Originale" class="product-image">
+                        <img src="images/originale-card.jpg" alt="L'Originale - Tisane bio digestive aux plantes : anis, réglisse, fenouil, romarin, thym, badiane" class="product-image" loading="lazy">
                         <h3 class="product-name">L'Originale</h3>
-                        <p class="product-price">12,00€</p>
+                        <p class="product-price">14,00€</p>
                         <p class="product-weight">100g</p>
                         <button class="btn-discover">Découvrir</button>
                     </div>
 
                     <!-- Product 2: La Sirocco -->
                     <div class="product-card" onclick="showPage('tisane-sirocco')">
-                        <img src="images/sirocco-card.jpg" alt="La Sirocco" class="product-image">
+                        <img src="images/sirocco-card.jpg" alt="La Sirocco - Tisane bio tonique et rafraîchissante à la menthe et réglisse" class="product-image" loading="lazy">
                         <h3 class="product-name">La Sirocco</h3>
                         <p class="product-price">14,00€</p>
                         <p class="product-weight">100g</p>
@@ -1177,9 +1270,9 @@
 
                     <!-- Product 3: La Motte -->
                     <div class="product-card" onclick="showPage('tisane-lamotte')">
-                        <div class="product-image">La Motte - Bientôt</div>
+                        <div class="product-image">Bientôt</div>
                         <h3 class="product-name">La Motte</h3>
-                        <p class="product-price">Bientôt</p>
+                        <p class="product-price">&nbsp;</p>
                         <p class="product-weight">100g</p>
                         <button class="btn-discover">Découvrir</button>
                     </div>
@@ -1193,12 +1286,12 @@
                 <a class="back-link" onclick="showPage('tisanes')">← Retour aux tisanes</a>
                 <div class="detail-container">
                     <div class="detail-image-container">
-                        <img src="images/originale-detail.jpg" alt="L'Originale" class="detail-image detail-image-main">
-                        <img src="images/originale-hover.jpg" alt="L'Originale gros plan" class="detail-image detail-image-hover">
+                        <img src="images/originale-detail.jpg" alt="L'Originale tisane bio digestive de Grignan - vue détaillée du mélange de plantes" class="detail-image detail-image-main" loading="lazy">
+                        <img src="images/originale-hover.jpg" alt="Gros plan sur les plantes bio de L'Originale : anis étoilé, fenouil, romarin" loading="lazy" class="detail-image detail-image-hover">
                     </div>
                     <div class="detail-info">
                         <h1>L'Originale</h1>
-                        <p class="detail-price">12,00€ - 100g</p>
+                        <p class="detail-price">14,00€ - 100g</p>
                         <p class="detail-description">Comme son nom l'indique, c'est LA première tisane imaginée par Jo dans sa pharmacie.<br><br>Cette recette facilite la digestion à toute heure de la journée.<br><br>Composition 100% bio : Anis, Réglisse, Fenouil, Romarin, Thym, Badiane</p>
                         <!-- SHOPIFY BUY BUTTON: L'Originale -->
                         <div id="product-component-1775039782949" class="shopify-btn-container"></div>
@@ -1213,8 +1306,8 @@
                 <a class="back-link" onclick="showPage('tisanes')">← Retour aux tisanes</a>
                 <div class="detail-container">
                     <div class="detail-image-container">
-                        <img src="images/sirocco-detail.jpg" alt="La Sirocco" class="detail-image detail-image-main">
-                        <img src="images/sirocco-hover.jpg" alt="La Sirocco gros plan" class="detail-image detail-image-hover">
+                        <img src="images/sirocco-detail.jpg" alt="La Sirocco tisane bio tonique de Grignan - vue détaillée du mélange menthe réglisse" class="detail-image detail-image-main" loading="lazy">
+                        <img src="images/sirocco-hover.jpg" alt="Gros plan sur les feuilles de menthe bio de La Sirocco" loading="lazy" class="detail-image detail-image-hover">
                     </div>
                     <div class="detail-info">
                         <h1>La Sirocco</h1>
@@ -1232,17 +1325,14 @@
             <section class="detail-section">
                 <a class="back-link" onclick="showPage('tisanes')">← Retour aux tisanes</a>
                 <div class="detail-container">
-                    <div>
-                        <div class="product-image" style="border-radius: 120px 120px 10px 10px; height: 400px;">La Motte</div>
+                    <div class="detail-image-container" style="background-color: var(--cream); display: flex; align-items: center; justify-content: center; min-height: 500px;">
+                        <p style="font-size: 1.5rem; font-style: italic; color: var(--marron); opacity: 0.6;">Bientôt</p>
                     </div>
                     <div class="detail-info">
                         <h1>La Motte</h1>
                         <p class="detail-price">Prix à venir</p>
-                        <p class="detail-description">À côté de notre maison familiale, le chemin de La Motte est notre promenade préférée avant de passer à table. Un nom prédestiné pour cette tisane qui met en appétit.<br><br>Composition 100% bio : Menthe, Gentiane</p>
-                        <div class="detail-composition">
-                            <h3>Composition</h3>
-                            <p>Menthe, Gentiane</p>
-                        </div>
+                        <p class="detail-description">À côté de notre maison familiale, le chemin de La Motte est notre promenade préférée avant de passer à table. Un nom prédestiné pour cette tisane qui met en appétit.</p>
+                        <p class="detail-description">Composition 100% bio : Menthe, Gentiane</p>
                         <!-- SHOPIFY BUY BUTTON: La Motte (à activer plus tard) -->
                         <div id="shopify-btn-lamotte" class="shopify-btn-container">
                             <button class="shopify-btn-placeholder" disabled style="opacity:0.5;cursor:not-allowed;">Bientôt disponible</button>
@@ -1260,7 +1350,7 @@
                     <div class="univers-row">
                         <div class="univers-image-wrapper sage-glow">
                             <div class="univers-watermark">🌱</div>
-                            <img src="images/histoire-familiale.jpg" alt="Une histoire familiale" class="univers-image">
+                            <img src="images/histoire-familiale.jpg" alt="Histoire familiale de La Tisane de Jo - tradition et savoir-faire artisanal depuis Grignan" loading="lazy" class="univers-image">
                         </div>
                         <div class="univers-text">
                             <h2 style="color: var(--sage);">Une histoire<br>familiale</h2>
@@ -1275,7 +1365,7 @@
                     <div class="univers-row reversed">
                         <div class="univers-image-wrapper violet-glow">
                             <div class="univers-watermark">🌿</div>
-                            <img src="images/alchimie-plantes.jpg" alt="L'alchimie des plantes" class="univers-image">
+                            <img src="images/alchimie-plantes.jpg" alt="L'alchimie des plantes bio - sélection et assemblage artisanal des tisanes" loading="lazy" class="univers-image">
                         </div>
                         <div class="univers-text">
                             <h2 style="color: var(--purple);">L'alchimie<br>des plantes</h2>
@@ -1484,21 +1574,22 @@
             "product": {
               "@media (min-width: 601px)": { "max-width": "calc(25% - 20px)", "margin-left": "20px", "margin-bottom": "50px" }
             },
-            "title": { "font-family": "Lato, sans-serif" },
+            "title": { "font-family": "Fraunces, Georgia, serif" },
             "button": {
-              "font-family": "Montserrat, sans-serif", "font-weight": "bold",
-              ":hover": { "background-color": "#8e71a7" },
-              "background-color": "#9e7eb9",
-              ":focus": { "background-color": "#8e71a7" }
+              "font-family": "Fraunces, Georgia, serif", "font-weight": "700",
+              "border-radius": "4px", "font-size": "15px", "padding": "12px 24px",
+              ":hover": { "background-color": "#7344B0" },
+              "background-color": "#8B5CC6",
+              ":focus": { "background-color": "#7344B0" }
             },
-            "price": { "font-family": "Lato, sans-serif" },
-            "compareAt": { "font-family": "Lato, sans-serif" },
-            "unitPrice": { "font-family": "Lato, sans-serif" },
-            "description": { "font-family": "Montserrat, sans-serif" }
+            "price": { "font-family": "Fraunces, Georgia, serif" },
+            "compareAt": { "font-family": "Fraunces, Georgia, serif" },
+            "unitPrice": { "font-family": "Fraunces, Georgia, serif" },
+            "description": { "font-family": "Fraunces, Georgia, serif" }
           },
           "contents": { "img": false, "title": false, "price": false },
           "text": { "button": "Ajouter au panier" },
-          "googleFonts": ["Lato", "Montserrat"]
+          "googleFonts": ["Fraunces"]
         },
         "productSet": {
           "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "-20px" } } }
@@ -1508,43 +1599,45 @@
           "styles": {
             "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
             "button": {
-              "font-family": "Montserrat, sans-serif", "font-weight": "bold",
-              ":hover": { "background-color": "#8e71a7" },
-              "background-color": "#9e7eb9",
-              ":focus": { "background-color": "#8e71a7" }
+              "font-family": "Fraunces, Georgia, serif", "font-weight": "700",
+              "border-radius": "4px",
+              ":hover": { "background-color": "#7344B0" },
+              "background-color": "#8B5CC6",
+              ":focus": { "background-color": "#7344B0" }
             },
-            "title": { "font-family": "Helvetica Neue, sans-serif", "font-weight": "bold", "font-size": "26px", "color": "#4c4c4c" },
-            "price": { "font-family": "Helvetica Neue, sans-serif", "font-weight": "normal", "font-size": "18px", "color": "#4c4c4c" },
-            "compareAt": { "font-family": "Helvetica Neue, sans-serif", "font-weight": "normal", "font-size": "15.3px", "color": "#4c4c4c" },
-            "unitPrice": { "font-family": "Helvetica Neue, sans-serif", "font-weight": "normal", "font-size": "15.3px", "color": "#4c4c4c" },
-            "description": { "font-family": "Helvetica Neue, sans-serif", "font-weight": "normal", "font-size": "14px", "color": "#4c4c4c" }
+            "title": { "font-family": "Fraunces, Georgia, serif", "font-weight": "bold", "font-size": "26px", "color": "#6B5B4E" },
+            "price": { "font-family": "Fraunces, Georgia, serif", "font-weight": "normal", "font-size": "18px", "color": "#6B5B4E" },
+            "compareAt": { "font-family": "Fraunces, Georgia, serif", "font-weight": "normal", "font-size": "15.3px", "color": "#6B5B4E" },
+            "unitPrice": { "font-family": "Fraunces, Georgia, serif", "font-weight": "normal", "font-size": "15.3px", "color": "#6B5B4E" },
+            "description": { "font-family": "Fraunces, Georgia, serif", "font-weight": "normal", "font-size": "14px", "color": "#6B5B4E" }
           },
-          "googleFonts": ["Montserrat"],
-          "text": { "button": "Add to cart" }
+          "googleFonts": ["Fraunces"],
+          "text": { "button": "Ajouter au panier" }
         },
         "option": {},
         "cart": {
           "styles": {
             "button": {
-              "font-family": "Montserrat, sans-serif", "font-weight": "bold",
-              ":hover": { "background-color": "#8e71a7" },
-              "background-color": "#9e7eb9",
-              ":focus": { "background-color": "#8e71a7" }
+              "font-family": "Fraunces, Georgia, serif", "font-weight": "700",
+              "border-radius": "4px",
+              ":hover": { "background-color": "#7344B0" },
+              "background-color": "#8B5CC6",
+              ":focus": { "background-color": "#7344B0" }
             }
           },
-          "text": { "total": "Subtotal", "button": "Checkout" },
-          "googleFonts": ["Montserrat"]
+          "text": { "total": "Sous-total", "button": "Commander" },
+          "googleFonts": ["Fraunces"]
         },
         "toggle": {
           "styles": {
             "toggle": {
-              "font-family": "Montserrat, sans-serif", "font-weight": "bold",
-              "background-color": "#9e7eb9",
-              ":hover": { "background-color": "#8e71a7" },
-              ":focus": { "background-color": "#8e71a7" }
+              "font-family": "Fraunces, Georgia, serif", "font-weight": "700",
+              "background-color": "#8B5CC6",
+              ":hover": { "background-color": "#7344B0" },
+              ":focus": { "background-color": "#7344B0" }
             }
           },
-          "googleFonts": ["Montserrat"]
+          "googleFonts": ["Fraunces"]
         }
       };
 
