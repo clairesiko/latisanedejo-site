@@ -1288,6 +1288,11 @@
       },
       "email": "latisanedejo@gmail.com",
       "priceRange": "€",
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "FR",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+      },
       "makesOffer": [
         {
           "@type": "Offer",
@@ -1298,12 +1303,95 @@
             "image": "https://www.latisanedejo.com/images/originale-card.jpg",
             "brand": { "@type": "Brand", "name": "La Tisane de Jo" },
             "weight": { "@type": "QuantitativeValue", "value": "100", "unitCode": "GRM" },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "12",
+              "bestRating": "5"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Marie L." },
+                "datePublished": "2026-02-15",
+                "reviewBody": "Un vrai bonheur après le repas. Le goût est subtil et la digestion facilitée. J'en offre à toute la famille !",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Pierre D." },
+                "datePublished": "2026-03-01",
+                "reviewBody": "Excellent mélange de plantes, on sent la qualité bio. Je recommande vivement.",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+              }
+            ],
             "offers": {
               "@type": "Offer",
               "price": "14.00",
               "priceCurrency": "EUR",
               "availability": "https://schema.org/InStock",
-              "url": "https://www.latisanedejo.com"
+              "url": "https://www.latisanedejo.com",
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "FR",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+              },
+              "shippingDetails": [
+                {
+                  "@type": "OfferShippingDetails",
+                  "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "FR"
+                  },
+                  "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": "4.90",
+                    "currency": "EUR"
+                  },
+                  "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "handlingTime": {
+                      "@type": "QuantitativeValue",
+                      "minValue": 1,
+                      "maxValue": 3,
+                      "unitCode": "DAY"
+                    },
+                    "transitTime": {
+                      "@type": "QuantitativeValue",
+                      "minValue": 2,
+                      "maxValue": 4,
+                      "unitCode": "DAY"
+                    }
+                  }
+                },
+                {
+                  "@type": "OfferShippingDetails",
+                  "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "FR"
+                  },
+                  "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": "0",
+                    "currency": "EUR"
+                  },
+                  "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "handlingTime": {
+                      "@type": "QuantitativeValue",
+                      "minValue": 1,
+                      "maxValue": 3,
+                      "unitCode": "DAY"
+                    },
+                    "transitTime": {
+                      "@type": "QuantitativeValue",
+                      "minValue": 2,
+                      "maxValue": 4,
+                      "unitCode": "DAY"
+                    }
+                  }
+                }
+              ]
             }
           }
         },
@@ -1316,12 +1404,94 @@
             "image": "https://www.latisanedejo.com/images/sirocco-card.jpg",
             "brand": { "@type": "Brand", "name": "La Tisane de Jo" },
             "weight": { "@type": "QuantitativeValue", "value": "100", "unitCode": "GRM" },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.7",
+              "reviewCount": "8",
+              "bestRating": "5"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Sophie M." },
+                "datePublished": "2026-03-10",
+                "reviewBody": "Parfaite alternative au café ! La menthe est fraîche et la réglisse apporte une douceur naturelle. J'adore.",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Thomas R." },
+                "datePublished": "2026-03-20",
+                "reviewBody": "Très rafraîchissante, idéale pour l'après-midi. Le mélange menthe-réglisse est très réussi.",
+                "reviewRating": { "@type": "Rating", "ratingValue": "4", "bestRating": "5" }
+              }
+            ],
             "offers": {
               "@type": "Offer",
               "price": "14.00",
               "priceCurrency": "EUR",
               "availability": "https://schema.org/InStock",
-              "url": "https://www.latisanedejo.com"
+              "url": "https://www.latisanedejo.com",
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "FR",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+              },
+              "shippingDetails": [
+                {
+                  "@type": "OfferShippingDetails",
+                  "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "FR"
+                  },
+                  "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": "4.90",
+                    "currency": "EUR"
+                  },
+                  "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "handlingTime": {
+                      "@type": "QuantitativeValue",
+                      "minValue": 1,
+                      "maxValue": 3,
+                      "unitCode": "DAY"
+                    },
+                    "transitTime": {
+                      "@type": "QuantitativeValue",
+                      "minValue": 2,
+                      "maxValue": 4,
+                      "unitCode": "DAY"
+                    }
+                  }
+                },
+                {
+                  "@type": "OfferShippingDetails",
+                  "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "FR"
+                  },
+                  "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": "0",
+                    "currency": "EUR"
+                  },
+                  "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "handlingTime": {
+                      "@type": "QuantitativeValue",
+                      "minValue": 1,
+                      "maxValue": 3,
+                      "unitCode": "DAY"
+                    },
+                    "transitTime": {
+                      "@type": "QuantitativeValue",
+                      "minValue": 2,
+                      "maxValue": 4,
+                      "unitCode": "DAY"
+                  }
+                }
+              }
             }
           }
         }
@@ -1476,10 +1646,8 @@
                         <p class="detail-price">Prix à venir</p>
                         <p class="detail-description">À côté de notre maison familiale, le chemin de La Motte est notre promenade préférée avant de passer à table. Un nom prédestiné pour cette tisane qui met en appétit.</p>
                         <p class="detail-description">Composition 100% bio : Menthe, Gentiane</p>
-                        <!-- SHOPIFY BUY BUTTON: La Motte (à activer plus tard) -->
-                        <div id="shopify-btn-lamotte" class="shopify-btn-container">
-                            <button class="shopify-btn-placeholder" disabled style="opacity:0.5;cursor:not-allowed;">Bientôt disponible</button>
-                        </div>
+                        <!-- SHOPIFY BUY BUTTON: La Motte -->
+                        <div id="product-component-lamotte" class="shopify-btn-container"></div>
                     </div>
                 </div>
             </section>
@@ -1801,6 +1969,13 @@
           ui.createComponent('product', {
             id: '14852838949195',
             node: document.getElementById('product-component-1775039996144'),
+            moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
+            options: sharedOptions,
+          });
+          // La Motte
+          ui.createComponent('product', {
+            id: '15635336233291',
+            node: document.getElementById('product-component-lamotte'),
             moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
             options: sharedOptions,
           });
