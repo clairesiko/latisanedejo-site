@@ -1556,9 +1556,11 @@
             <section class="newsletter-section">
                 <div class="newsletter-content">
                     <h3 class="newsletter-title">La lettre de Jo</h3>
-                    <div class="newsletter-emailoctopus">
-                        <script async src="https://eocampaign1.com/form/d3a9d7fa-4252-11f1-a3fe-2b58e881e38e.js" data-form="d3a9d7fa-4252-11f1-a3fe-2b58e881e38e"></script>
-                    </div>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" id="newsletterEmail" placeholder="Votre email" required>
+                        <button type="submit">S'inscrire</button>
+                    </form>
+                    <p id="newsletterMsg" style="margin-top:0.8rem;font-size:0.95rem;display:none;"></p>
                 </div>
             </section>
         </div>
@@ -1793,7 +1795,48 @@
             triggerRevealAnimations();
         }
 
-        // Newsletter handled by EmailOctopus
+        // Newsletter - EmailOctopus API
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var email = document.getElementById('newsletterEmail').value;
+            var msg = document.getElementById('newsletterMsg');
+            var btn = this.querySelector('button');
+            btn.disabled = true;
+            btn.textContent = '...';
+            fetch('https://emailoctopus.com/api/1.6/lists/a2676e5a-4252-11f1-b192-b153aecc680c/contacts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    api_key: 'eo_a0195bd1c000bf58bd4e13056c87a7a4570d6a79e26c9fcb1815d69bf5b04583',
+                    email_address: email,
+                    status: 'SUBSCRIBED'
+                })
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.id || data.status === 'SUBSCRIBED') {
+                    msg.style.color = '#8B9F7A';
+                    msg.textContent = 'Merci ! Vous êtes inscrit à la lettre de Jo.';
+                    document.getElementById('newsletterEmail').value = '';
+                } else if (data.error && data.error.code === 'MEMBER_EXISTS_WITH_EMAIL_ADDRESS') {
+                    msg.style.color = '#8B9F7A';
+                    msg.textContent = 'Vous êtes déjà inscrit !';
+                } else {
+                    msg.style.color = '#c0392b';
+                    msg.textContent = 'Une erreur est survenue. Réessayez.';
+                }
+                msg.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = "S'inscrire";
+            })
+            .catch(function() {
+                msg.style.color = '#c0392b';
+                msg.textContent = 'Erreur de connexion. Réessayez.';
+                msg.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = "S'inscrire";
+            });
+        });
 
         // Contact form handler
         document.addEventListener('DOMContentLoaded', function() {
