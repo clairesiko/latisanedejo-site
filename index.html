@@ -439,6 +439,11 @@
             background-color: var(--purple-dark);
         }
 
+        .newsletter-emailoctopus {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
         /* Product Cards - Nos Tisanes */
         .products-section {
             padding: calc(70px + 2rem) 2rem 3rem 2rem;
@@ -1551,10 +1556,9 @@
             <section class="newsletter-section">
                 <div class="newsletter-content">
                     <h3 class="newsletter-title">La lettre de Jo</h3>
-                    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
-                        <input type="email" placeholder="Votre email" required>
-                        <button type="submit">S'inscrire</button>
-                    </form>
+                    <div class="newsletter-emailoctopus">
+                        <script async src="https://eocampaign1.com/form/d3a9d7fa-4252-11f1-a3fe-2b58e881e38e.js" data-form="d3a9d7fa-4252-11f1-a3fe-2b58e881e38e"></script>
+                    </div>
                 </div>
             </section>
         </div>
@@ -1789,12 +1793,7 @@
             triggerRevealAnimations();
         }
 
-        // Newsletter handler
-        function handleNewsletter(event) {
-            event.preventDefault();
-            alert('Merci de votre intérêt ! Vous serez bientôt inscrit à la lettre de Jo.');
-            event.target.reset();
-        }
+        // Newsletter handled by EmailOctopus
 
         // Contact form handler
         document.addEventListener('DOMContentLoaded', function() {
