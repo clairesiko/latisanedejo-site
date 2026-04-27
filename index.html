@@ -1300,7 +1300,10 @@
       "hasMerchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
         "applicableCountry": "FR",
-        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 14,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/ReturnShippingFees"
       },
       "makesOffer": [
         {
@@ -1312,28 +1315,6 @@
             "image": "https://www.latisanedejo.com/images/originale-card.jpg",
             "brand": { "@type": "Brand", "name": "La Tisane de Jo" },
             "weight": { "@type": "QuantitativeValue", "value": "100", "unitCode": "GRM" },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "reviewCount": "12",
-              "bestRating": "5"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "author": { "@type": "Person", "name": "Marie L." },
-                "datePublished": "2026-02-15",
-                "reviewBody": "Un vrai bonheur après le repas. Le goût est subtil et la digestion facilitée. J'en offre à toute la famille !",
-                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-              },
-              {
-                "@type": "Review",
-                "author": { "@type": "Person", "name": "Pierre D." },
-                "datePublished": "2026-03-01",
-                "reviewBody": "Excellent mélange de plantes, on sent la qualité bio. Je recommande vivement.",
-                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-              }
-            ],
             "offers": {
               "@type": "Offer",
               "price": "14.00",
@@ -1343,7 +1324,10 @@
               "hasMerchantReturnPolicy": {
                 "@type": "MerchantReturnPolicy",
                 "applicableCountry": "FR",
-                "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                "merchantReturnDays": 14,
+                "returnMethod": "https://schema.org/ReturnByMail",
+                "returnFees": "https://schema.org/ReturnShippingFees"
               },
               "shippingDetails": [
                 {
@@ -1413,28 +1397,6 @@
             "image": "https://www.latisanedejo.com/images/sirocco-card.jpg",
             "brand": { "@type": "Brand", "name": "La Tisane de Jo" },
             "weight": { "@type": "QuantitativeValue", "value": "100", "unitCode": "GRM" },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.7",
-              "reviewCount": "8",
-              "bestRating": "5"
-            },
-            "review": [
-              {
-                "@type": "Review",
-                "author": { "@type": "Person", "name": "Sophie M." },
-                "datePublished": "2026-03-10",
-                "reviewBody": "Parfaite alternative au café ! La menthe est fraîche et la réglisse apporte une douceur naturelle. J'adore.",
-                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-              },
-              {
-                "@type": "Review",
-                "author": { "@type": "Person", "name": "Thomas R." },
-                "datePublished": "2026-03-20",
-                "reviewBody": "Très rafraîchissante, idéale pour l'après-midi. Le mélange menthe-réglisse est très réussi.",
-                "reviewRating": { "@type": "Rating", "ratingValue": "4", "bestRating": "5" }
-              }
-            ],
             "offers": {
               "@type": "Offer",
               "price": "14.00",
@@ -1444,7 +1406,10 @@
               "hasMerchantReturnPolicy": {
                 "@type": "MerchantReturnPolicy",
                 "applicableCountry": "FR",
-                "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                "merchantReturnDays": 14,
+                "returnMethod": "https://schema.org/ReturnByMail",
+                "returnFees": "https://schema.org/ReturnShippingFees"
               },
               "shippingDetails": [
                 {
@@ -1498,9 +1463,10 @@
                       "minValue": 2,
                       "maxValue": 4,
                       "unitCode": "DAY"
+                    }
                   }
                 }
-              }
+              ]
             }
           }
         }
