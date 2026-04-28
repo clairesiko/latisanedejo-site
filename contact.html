@@ -84,7 +84,12 @@
             <p>Une question, une suggestion ou simplement envie de dire bonjour ? Nous vous répondons avec plaisir.</p>
         </div>
 
-        <form class="contact-form" action="mailto:latisanedejo@gmail.com" method="POST" enctype="text/plain">
+        <form class="contact-form" action="https://formsubmit.co/latisanedejo@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Nouveau message via le site — La Tisane de Jo">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_autoresponse" value="Bonjour, nous avons bien reçu votre message et nous vous répondrons dans les meilleurs délais. À très vite. — La Tisane de Jo">
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-group">
                 <label for="name">Nom</label>
                 <input type="text" id="name" name="name" required>

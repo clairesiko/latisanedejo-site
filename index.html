@@ -448,6 +448,33 @@
             display: none !important;
         }
 
+        .newsletter-intro {
+            font-family: 'Fraunces', serif;
+            color: rgba(245, 240, 227, 0.85);
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 540px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .newsletter-privacy {
+            font-family: 'Fraunces', serif;
+            color: rgba(245, 240, 227, 0.65);
+            font-size: 0.82rem;
+            line-height: 1.5;
+            max-width: 540px;
+            margin: 1.5rem auto 0 auto;
+        }
+
+        .newsletter-privacy a {
+            color: rgba(245, 240, 227, 0.9);
+            text-decoration: underline;
+        }
+
+        .newsletter-privacy a:hover {
+            color: var(--cream);
+        }
+
         /* Product Cards - Nos Tisanes */
         .products-section {
             padding: calc(70px + 2rem) 2rem 3rem 2rem;
@@ -1280,6 +1307,145 @@
             transform: translateY(0);
             transition: all 0.6s ease-out;
         }
+
+        /* ============================================ */
+        /* MOCKUP DESIGN OVERRIDES — applied April 2026 */
+        /* ============================================ */
+
+        /* NAV — cream-soft background, logo centré violet, liens centrés en dessous (desktop) */
+        nav {
+            background-color: #FBF7EC !important;
+            padding: 18px 56px 14px !important;
+            box-shadow: 0 2px 14px rgba(74, 63, 54, 0.07) !important;
+            position: sticky !important;
+            top: 0 !important;
+        }
+        @media (min-width: 901px) {
+            nav {
+                flex-direction: column !important;
+                gap: 8px !important;
+                justify-content: center !important;
+            }
+        }
+        .nav-logo {
+            font-family: 'Fraunces', serif !important;
+            font-style: italic !important;
+            font-weight: 800 !important;
+            font-size: 30px !important;
+            color: var(--purple) !important;
+            text-align: center !important;
+            letter-spacing: -0.5px !important;
+            text-transform: none !important;
+            line-height: 1 !important;
+            transition: color 0.2s !important;
+        }
+        .nav-logo:hover { color: var(--purple-dark) !important; }
+        .nav-links a {
+            color: var(--dark-brown) !important;
+            font-weight: 500 !important;
+            letter-spacing: 0.2px !important;
+            text-transform: none !important;
+            font-size: 15px !important;
+            transition: color 0.2s !important;
+        }
+        .nav-links a:hover { color: var(--purple) !important; }
+        .hamburger span { background-color: var(--dark-brown) !important; }
+
+        /* HERO — pas de h1, voile en dégradé bas, tagline réduite, pas de bouton */
+        .hero {
+            background: linear-gradient(rgba(44,37,32,0.0) 0%, rgba(44,37,32,0.0) 30%, rgba(44,37,32,0.42) 100%), url('images/hero-bg.jpg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            height: 86vh !important;
+            min-height: 560px !important;
+        }
+        .hero-title { display: none !important; }
+        .hero-content {
+            align-items: center !important;
+            text-align: center !important;
+            justify-content: center !important;
+        }
+        .hero-bottom {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            margin-bottom: 0 !important;
+        }
+        .hero-tagline {
+            font-style: italic !important;
+            font-weight: 800 !important;
+            font-size: clamp(38px, 4.6vw, 64px) !important;
+            color: var(--green-pomme) !important;
+            line-height: 1 !important;
+            letter-spacing: -0.8px !important;
+            margin-bottom: 28px !important;
+            max-width: 18ch !important;
+            text-shadow: none !important;
+        }
+        .hero-subtitle {
+            font-weight: 500 !important;
+            font-size: clamp(22px, 2.2vw, 28px) !important;
+            color: var(--cream) !important;
+            margin-bottom: 18px !important;
+            max-width: 720px !important;
+            line-height: 1.3 !important;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
+        }
+        .hero-description {
+            font-size: clamp(19px, 1.6vw, 22px) !important;
+            color: var(--cream) !important;
+            opacity: 0.96 !important;
+            max-width: 660px !important;
+            line-height: 1.65 !important;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.4) !important;
+        }
+        .hero .btn { display: none !important; }
+
+        /* SECTION TITLES — marron #6B5B4E partout */
+        .mot-de-jo-title,
+        .newsletter-title,
+        .univers-convictions h2,
+        .contact-title,
+        .faq-section h1 {
+            color: #6B5B4E !important;
+        }
+        .product-name { color: #6B5B4E !important; }
+
+        /* MOT DE JO — marges réduites */
+        .mot-de-jo-section { padding: 40px 2rem 32px !important; }
+
+        /* PRODUCT ARCHES — plus prononcées */
+        .product-image {
+            aspect-ratio: 0.78 !important;
+            border-top-left-radius: 200px !important;
+            border-top-right-radius: 200px !important;
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+            height: auto !important;
+            width: 100% !important;
+            object-fit: cover !important;
+        }
+        .product-card:hover .product-name { color: var(--purple) !important; }
+
+        /* UNIVERS — pas de cercles colorés autour des photos */
+        .univers-image-wrapper.sage-glow,
+        .univers-image-wrapper.violet-glow {
+            box-shadow: none !important;
+            border: none !important;
+        }
+        .univers-watermark { display: none !important; }
+
+        /* HOVERS — tout en violet */
+        .footer-links a:hover,
+        footer a:hover { color: var(--purple) !important; }
+
+        /* MOBILE adjustments */
+        @media (max-width: 900px) {
+            nav { padding: 14px 20px 12px !important; }
+            .nav-logo { font-size: 26px !important; }
+            .nav-links a { font-size: 14px !important; }
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -1522,13 +1688,19 @@
                 </div>
             </section>
 
-            <!-- La Lettre de Jo Newsletter -->
+            <!-- La Lettre de Jo Newsletter (RGPD-compliant) -->
             <section class="newsletter-section">
                 <div class="newsletter-content">
                     <h3 class="newsletter-title">La lettre de Jo</h3>
+                    <p class="newsletter-intro">
+                        Recevez nos recettes de saison, l'arrivée de nouvelles tisanes et les histoires des plantes qui composent nos préparations. Environ un message par mois, jamais de spam.
+                    </p>
                     <div class="newsletter-emailoctopus">
                         <script async src="https://eocampaign1.com/form/d3a9d7fa-4252-11f1-a3fe-2b58e881e38e.js" data-form="d3a9d7fa-4252-11f1-a3fe-2b58e881e38e"></script>
                     </div>
+                    <p class="newsletter-privacy">
+                        En cliquant sur « S'inscrire », vous acceptez de recevoir nos emails. Vos données (votre adresse email) sont traitées par La Tisane de Jo et notre prestataire EmailOctopus pour cette unique finalité — <a href="politique-confidentialite.html">en savoir plus</a>. Vous pouvez vous désabonner à tout moment via le lien présent en bas de chaque email.
+                    </p>
                 </div>
             </section>
         </div>
@@ -1698,7 +1870,12 @@
             <section class="contact-section">
                 <div class="contact-container">
                     <h1 class="contact-title">Nous contacter</h1>
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formsubmit.co/latisanedejo@gmail.com" method="POST">
+                        <input type="hidden" name="_subject" value="Nouveau message via le site — La Tisane de Jo">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="true">
+                        <input type="hidden" name="_autoresponse" value="Bonjour, nous avons bien reçu votre message et nous vous répondrons dans les meilleurs délais. À très vite. — La Tisane de Jo">
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                         <div class="form-group">
                             <label for="name">Nom</label>
                             <input type="text" id="name" name="name" required>
@@ -1765,24 +1942,11 @@
 
         // Newsletter handled by EmailOctopus embed
 
-        // Contact form handler
+        // Contact form is handled by FormSubmit (action + method attributes on the form).
+        // First submission triggers an activation email to latisanedejo@gmail.com — click the
+        // confirmation link to activate the endpoint, then submissions arrive in the inbox.
+
         document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const subject = document.getElementById('subject').value;
-                    const message = document.getElementById('message').value;
-
-                    const mailtoLink = `mailto:latisanedejo@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Nom: ' + name + '\nEmail: ' + email + '\n\n' + message)}`;
-
-                    window.location.href = mailtoLink;
-                    this.reset();
-                });
-            }
-
             // Setup Intersection Observer for reveal animations
             setupRevealAnimations();
         });
