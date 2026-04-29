@@ -34,12 +34,14 @@
         }
 
         :root {
-            --marron: #7D6B5C;
-            --cream: #F5F0E3;
-            --sage: #8B9F7A;
+            --marron: #7D6B5C;          /* Terre — accent chaud, hover */
+            --cream: #F7F3EB;           /* Beige chaud — fond principal (brand book) */
+            --sage: #8B9F7A;            /* Sauge — croix pharmacie, accent */
             --sage-dark: #6B7F5A;
-            --purple: #8B5CC6;
-            --purple-dark: #7344B0;
+            --argile: #8A7A6A;          /* Argile — sections alternées (brand book) */
+            --purple: #7B5C8E;          /* Prune — héros, boutons, titres (brand book) */
+            --purple-dark: #5A4170;     /* Prune foncé — hover */
+            --purple-light: #9E7EB9;    /* Prune clair — touches précieuses (brand book) */
             --warm-black: #2C2520;
             --dark-brown: #4A3F36;
         }
@@ -1312,13 +1314,41 @@
         /* MOCKUP DESIGN OVERRIDES — applied April 2026 */
         /* ============================================ */
 
-        /* NAV — cream-soft background, logo centré violet, liens centrés en dessous (desktop) */
+        /* NAV — fond identique, FIXED (freeze on scroll), petite ligne centrée subtile en bas */
         nav {
-            background-color: #FBF7EC !important;
+            background-color: #F7F3EB !important;
             padding: 18px 56px 14px !important;
-            box-shadow: 0 2px 14px rgba(74, 63, 54, 0.07) !important;
-            position: sticky !important;
+            box-shadow: none !important;
+            position: fixed !important;
             top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 1000 !important;
+        }
+        /* Décaler le contenu sous le nav fixé pour les pages sans hero */
+        #page-tisanes, #page-univers, #page-faq, #page-contact,
+        #page-tisane-originale, #page-tisane-sirocco, #page-tisane-lamotte {
+            padding-top: 90px !important;
+        }
+        /* Cacher la ligne sous le nav sur la page d'accueil */
+        body:has(#page-accueil.active) nav::after {
+            display: none !important;
+        }
+        nav::after {
+            content: "" !important;
+            position: absolute !important;
+            bottom: -1px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 320px !important;
+            height: 3px !important;
+            background: linear-gradient(to right,
+                transparent 0%,
+                rgba(74, 63, 54, 0.45) 50%,
+                transparent 100%) !important;
+            box-shadow: 0 6px 16px rgba(74, 63, 54, 0.18),
+                        0 2px 4px rgba(74, 63, 54, 0.12) !important;
+            border-radius: 999px !important;
         }
         @media (min-width: 901px) {
             nav {
@@ -1411,6 +1441,17 @@
             color: #6B5B4E !important;
         }
 
+        /* Le mot de Jo — aligner exactement sur le style La lettre de Jo */
+        .mot-de-jo-title {
+            font-family: 'Fraunces', serif !important;
+            font-style: italic !important;
+            font-weight: 700 !important;
+            font-size: 2rem !important;
+            letter-spacing: -0.3px !important;
+            margin-bottom: 1.5rem !important;
+            font-variation-settings: normal !important;
+        }
+
         /* PRODUCT NAMES — vert sage */
         .product-name { color: #8B9F7A !important; }
 
@@ -1454,11 +1495,127 @@
         .footer-links a:hover,
         footer a:hover { color: var(--purple) !important; }
 
+        /* SECTIONS — fond cream uniforme (#F7F3EB partout, comme le header) */
+        .products-section,
+        .univers-section,
+        .detail-section,
+        .faq-section,
+        .newsletter-section {
+            background-color: #F7F3EB !important;
+        }
+
+        /* PRODUCT IMAGES — arches sans cadre dark-brown */
+        .product-image {
+            aspect-ratio: 0.78 !important;
+            border-top-left-radius: 200px !important;
+            border-top-right-radius: 200px !important;
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+            border: none !important;
+            background-color: transparent !important;
+            height: auto !important;
+            width: 100% !important;
+            object-fit: cover !important;
+        }
+
+        /* MOT DE JO — barre gauche dark-brown, ligne courte centrée en bas (mêmes 2px) */
+        .mot-de-jo-text {
+            border-left: 2px solid var(--dark-brown) !important;
+        }
+        .quote-mark { color: var(--dark-brown) !important; }
+        .mot-de-jo-section {
+            border-bottom: none !important;
+            position: relative !important;
+        }
+        .mot-de-jo-section::after {
+            content: "" !important;
+            position: absolute !important;
+            bottom: 0 !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 240px !important;
+            height: 2px !important;
+            background-color: var(--dark-brown) !important;
+        }
+
+        /* NEWSLETTER — bouton subscribe en prune, masquer "Powered by EmailOctopus" */
+        .newsletter-emailoctopus button,
+        .newsletter-emailoctopus input[type="submit"] {
+            background-color: var(--purple) !important;
+            color: var(--cream) !important;
+            border: none !important;
+            border-radius: 999px !important;
+            padding: 12px 28px !important;
+            font-family: 'Fraunces', serif !important;
+            font-weight: 600 !important;
+            font-size: 15px !important;
+            cursor: pointer !important;
+            transition: background-color 0.3s !important;
+        }
+        .newsletter-emailoctopus button:hover,
+        .newsletter-emailoctopus input[type="submit"]:hover {
+            background-color: var(--purple-dark) !important;
+        }
+        /* Hide ONLY the "Powered by EmailOctopus" link — never anything else */
+        .newsletter-emailoctopus a[href*="emailoctopus.com"],
+        .newsletter-emailoctopus a[href*="EmailOctopus"] {
+            display: none !important;
+        }
+        .product-card { transition: transform 0.4s ease !important; }
+        .product-card:hover { transform: translateY(-6px); }
+
+        /* NEWSLETTER — minimal : titre stylé bouton + form + marges réduites */
+        .newsletter-section {
+            padding: 2rem 2rem !important;
+            border-top: none !important;
+        }
+        .newsletter-content {
+            background: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            max-width: 600px !important;
+            margin: 0 auto !important;
+        }
+        .newsletter-title {
+            display: block !important;
+            background-color: transparent !important;
+            color: #6B5B4E !important;
+            font-family: 'Fraunces', serif !important;
+            font-style: italic !important;
+            font-weight: 700 !important;
+            font-size: 2rem !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            margin-bottom: 1.5rem !important;
+            letter-spacing: -0.3px !important;
+        }
+
         /* MOBILE adjustments */
         @media (max-width: 900px) {
             nav { padding: 14px 20px 12px !important; }
             .nav-logo { font-size: 26px !important; }
             .nav-links a { font-size: 14px !important; }
+
+            /* Mobile menu panel: nav-links opens on right with dark-brown bg */
+            /* Force CREAM text on dark-brown panel (override the desktop dark-brown) */
+            .nav-links { background-color: var(--dark-brown) !important; }
+            .nav-links a { color: var(--cream) !important; }
+            .nav-links a:hover { color: var(--purple-light) !important; }
+            .close-menu-btn a { color: var(--cream) !important; }
+
+            /* Hero text on mobile: push to bottom (away from sky), darker overlay */
+            .hero {
+                background: linear-gradient(rgba(44,37,32,0.0) 0%, rgba(44,37,32,0.0) 30%, rgba(44,37,32,0.55) 100%), url('images/hero-bg.jpg') !important;
+                background-size: cover !important;
+                background-position: center 35% !important;
+            }
+            .hero-content {
+                justify-content: flex-end !important;
+                padding-bottom: 8vh !important;
+            }
+            .hero-tagline { font-size: clamp(32px, 9vw, 48px) !important; max-width: 95% !important; }
+            .hero-subtitle { font-size: clamp(18px, 5vw, 22px) !important; }
+            .hero-description { font-size: clamp(15px, 4vw, 18px) !important; }
         }
     </style>
     <script type="application/ld+json">
@@ -1805,7 +1962,7 @@
                         <h1>La Motte</h1>
                         <p class="detail-price">Prix à venir</p>
                         <p class="detail-description">À côté de notre maison familiale, le chemin de La Motte est notre promenade préférée avant de passer à table. Un nom prédestiné pour cette tisane qui met en appétit.</p>
-                        <p class="detail-description">Composition 100% bio : Menthe, Gentiane</p>
+                        <p class="detail-description">Composition 100% bio : Gentiane, Menthe</p>
                         <!-- SHOPIFY BUY BUTTON: La Motte -->
                         <div id="product-component-lamotte" class="shopify-btn-container"></div>
                     </div>
@@ -2002,6 +2159,23 @@
 
         // Set initial page
         showPage('accueil');
+
+        // Scrub ONLY the "Powered by EmailOctopus" anchor link — never form/input/button
+        function scrubPoweredBy() {
+            const root = document.querySelector('.newsletter-emailoctopus');
+            if (!root) return;
+            root.querySelectorAll('a').forEach(a => {
+                const txt = (a.textContent || '').toLowerCase();
+                const href = (a.getAttribute('href') || '').toLowerCase();
+                // Only hide the actual <a> link — do NOT touch parents or other elements
+                if (txt.includes('powered') || href.includes('emailoctopus.com')) {
+                    a.style.display = 'none';
+                }
+            });
+        }
+        setTimeout(scrubPoweredBy, 800);
+        setTimeout(scrubPoweredBy, 2500);
+        setTimeout(scrubPoweredBy, 5000);
     </script>
 
     <!-- Shopify Buy Button SDK -->
@@ -2036,9 +2210,9 @@
             "button": {
               "font-family": "Fraunces, Georgia, serif", "font-weight": "700",
               "border-radius": "4px", "font-size": "15px", "padding": "12px 24px",
-              ":hover": { "background-color": "#7344B0" },
-              "background-color": "#8B5CC6",
-              ":focus": { "background-color": "#7344B0" }
+              ":hover": { "background-color": "#5A4170" },
+              "background-color": "#7B5C8E",
+              ":focus": { "background-color": "#5A4170" }
             },
             "price": { "font-family": "Fraunces, Georgia, serif" },
             "compareAt": { "font-family": "Fraunces, Georgia, serif" },
@@ -2059,9 +2233,9 @@
             "button": {
               "font-family": "Fraunces, Georgia, serif", "font-weight": "700",
               "border-radius": "4px",
-              ":hover": { "background-color": "#7344B0" },
-              "background-color": "#8B5CC6",
-              ":focus": { "background-color": "#7344B0" }
+              ":hover": { "background-color": "#5A4170" },
+              "background-color": "#7B5C8E",
+              ":focus": { "background-color": "#5A4170" }
             },
             "title": { "font-family": "Fraunces, Georgia, serif", "font-weight": "bold", "font-size": "26px", "color": "#6B5B4E" },
             "price": { "font-family": "Fraunces, Georgia, serif", "font-weight": "normal", "font-size": "18px", "color": "#6B5B4E" },
@@ -2078,9 +2252,9 @@
             "button": {
               "font-family": "Fraunces, Georgia, serif", "font-weight": "700",
               "border-radius": "4px",
-              ":hover": { "background-color": "#7344B0" },
-              "background-color": "#8B5CC6",
-              ":focus": { "background-color": "#7344B0" }
+              ":hover": { "background-color": "#5A4170" },
+              "background-color": "#7B5C8E",
+              ":focus": { "background-color": "#5A4170" }
             }
           },
           "text": { "total": "Sous-total", "button": "Commander" },
@@ -2090,9 +2264,9 @@
           "styles": {
             "toggle": {
               "font-family": "Fraunces, Georgia, serif", "font-weight": "700",
-              "background-color": "#8B5CC6",
-              ":hover": { "background-color": "#7344B0" },
-              ":focus": { "background-color": "#7344B0" }
+              "background-color": "#7B5C8E",
+              ":hover": { "background-color": "#5A4170" },
+              ":focus": { "background-color": "#5A4170" }
             }
           },
           "googleFonts": ["Fraunces"]
