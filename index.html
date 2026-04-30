@@ -1316,10 +1316,10 @@
 
         /* === HEADER === */
         nav {
-            background: rgba(247, 243, 235, 0.94) !important;
-            backdrop-filter: blur(8px) !important;
-            padding: 22px 32px 18px !important;
-            box-shadow: none !important;
+            background: #F7F3EB !important;
+            backdrop-filter: none !important;
+            padding: 18px 32px 14px !important;
+            box-shadow: 0 2px 12px rgba(110, 41, 19, 0.08) !important;
             position: fixed !important;
             top: 0 !important;
             left: 0 !important;
@@ -1328,7 +1328,7 @@
             display: flex !important;
             flex-direction: column !important;
             align-items: center !important;
-            gap: 14px !important;
+            gap: 12px !important;
             justify-content: center !important;
         }
         nav::after {
@@ -1408,19 +1408,22 @@
         }
         .hamburger span { background-color: #6E2913 !important; }
 
-        /* === HERO — magazine cover === */
+        /* === HERO — magazine cover, content anchored to bottom so it stays visible during scroll === */
         .hero {
-            height: 90vh !important;
+            height: 92vh !important;
             min-height: 620px !important;
             background:
-                radial-gradient(ellipse at center, rgba(44,37,32,0.0) 30%, rgba(44,37,32,0.32) 100%),
-                linear-gradient(to bottom, rgba(247,243,235,0.0) 60%, rgba(247,243,235,0.35) 100%),
+                radial-gradient(ellipse at center, rgba(44,37,32,0.0) 30%, rgba(44,37,32,0.34) 100%),
+                linear-gradient(to bottom, rgba(247,243,235,0.0) 55%, rgba(247,243,235,0.4) 100%),
                 url('images/hero-bg.jpg') !important;
             background-size: cover !important;
             background-position: center 40% !important;
             display: flex !important;
+            flex-direction: column !important;
             align-items: center !important;
-            justify-content: center !important;
+            justify-content: flex-end !important;
+            padding-bottom: 8vh !important;
+            padding-top: 130px !important;
         }
         .hero-title { display: none !important; }
         .hero-content {
@@ -1625,12 +1628,43 @@
 
         /* === MOBILE === */
         @media (max-width: 900px) {
-            nav { padding: 14px 20px 12px !important; gap: 8px !important; }
-            .nav-logo { font-size: 28px !important; }
-            .nav-links { gap: 14px !important; font-size: 11px !important; flex-wrap: wrap !important; }
-            .nav-links li { gap: 14px !important; }
-            .nav-links a { font-size: 11px !important; }
-            .hero { height: 78vh !important; min-height: 540px !important; }
+            nav { padding: 12px 16px 10px !important; gap: 8px !important; }
+            .nav-logo { font-size: 24px !important; }
+
+            /* Force hamburger OFF + show nav-links inline (kill the side-panel pattern) */
+            .hamburger { display: none !important; }
+            .close-menu-btn { display: none !important; }
+            .nav-links {
+                display: flex !important;
+                position: static !important;
+                width: auto !important;
+                height: auto !important;
+                background-color: transparent !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 0 !important;
+                gap: 10px !important;
+                z-index: auto !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                flex-wrap: wrap !important;
+            }
+            .nav-links li {
+                width: auto !important;
+                gap: 10px !important;
+            }
+            .nav-links a {
+                display: inline-flex !important;
+                padding: 0 !important;
+                font-size: 10px !important;
+                letter-spacing: 1.5px !important;
+                color: var(--brown) !important;
+            }
+            .nav-links a:hover { background-color: transparent !important; color: var(--purple) !important; }
+            .nav-links li:not(:first-child)::before { margin-right: 10px !important; }
+
+            .hero { height: 88vh !important; min-height: 540px !important; padding-top: 90px !important; padding-bottom: 6vh !important; }
             .hero-tagline { font-size: clamp(34px, 9vw, 54px) !important; }
             .hero-subtitle { font-size: clamp(17px, 5vw, 22px) !important; }
             .hero-description { font-size: clamp(14px, 4vw, 18px) !important; }
