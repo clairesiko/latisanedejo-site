@@ -43,7 +43,7 @@
             --purple-dark: #5A4170;     /* Prune foncé — hover */
             --purple-light: #9E7EB9;    /* Prune clair — touches précieuses (brand book) */
             --warm-black: #2C2520;
-            --dark-brown: #4A3F36;
+            --dark-brown: #6E2913;     /* PANTONE 483 CP — brun rouge profond, qui ressort */
         }
 
         body {
@@ -1311,89 +1311,122 @@
         }
 
         /* ============================================ */
-        /* MOCKUP DESIGN OVERRIDES — applied April 2026 */
+        /* REDESIGN OVERRIDES — V2 mockup applied        */
         /* ============================================ */
 
-        /* NAV — fond identique, FIXED (freeze on scroll), petite ligne centrée subtile en bas */
+        /* === HEADER === */
         nav {
-            background-color: #F7F3EB !important;
-            padding: 18px 56px 14px !important;
+            background: rgba(247, 243, 235, 0.94) !important;
+            backdrop-filter: blur(8px) !important;
+            padding: 22px 32px 18px !important;
             box-shadow: none !important;
             position: fixed !important;
             top: 0 !important;
             left: 0 !important;
             right: 0 !important;
             z-index: 1000 !important;
-        }
-        /* Décaler le contenu sous le nav fixé pour les pages sans hero */
-        #page-tisanes, #page-univers, #page-faq, #page-contact,
-        #page-tisane-originale, #page-tisane-sirocco, #page-tisane-lamotte {
-            padding-top: 90px !important;
-        }
-        /* Cacher la ligne sous le nav sur la page d'accueil */
-        body:has(#page-accueil.active) nav::after {
-            display: none !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 14px !important;
+            justify-content: center !important;
         }
         nav::after {
             content: "" !important;
             position: absolute !important;
-            bottom: -1px !important;
-            left: 50% !important;
-            transform: translateX(-50%) !important;
-            width: 320px !important;
-            height: 3px !important;
-            background: linear-gradient(to right,
-                transparent 0%,
-                rgba(74, 63, 54, 0.45) 50%,
-                transparent 100%) !important;
-            box-shadow: 0 6px 16px rgba(74, 63, 54, 0.18),
-                        0 2px 4px rgba(74, 63, 54, 0.12) !important;
-            border-radius: 999px !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: -22px !important;
+            height: 22px !important;
+            background: linear-gradient(to bottom, rgba(247,243,235, 0.6), rgba(247,243,235, 0)) !important;
+            pointer-events: none !important;
         }
-        @media (min-width: 901px) {
-            nav {
-                flex-direction: column !important;
-                gap: 8px !important;
-                justify-content: center !important;
-            }
+        body:has(#page-accueil.active) nav::after {
+            display: none !important;
         }
+
+        /* Hand-drawn-feel wordmark */
         .nav-logo {
             font-family: 'Fraunces', serif !important;
             font-style: italic !important;
             font-weight: 800 !important;
-            font-size: 30px !important;
+            font-variation-settings: "SOFT" 100, "WONK" 1 !important;
+            font-size: 38px !important;
             color: var(--purple) !important;
             text-align: center !important;
+            line-height: 1 !important;
             letter-spacing: -0.5px !important;
             text-transform: none !important;
-            line-height: 1 !important;
-            transition: color 0.2s !important;
+            text-shadow: none !important;
+            background: transparent !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            -webkit-text-stroke: 0 !important;
+            transition: color 0.3s !important;
         }
         .nav-logo:hover { color: var(--purple-dark) !important; }
-        .nav-links a {
-            color: var(--dark-brown) !important;
-            font-weight: 500 !important;
-            letter-spacing: 0.2px !important;
-            text-transform: none !important;
-            font-size: 15px !important;
-            transition: color 0.2s !important;
-        }
-        .nav-links a:hover { color: var(--purple) !important; }
-        .hamburger span { background-color: var(--dark-brown) !important; }
 
-        /* HERO — pas de h1, voile en dégradé bas, tagline réduite, pas de bouton */
+        /* Nav links: brown text with diamond separators (skip li 1=close-btn hidden, li 2=Accueil) */
+        .nav-links {
+            display: flex !important;
+            flex-direction: row !important;
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 16px !important;
+            font-size: 13px !important;
+            letter-spacing: 2px !important;
+            text-transform: uppercase !important;
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .nav-links li {
+            display: flex !important;
+            align-items: center !important;
+            list-style: none !important;
+        }
+        .nav-links li:nth-child(n+3)::before {
+            content: "\25C6" !important;
+            color: #6E2913 !important;
+            font-size: 8px !important;
+            opacity: 0.6 !important;
+            margin-right: 16px !important;
+            display: inline-block !important;
+        }
+        .nav-links a {
+            color: #6E2913 !important;
+            font-weight: 600 !important;
+            letter-spacing: 2px !important;
+            text-transform: uppercase !important;
+            font-size: 13px !important;
+            text-decoration: none !important;
+            transition: color 0.3s !important;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--purple) !important;
+        }
+        .hamburger span { background-color: #6E2913 !important; }
+
+        /* === HERO — magazine cover === */
         .hero {
-            background: linear-gradient(rgba(44,37,32,0.0) 0%, rgba(44,37,32,0.0) 30%, rgba(44,37,32,0.42) 100%), url('images/hero-bg.jpg') !important;
+            height: 90vh !important;
+            min-height: 620px !important;
+            background:
+                radial-gradient(ellipse at center, rgba(44,37,32,0.0) 30%, rgba(44,37,32,0.32) 100%),
+                linear-gradient(to bottom, rgba(247,243,235,0.0) 60%, rgba(247,243,235,0.35) 100%),
+                url('images/hero-bg.jpg') !important;
             background-size: cover !important;
-            background-position: center !important;
-            height: 86vh !important;
-            min-height: 560px !important;
+            background-position: center 40% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
         }
         .hero-title { display: none !important; }
         .hero-content {
-            align-items: center !important;
             text-align: center !important;
-            justify-content: center !important;
+            max-width: 800px !important;
+            padding: 0 28px !important;
         }
         .hero-bottom {
             display: flex !important;
@@ -1403,45 +1436,49 @@
             margin-bottom: 0 !important;
         }
         .hero-tagline {
+            font-family: 'Fraunces', serif !important;
             font-style: italic !important;
-            font-weight: 800 !important;
-            font-size: clamp(38px, 4.6vw, 64px) !important;
-            color: #A4C26A !important;
+            font-weight: 700 !important;
+            font-variation-settings: "SOFT" 100, "WONK" 1 !important;
+            font-size: clamp(46px, 7vw, 92px) !important;
             line-height: 1 !important;
-            letter-spacing: -0.8px !important;
-            margin-bottom: 28px !important;
-            max-width: 18ch !important;
-            text-shadow: none !important;
+            letter-spacing: -2px !important;
+            color: #8B9F7A !important;
+            margin-bottom: 26px !important;
+            max-width: none !important;
+            text-shadow: 0 2px 24px rgba(44,37,32,0.45) !important;
         }
         .hero-subtitle {
+            font-family: 'Fraunces', serif !important;
             font-weight: 500 !important;
-            font-size: clamp(22px, 2.2vw, 28px) !important;
+            font-size: clamp(20px, 1.9vw, 26px) !important;
             color: var(--cream) !important;
-            margin-bottom: 18px !important;
-            max-width: 720px !important;
-            line-height: 1.3 !important;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.4) !important;
+            max-width: 580px !important;
+            margin: 0 auto 14px !important;
+            line-height: 1.4 !important;
+            text-shadow: 0 1px 10px rgba(44,37,32,0.55) !important;
         }
         .hero-description {
-            font-size: clamp(19px, 1.6vw, 22px) !important;
+            font-family: 'Fraunces', serif !important;
+            font-size: clamp(15px, 1.3vw, 18px) !important;
             color: var(--cream) !important;
-            opacity: 0.96 !important;
-            max-width: 660px !important;
+            opacity: 0.94 !important;
+            max-width: 540px !important;
             line-height: 1.65 !important;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.4) !important;
+            text-shadow: 0 1px 6px rgba(44,37,32,0.55) !important;
+            margin: 0 auto !important;
         }
         .hero .btn { display: none !important; }
 
-        /* SECTION TITLES — marron #6B5B4E partout */
+        /* === SECTION TITLES === */
         .mot-de-jo-title,
         .newsletter-title,
         .univers-convictions h2,
         .contact-title,
         .faq-section h1 {
-            color: #6B5B4E !important;
+            color: #6E2913 !important;
+            text-shadow: none !important;
         }
-
-        /* Le mot de Jo — aligner exactement sur le style La lettre de Jo */
         .mot-de-jo-title {
             font-family: 'Fraunces', serif !important;
             font-style: italic !important;
@@ -1452,81 +1489,10 @@
             font-variation-settings: normal !important;
         }
 
-        /* PRODUCT NAMES — vert sage */
-        .product-name { color: #8B9F7A !important; }
-
-        /* NEWSLETTER — fond clair pour que le titre marron soit lisible, sans intro/privacy */
-        .newsletter-section {
-            background-color: #FBF7EC !important;
-            border-top: none !important;
-            padding: 3.5rem 2rem !important;
-        }
-        .newsletter-intro,
-        .newsletter-privacy {
-            display: none !important;
-        }
-        .product-name { color: #6B5B4E !important; }
-
-        /* MOT DE JO — marges réduites */
-        .mot-de-jo-section { padding: 40px 2rem 32px !important; }
-
-        /* PRODUCT ARCHES — plus prononcées */
-        .product-image {
-            aspect-ratio: 0.78 !important;
-            border-top-left-radius: 200px !important;
-            border-top-right-radius: 200px !important;
-            border-bottom-left-radius: 0 !important;
-            border-bottom-right-radius: 0 !important;
-            height: auto !important;
-            width: 100% !important;
-            object-fit: cover !important;
-        }
-        .product-card:hover .product-name { color: var(--purple) !important; }
-
-        /* UNIVERS — pas de cercles colorés autour des photos */
-        .univers-image-wrapper.sage-glow,
-        .univers-image-wrapper.violet-glow {
-            box-shadow: none !important;
-            border: none !important;
-        }
-        .univers-watermark { display: none !important; }
-
-        /* HOVERS — tout en violet */
-        .footer-links a:hover,
-        footer a:hover { color: var(--purple) !important; }
-
-        /* SECTIONS — fond cream uniforme (#F7F3EB partout, comme le header) */
-        .products-section,
-        .univers-section,
-        .detail-section,
-        .faq-section,
-        .newsletter-section {
-            background-color: #F7F3EB !important;
-        }
-
-        /* PRODUCT IMAGES — arches sans cadre dark-brown */
-        .product-image {
-            aspect-ratio: 0.78 !important;
-            border-top-left-radius: 200px !important;
-            border-top-right-radius: 200px !important;
-            border-bottom-left-radius: 0 !important;
-            border-bottom-right-radius: 0 !important;
-            border: none !important;
-            background-color: transparent !important;
-            height: auto !important;
-            width: 100% !important;
-            object-fit: cover !important;
-        }
-
-        /* MOT DE JO — barre gauche dark-brown, ligne courte centrée en bas (mêmes 2px) */
-        .mot-de-jo-text {
-            border-left: 2px solid var(--dark-brown) !important;
-        }
-        .quote-mark { color: var(--dark-brown) !important; }
-        .mot-de-jo-section {
-            border-bottom: none !important;
-            position: relative !important;
-        }
+        /* === MOT DE JO — production layout === */
+        .mot-de-jo-section { padding: 4rem 2rem 3rem !important; position: relative !important; border-bottom: none !important; }
+        .mot-de-jo-text { border-left: 2px solid #6E2913 !important; }
+        .quote-mark { color: #6E2913 !important; }
         .mot-de-jo-section::after {
             content: "" !important;
             position: absolute !important;
@@ -1535,10 +1501,18 @@
             transform: translateX(-50%) !important;
             width: 240px !important;
             height: 2px !important;
-            background-color: var(--dark-brown) !important;
+            background-color: #6E2913 !important;
+            border-radius: 999px !important;
         }
 
-        /* NEWSLETTER — bouton subscribe en prune, masquer "Powered by EmailOctopus" */
+        /* === NEWSLETTER === */
+        .newsletter-section {
+            background-color: #F7F3EB !important;
+            border-top: none !important;
+            padding: 3.5rem 2rem !important;
+        }
+        .newsletter-intro,
+        .newsletter-privacy { display: none !important; }
         .newsletter-emailoctopus button,
         .newsletter-emailoctopus input[type="submit"] {
             background-color: var(--purple) !important;
@@ -1556,66 +1530,110 @@
         .newsletter-emailoctopus input[type="submit"]:hover {
             background-color: var(--purple-dark) !important;
         }
-        /* Hide ONLY the "Powered by EmailOctopus" link — never anything else */
         .newsletter-emailoctopus a[href*="emailoctopus.com"],
         .newsletter-emailoctopus a[href*="EmailOctopus"] {
             display: none !important;
         }
-        .product-card { transition: transform 0.4s ease !important; }
-        .product-card:hover { transform: translateY(-6px); }
 
-        /* NEWSLETTER — minimal : titre stylé bouton + form + marges réduites */
+        /* === SECTIONS BG cohérentes === */
+        .products-section,
+        .univers-section,
+        .detail-section,
+        .faq-section,
         .newsletter-section {
-            padding: 2rem 2rem !important;
-            border-top: none !important;
+            background-color: #F7F3EB !important;
+            position: relative !important;
         }
-        .newsletter-content {
-            background: transparent !important;
+
+        /* === PRODUCT CARDS — medallion style === */
+        .product-card { transition: transform 0.5s ease !important; cursor: pointer !important; }
+        .product-card:hover { transform: translateY(-8px) !important; }
+        .product-image {
+            aspect-ratio: 0.78 !important;
+            border-top-left-radius: 200px !important;
+            border-top-right-radius: 200px !important;
+            border-bottom-left-radius: 16px !important;
+            border-bottom-right-radius: 16px !important;
             border: none !important;
-            padding: 0 !important;
-            max-width: 600px !important;
-            margin: 0 auto !important;
+            background-color: #F2EBD8 !important;
+            height: auto !important;
+            width: 100% !important;
+            object-fit: cover !important;
         }
-        .newsletter-title {
-            display: block !important;
-            background-color: transparent !important;
-            color: #6B5B4E !important;
+        .product-name {
+            color: #8B9F7A !important;
             font-family: 'Fraunces', serif !important;
             font-style: italic !important;
             font-weight: 700 !important;
-            font-size: 2rem !important;
-            padding: 0 !important;
-            border-radius: 0 !important;
-            margin-bottom: 1.5rem !important;
-            letter-spacing: -0.3px !important;
+            font-variation-settings: "SOFT" 100 !important;
+            font-size: 28px !important;
+            letter-spacing: -0.4px !important;
+        }
+        .product-card:hover .product-name { color: var(--purple) !important; }
+        .product-price {
+            color: #6E2913 !important;
+            font-family: 'Fraunces', serif !important;
+            font-style: italic !important;
+            font-size: 16px !important;
+        }
+        .product-weight {
+            color: #6E2913 !important;
+            font-size: 13px !important;
+            letter-spacing: 1.5px !important;
+            text-transform: uppercase !important;
         }
 
-        /* MOBILE adjustments */
+        /* === DETAIL PAGES — medallion image === */
+        .detail-image-container,
+        .detail-image-main {
+            border-top-left-radius: 200px !important;
+            border-top-right-radius: 200px !important;
+            border-bottom-left-radius: 16px !important;
+            border-bottom-right-radius: 16px !important;
+            overflow: hidden !important;
+        }
+
+        /* === UNIVERS — pas de cercles colorés === */
+        .univers-image-wrapper.sage-glow,
+        .univers-image-wrapper.violet-glow {
+            box-shadow: none !important;
+            border: none !important;
+        }
+        .univers-watermark { display: none !important; }
+        .univers-conviction-title {
+            color: #6E2913 !important;
+            font-family: 'Fraunces', serif !important;
+            font-style: italic !important;
+            font-variation-settings: normal !important;
+        }
+
+        /* === FOOTER — slim brown === */
+        footer {
+            padding: 1.5rem 2rem !important;
+        }
+        .footer-content > * { margin-bottom: 0.5rem !important; }
+        .footer-links { margin-bottom: 0.8rem !important; }
+        .footer-copyright { margin-top: 0.5rem !important; }
+        .footer-links a:hover,
+        footer a:hover { color: var(--purple) !important; }
+
+        /* === Décaler le contenu sous le nav fixé === */
+        #page-tisanes, #page-univers, #page-faq, #page-contact,
+        #page-tisane-originale, #page-tisane-sirocco, #page-tisane-lamotte {
+            padding-top: 110px !important;
+        }
+
+        /* === MOBILE === */
         @media (max-width: 900px) {
-            nav { padding: 14px 20px 12px !important; }
-            .nav-logo { font-size: 26px !important; }
-            .nav-links a { font-size: 14px !important; }
-
-            /* Mobile menu panel: nav-links opens on right with dark-brown bg */
-            /* Force CREAM text on dark-brown panel (override the desktop dark-brown) */
-            .nav-links { background-color: var(--dark-brown) !important; }
-            .nav-links a { color: var(--cream) !important; }
-            .nav-links a:hover { color: var(--purple-light) !important; }
-            .close-menu-btn a { color: var(--cream) !important; }
-
-            /* Hero text on mobile: push to bottom (away from sky), darker overlay */
-            .hero {
-                background: linear-gradient(rgba(44,37,32,0.0) 0%, rgba(44,37,32,0.0) 30%, rgba(44,37,32,0.55) 100%), url('images/hero-bg.jpg') !important;
-                background-size: cover !important;
-                background-position: center 35% !important;
-            }
-            .hero-content {
-                justify-content: flex-end !important;
-                padding-bottom: 8vh !important;
-            }
-            .hero-tagline { font-size: clamp(32px, 9vw, 48px) !important; max-width: 95% !important; }
-            .hero-subtitle { font-size: clamp(18px, 5vw, 22px) !important; }
-            .hero-description { font-size: clamp(15px, 4vw, 18px) !important; }
+            nav { padding: 14px 20px 12px !important; gap: 8px !important; }
+            .nav-logo { font-size: 28px !important; }
+            .nav-links { gap: 14px !important; font-size: 11px !important; flex-wrap: wrap !important; }
+            .nav-links li { gap: 14px !important; }
+            .nav-links a { font-size: 11px !important; }
+            .hero { height: 78vh !important; min-height: 540px !important; }
+            .hero-tagline { font-size: clamp(34px, 9vw, 54px) !important; }
+            .hero-subtitle { font-size: clamp(17px, 5vw, 22px) !important; }
+            .hero-description { font-size: clamp(14px, 4vw, 18px) !important; }
         }
     </style>
     <script type="application/ld+json">
