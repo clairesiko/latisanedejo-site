@@ -18,10 +18,44 @@
     <meta name="twitter:description" content="Tisanes bio artisanales imaginées par Jo, pharmacien passionné de plantes. Recettes familiales 100% bio de Grignan.">
     <meta name="twitter:image" content="https://www.latisanedejo.com/images/hero-bg.jpg">
     <link rel="canonical" href="https://www.latisanedejo.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,900&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'Dahlia';
+            src: url('fonts/dahlia-regular.woff') format('woff'),
+                 url('fonts/dahlia-regular.otf') format('opentype');
+            font-weight: 400; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Dahlia';
+            src: url('fonts/dahlia-medium.woff') format('woff'),
+                 url('fonts/dahlia-medium.otf') format('opentype');
+            font-weight: 500; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Dahlia';
+            src: url('fonts/dahlia-bold.woff') format('woff'),
+                 url('fonts/dahlia-bold.otf') format('opentype');
+            font-weight: 700; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Dahlia Condensed';
+            src: url('fonts/dahlia-regularcondensed.woff') format('woff'),
+                 url('fonts/dahlia-regularcondensed.otf') format('opentype');
+            font-weight: 400; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Dahlia Condensed';
+            src: url('fonts/dahlia-mediumcondensed.woff') format('woff'),
+                 url('fonts/dahlia-mediumcondensed.otf') format('opentype');
+            font-weight: 500; font-style: normal; font-display: swap;
+        }
+        @font-face {
+            font-family: 'Dahlia Condensed';
+            src: url('fonts/dahlia-boldcondensed.woff') format('woff'),
+                 url('fonts/dahlia-boldcondensed.otf') format('opentype');
+            font-weight: 700; font-style: normal; font-display: swap;
+        }
+
         html {
             scroll-behavior: smooth;
             overflow-x: hidden;
@@ -47,7 +81,7 @@
         }
 
         body {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             color: var(--warm-black);
             line-height: 1.6;
             overflow-x: hidden;
@@ -76,7 +110,7 @@
         }
 
         .nav-logo {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-weight: 900;
             font-size: 1.5rem;
             color: var(--cream);
@@ -163,7 +197,7 @@
             color: white;
             border: none;
             cursor: pointer;
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-size: 1.1rem;
             letter-spacing: 1px;
             border-radius: 4px;
@@ -230,12 +264,12 @@
         }
 
         .hero-title {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-weight: 900;
             font-size: 5rem;
             margin-top: 15vh;
             margin-bottom: auto;
-            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+            
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
         }
 
@@ -246,8 +280,8 @@
         /* no title underline */
 
         .hero-tagline {
-            font-family: 'Fraunces', serif;
-            font-style: italic;
+            font-family: 'Dahlia', serif;
+            font-style: normal;
             font-size: 2.2rem;
             color: #A4C26A;
             background: none;
@@ -284,7 +318,7 @@
             text-decoration: none;
             border: none;
             cursor: pointer;
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-size: 1.1rem;
             letter-spacing: 1px;
             transition: background-color 0.3s;
@@ -345,16 +379,16 @@
         }
 
         .mot-de-jo-title {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-weight: 900;
             font-size: 2.2rem;
             margin-bottom: 1.2rem;
-            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+            
             color: var(--sage);
         }
 
         .quote-mark {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-size: 3rem;
             color: var(--sage);
             opacity: 0.45;
@@ -375,7 +409,7 @@
             line-height: 1.8;
             color: #6B5B4E;
             margin-bottom: 0.8rem;
-            font-style: italic;
+            font-style: normal;
             font-weight: 500;
         }
 
@@ -400,12 +434,12 @@
         }
 
         .newsletter-title {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-weight: 900;
             color: var(--cream);
             font-size: 2rem;
             margin-bottom: 2rem;
-            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+            
         }
 
         .newsletter-form {
@@ -421,7 +455,7 @@
             padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 4px;
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-size: 1rem;
         }
 
@@ -431,7 +465,7 @@
             color: white;
             border: none;
             cursor: pointer;
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-size: 1rem;
             border-radius: 4px;
             transition: background-color 0.3s;
@@ -451,7 +485,7 @@
         }
 
         .newsletter-intro {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             color: rgba(245, 240, 227, 0.85);
             font-size: 1rem;
             line-height: 1.6;
@@ -460,7 +494,7 @@
         }
 
         .newsletter-privacy {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             color: rgba(245, 240, 227, 0.65);
             font-size: 0.82rem;
             line-height: 1.5;
@@ -520,11 +554,11 @@
         }
 
         .product-name {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-weight: 900;
             font-size: 1.8rem;
             margin-bottom: 0.5rem;
-            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+            
             color: var(--sage);
             margin-bottom: 0.2rem;
         }
@@ -549,7 +583,7 @@
             text-decoration: none;
             border: none;
             cursor: pointer;
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-size: 1.05rem;
             letter-spacing: 1px;
             transition: background-color 0.3s;
@@ -625,11 +659,11 @@
         }
 
         .detail-info h1 {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-weight: 900;
             font-size: 3rem;
             margin-bottom: 1.2rem;
-            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+            
             color: var(--sage);
         }
 
@@ -657,7 +691,7 @@
         }
 
         .detail-composition h3 {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-weight: 900;
             margin-bottom: 1rem;
         }
@@ -737,12 +771,12 @@
         }
 
         .univers-text h2 {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-size: 3rem;
             font-weight: 900;
             margin-bottom: 1.5rem;
             line-height: 1.1;
-            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+            
         }
 
         .univers-text p {
@@ -765,13 +799,13 @@
         }
 
         .univers-convictions h2 {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-size: 3rem;
             font-weight: 900;
             margin-bottom: 3rem;
             color: var(--marron);
             text-align: center;
-            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+            
         }
 
         .univers-convictions-grid {
@@ -791,12 +825,12 @@
         }
 
         .univers-conviction-title {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-size: 1.6rem;
             font-weight: 900;
             margin-bottom: 1rem;
             color: var(--marron);
-            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+            
         }
 
         .univers-conviction-text {
@@ -846,12 +880,12 @@
         }
 
         .contact-title {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-weight: 900;
             font-size: 2.2rem;
             margin-bottom: 2rem;
             text-align: center;
-            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+            
         }
 
         .form-group {
@@ -871,7 +905,7 @@
             padding: 0.8rem;
             border: 1px solid #ddd;
             border-radius: 4px;
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-size: 1rem;
         }
 
@@ -897,12 +931,12 @@
         }
 
         .footer-logo {
-            font-family: 'Fraunces', serif;
+            font-family: 'Dahlia', serif;
             font-weight: 900;
             font-size: 1.5rem;
             margin-bottom: 2rem;
             letter-spacing: 1px;
-            font-variation-settings: 'WONK' 1, 'SOFT' 100;
+            
         }
 
         .footer-links {
@@ -1347,10 +1381,10 @@
 
         /* Hand-drawn-feel wordmark */
         .nav-logo {
-            font-family: 'Fraunces', serif !important;
-            font-style: italic !important;
+            font-family: 'Dahlia', serif !important;
+            font-style: normal !important;
             font-weight: 800 !important;
-            font-variation-settings: "SOFT" 100, "WONK" 1 !important;
+            
             font-size: 38px !important;
             color: var(--purple) !important;
             text-align: center !important;
@@ -1408,7 +1442,7 @@
         }
         .hamburger span { background-color: #6E2913 !important; }
 
-        /* === HERO — magazine cover, content anchored to bottom so it stays visible during scroll === */
+        /* === HERO — content positioned higher on desktop (upper third of photo) === */
         .hero {
             height: 92vh !important;
             min-height: 620px !important;
@@ -1421,9 +1455,9 @@
             display: flex !important;
             flex-direction: column !important;
             align-items: center !important;
-            justify-content: flex-end !important;
+            justify-content: flex-start !important;
+            padding-top: 180px !important;
             padding-bottom: 8vh !important;
-            padding-top: 130px !important;
         }
         .hero-title { display: none !important; }
         .hero-content {
@@ -1439,10 +1473,10 @@
             margin-bottom: 0 !important;
         }
         .hero-tagline {
-            font-family: 'Fraunces', serif !important;
-            font-style: italic !important;
+            font-family: 'Dahlia', serif !important;
+            font-style: normal !important;
             font-weight: 700 !important;
-            font-variation-settings: "SOFT" 100, "WONK" 1 !important;
+            
             font-size: clamp(46px, 7vw, 92px) !important;
             line-height: 1 !important;
             letter-spacing: -2px !important;
@@ -1452,7 +1486,7 @@
             text-shadow: 0 2px 24px rgba(44,37,32,0.45) !important;
         }
         .hero-subtitle {
-            font-family: 'Fraunces', serif !important;
+            font-family: 'Dahlia', serif !important;
             font-weight: 500 !important;
             font-size: clamp(20px, 1.9vw, 26px) !important;
             color: var(--cream) !important;
@@ -1462,13 +1496,14 @@
             text-shadow: 0 1px 10px rgba(44,37,32,0.55) !important;
         }
         .hero-description {
-            font-family: 'Fraunces', serif !important;
-            font-size: clamp(15px, 1.3vw, 18px) !important;
+            font-family: 'Dahlia', serif !important;
+            font-size: clamp(17px, 1.6vw, 21px) !important;
+            font-weight: 500 !important;
             color: var(--cream) !important;
-            opacity: 0.94 !important;
-            max-width: 540px !important;
-            line-height: 1.65 !important;
-            text-shadow: 0 1px 6px rgba(44,37,32,0.55) !important;
+            opacity: 1 !important;
+            max-width: 580px !important;
+            line-height: 1.6 !important;
+            text-shadow: 0 1px 8px rgba(44,37,32,0.7) !important;
             margin: 0 auto !important;
         }
         .hero .btn { display: none !important; }
@@ -1483,13 +1518,13 @@
             text-shadow: none !important;
         }
         .mot-de-jo-title {
-            font-family: 'Fraunces', serif !important;
-            font-style: italic !important;
+            font-family: 'Dahlia', serif !important;
+            font-style: normal !important;
             font-weight: 700 !important;
             font-size: 2rem !important;
             letter-spacing: -0.3px !important;
             margin-bottom: 1.5rem !important;
-            font-variation-settings: normal !important;
+            
         }
 
         /* === MOT DE JO — production layout === */
@@ -1523,7 +1558,7 @@
             border: none !important;
             border-radius: 999px !important;
             padding: 12px 28px !important;
-            font-family: 'Fraunces', serif !important;
+            font-family: 'Dahlia', serif !important;
             font-weight: 600 !important;
             font-size: 15px !important;
             cursor: pointer !important;
@@ -1548,6 +1583,10 @@
             position: relative !important;
         }
 
+        /* Notre Univers — réduire les marges haut/bas */
+        .univers-section { padding: 2rem 2rem 2rem !important; }
+        .univers-row { margin-bottom: 2rem !important; }
+
         /* === PRODUCT CARDS — medallion style === */
         .product-card { transition: transform 0.5s ease !important; cursor: pointer !important; }
         .product-card:hover { transform: translateY(-8px) !important; }
@@ -1565,18 +1604,18 @@
         }
         .product-name {
             color: #8B9F7A !important;
-            font-family: 'Fraunces', serif !important;
-            font-style: italic !important;
+            font-family: 'Dahlia', serif !important;
+            font-style: normal !important;
             font-weight: 700 !important;
-            font-variation-settings: "SOFT" 100 !important;
+            
             font-size: 28px !important;
             letter-spacing: -0.4px !important;
         }
         .product-card:hover .product-name { color: var(--purple) !important; }
         .product-price {
             color: #6E2913 !important;
-            font-family: 'Fraunces', serif !important;
-            font-style: italic !important;
+            font-family: 'Dahlia', serif !important;
+            font-style: normal !important;
             font-size: 16px !important;
         }
         .product-weight {
@@ -1605,9 +1644,9 @@
         .univers-watermark { display: none !important; }
         .univers-conviction-title {
             color: #6E2913 !important;
-            font-family: 'Fraunces', serif !important;
-            font-style: italic !important;
-            font-variation-settings: normal !important;
+            font-family: 'Dahlia', serif !important;
+            font-style: normal !important;
+            
         }
 
         /* === FOOTER — slim brown === */
@@ -1679,12 +1718,14 @@
                 font-size: 6px !important;
             }
 
-            /* Hero — give enough room for the taller mobile nav so content stays below it */
+            /* Hero — push content to the lower half (over the land, not the sky) */
             .hero {
                 height: auto !important;
                 min-height: 100vh !important;
                 padding-top: 160px !important;
-                padding-bottom: 60px !important;
+                padding-bottom: 40px !important;
+                justify-content: flex-end !important;
+                background-position: center 65% !important;
             }
             .hero-tagline { font-size: clamp(30px, 8vw, 46px) !important; line-height: 1.05 !important; }
             .hero-subtitle { font-size: clamp(15px, 4.5vw, 20px) !important; line-height: 1.35 !important; }
@@ -2029,7 +2070,7 @@
                 <a class="back-link" onclick="showPage('tisanes')">← Retour aux tisanes</a>
                 <div class="detail-container">
                     <div class="detail-image-container" style="background-color: var(--cream); display: flex; align-items: center; justify-content: center; min-height: 500px;">
-                        <p style="font-size: 1.5rem; font-style: italic; color: var(--marron); opacity: 0.6;">Bientôt</p>
+                        <p style="font-size: 1.5rem; font-style: normal; color: var(--marron); opacity: 0.6;">Bientôt</p>
                     </div>
                     <div class="detail-info">
                         <h1>La Motte</h1>
@@ -2279,22 +2320,22 @@
             "product": {
               "@media (min-width: 601px)": { "max-width": "calc(25% - 20px)", "margin-left": "20px", "margin-bottom": "50px" }
             },
-            "title": { "font-family": "Fraunces, Georgia, serif" },
+            "title": { "font-family": "Dahlia, Georgia, serif" },
             "button": {
-              "font-family": "Fraunces, Georgia, serif", "font-weight": "700",
+              "font-family": "Dahlia, Georgia, serif", "font-weight": "700",
               "border-radius": "4px", "font-size": "15px", "padding": "12px 24px",
               ":hover": { "background-color": "#5A4170" },
               "background-color": "#7B5C8E",
               ":focus": { "background-color": "#5A4170" }
             },
-            "price": { "font-family": "Fraunces, Georgia, serif" },
-            "compareAt": { "font-family": "Fraunces, Georgia, serif" },
-            "unitPrice": { "font-family": "Fraunces, Georgia, serif" },
-            "description": { "font-family": "Fraunces, Georgia, serif" }
+            "price": { "font-family": "Dahlia, Georgia, serif" },
+            "compareAt": { "font-family": "Dahlia, Georgia, serif" },
+            "unitPrice": { "font-family": "Dahlia, Georgia, serif" },
+            "description": { "font-family": "Dahlia, Georgia, serif" }
           },
           "contents": { "img": false, "title": false, "price": false },
           "text": { "button": "Ajouter au panier" },
-          "googleFonts": ["Fraunces"]
+          "googleFonts": []
         },
         "productSet": {
           "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "-20px" } } }
@@ -2304,26 +2345,26 @@
           "styles": {
             "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
             "button": {
-              "font-family": "Fraunces, Georgia, serif", "font-weight": "700",
+              "font-family": "Dahlia, Georgia, serif", "font-weight": "700",
               "border-radius": "4px",
               ":hover": { "background-color": "#5A4170" },
               "background-color": "#7B5C8E",
               ":focus": { "background-color": "#5A4170" }
             },
-            "title": { "font-family": "Fraunces, Georgia, serif", "font-weight": "bold", "font-size": "26px", "color": "#6B5B4E" },
-            "price": { "font-family": "Fraunces, Georgia, serif", "font-weight": "normal", "font-size": "18px", "color": "#6B5B4E" },
-            "compareAt": { "font-family": "Fraunces, Georgia, serif", "font-weight": "normal", "font-size": "15.3px", "color": "#6B5B4E" },
-            "unitPrice": { "font-family": "Fraunces, Georgia, serif", "font-weight": "normal", "font-size": "15.3px", "color": "#6B5B4E" },
-            "description": { "font-family": "Fraunces, Georgia, serif", "font-weight": "normal", "font-size": "14px", "color": "#6B5B4E" }
+            "title": { "font-family": "Dahlia, Georgia, serif", "font-weight": "bold", "font-size": "26px", "color": "#6B5B4E" },
+            "price": { "font-family": "Dahlia, Georgia, serif", "font-weight": "normal", "font-size": "18px", "color": "#6B5B4E" },
+            "compareAt": { "font-family": "Dahlia, Georgia, serif", "font-weight": "normal", "font-size": "15.3px", "color": "#6B5B4E" },
+            "unitPrice": { "font-family": "Dahlia, Georgia, serif", "font-weight": "normal", "font-size": "15.3px", "color": "#6B5B4E" },
+            "description": { "font-family": "Dahlia, Georgia, serif", "font-weight": "normal", "font-size": "14px", "color": "#6B5B4E" }
           },
-          "googleFonts": ["Fraunces"],
+          "googleFonts": [],
           "text": { "button": "Ajouter au panier" }
         },
         "option": {},
         "cart": {
           "styles": {
             "button": {
-              "font-family": "Fraunces, Georgia, serif", "font-weight": "700",
+              "font-family": "Dahlia, Georgia, serif", "font-weight": "700",
               "border-radius": "4px",
               ":hover": { "background-color": "#5A4170" },
               "background-color": "#7B5C8E",
@@ -2331,18 +2372,18 @@
             }
           },
           "text": { "total": "Sous-total", "button": "Commander" },
-          "googleFonts": ["Fraunces"]
+          "googleFonts": []
         },
         "toggle": {
           "styles": {
             "toggle": {
-              "font-family": "Fraunces, Georgia, serif", "font-weight": "700",
+              "font-family": "Dahlia, Georgia, serif", "font-weight": "700",
               "background-color": "#7B5C8E",
               ":hover": { "background-color": "#5A4170" },
               ":focus": { "background-color": "#5A4170" }
             }
           },
-          "googleFonts": ["Fraunces"]
+          "googleFonts": []
         }
       };
 

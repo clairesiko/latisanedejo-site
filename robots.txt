@@ -1,4 +1,10 @@
+# robots.txt — La Tisane de Jo
+# https://www.latisanedejo.com
+
 User-agent: *
 Allow: /
+
+# Block mockup files from being indexed
+Disallow: /mockups/
 
 Sitemap: https://www.latisanedejo.com/sitemap.xml
