@@ -1668,7 +1668,7 @@
         /* === MOBILE === */
         @media (max-width: 900px) {
             nav { padding: 12px 12px 10px !important; gap: 6px !important; }
-            .nav-logo { font-size: 22px !important; }
+            .nav-logo { font-size: 30px !important; }
 
             /* Force hamburger + side-panel OFF, force inline nav links */
             .hamburger,
@@ -1707,7 +1707,7 @@
             .nav-links a {
                 display: inline-flex !important;
                 padding: 0 !important;
-                font-size: 9px !important;
+                font-size: 12px !important;
                 letter-spacing: 1px !important;
                 color: var(--brown) !important;
                 white-space: nowrap !important;
@@ -1715,21 +1715,21 @@
             .nav-links a:hover { background-color: transparent !important; color: var(--purple) !important; }
             .nav-links li:not(:first-child)::before {
                 margin-right: 8px !important;
-                font-size: 6px !important;
+                font-size: 12px !important;
             }
 
-            /* Hero — push content to the lower half (over the land, not the sky) */
+            /* Hero — tagline in the sky, white text higher on the land */
             .hero {
                 height: auto !important;
                 min-height: 100vh !important;
-                padding-top: 160px !important;
+                padding-top: 140px !important;
                 padding-bottom: 40px !important;
-                justify-content: flex-end !important;
-                background-position: center 65% !important;
+                justify-content: flex-start !important;
+                background-position: center 15% !important;
             }
-            .hero-tagline { font-size: clamp(30px, 8vw, 46px) !important; line-height: 1.05 !important; }
-            .hero-subtitle { font-size: clamp(15px, 4.5vw, 20px) !important; line-height: 1.35 !important; }
-            .hero-description { font-size: clamp(13px, 3.5vw, 16px) !important; line-height: 1.55 !important; max-width: 90% !important; }
+            .hero-tagline { font-size: clamp(42px, 10vw, 56px) !important; line-height: 1.05 !important; margin-bottom: 200px !important; }
+            .hero-subtitle { font-size: clamp(22px, 5.5vw, 24px) !important; line-height: 1.35 !important; }
+            .hero-description { font-size: clamp(16px, 4.2vw, 16px) !important; line-height: 1.55 !important; max-width: 90% !important; }
         }
     </style>
     <script type="application/ld+json">
@@ -2016,7 +2016,7 @@
                     <div class="product-card" onclick="showPage('tisane-lamotte')">
                         <div class="product-image">Bientôt</div>
                         <h3 class="product-name">La Motte</h3>
-                        <p class="product-price">&nbsp;</p>
+                        <p class="product-price">14,00€</p>
                         <p class="product-weight">100g</p>
                         <button class="btn-discover">Découvrir</button>
                     </div>
@@ -2074,7 +2074,7 @@
                     </div>
                     <div class="detail-info">
                         <h1>La Motte</h1>
-                        <p class="detail-price">Prix à venir</p>
+                        <p class="detail-price">14,00€ - 100g</p>
                         <p class="detail-description">À côté de notre maison familiale, le chemin de La Motte est notre promenade préférée avant de passer à table. Un nom prédestiné pour cette tisane qui met en appétit.</p>
                         <p class="detail-description">Composition 100% bio : Gentiane, Menthe</p>
                         <!-- SHOPIFY BUY BUTTON: La Motte -->
