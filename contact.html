@@ -191,6 +191,84 @@
             margin-top: 0.5rem;
         }
 
+        /* === PAGE HEADER === */
+        .page-header {
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .page-header h1 {
+            font-family: 'Dahlia', serif;
+            font-weight: 700;
+            font-size: 2.8rem;
+            color: var(--brown);
+            margin-bottom: 0.8rem;
+        }
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--body-text);
+            line-height: 1.7;
+        }
+
+        /* === CONTACT FORM === */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.4rem;
+        }
+        .form-group label {
+            font-family: 'Dahlia', serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--brown);
+            letter-spacing: 0.5px;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+        }
+        .form-group input,
+        .form-group textarea {
+            font-family: 'Dahlia', serif;
+            font-size: 1rem;
+            color: var(--warm-black);
+            background: white;
+            border: 1.5px solid #D6C9BA;
+            border-radius: 4px;
+            padding: 0.75rem 1rem;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--brown);
+        }
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--purple);
+            color: white;
+            font-family: 'Dahlia', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 4px;
+            padding: 0.85rem 2.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 0.5rem;
+        }
+        .btn:hover { background-color: var(--purple-dark); }
+
         @media (max-width: 900px) {
             body { padding-top: 100px; }
             nav { padding: 14px 20px 12px; gap: 8px; }
@@ -199,6 +277,10 @@
             .nav-links a { font-size: 11px; letter-spacing: 1.5px; }
             .nav-links li:not(:first-child)::before { margin-right: 12px; }
             footer { padding: 1.2rem 1rem; }
+        }
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 2rem; }
+            .page-header p { font-size: 1rem; }
         }
     </style>
 </head>
