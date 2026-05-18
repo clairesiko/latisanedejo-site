@@ -2155,12 +2155,11 @@
             <section class="contact-section">
                 <div class="contact-container">
                     <h1 class="contact-title">Nous contacter</h1>
-                    <form id="contactForm" action="https://formsubmit.co/latisanedejo@gmail.com" method="POST">
-                        <input type="hidden" name="_subject" value="Nouveau message via le site — La Tisane de Jo">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_captcha" value="true">
-                        <input type="hidden" name="_autoresponse" value="Bonjour, nous avons bien reçu votre message et nous vous répondrons dans les meilleurs délais. À très vite. — La Tisane de Jo">
-                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="0916cc3c-d545-467c-8a14-0331bb1eb0f2">
+                        <input type="hidden" name="subject" value="Nouveau message via le site — La Tisane de Jo">
+                        <input type="hidden" name="botcheck" value="" style="display:none">
+                        <input type="hidden" name="redirect" value="https://www.latisanedejo.com/contact.html?merci=1">
                         <div class="form-group">
                             <label for="name">Nom</label>
                             <input type="text" id="name" name="name" required>
