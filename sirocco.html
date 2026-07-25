@@ -46,183 +46,69 @@
     }
     </script>
     <style>
-        @font-face {
-            font-family: 'Dahlia';
-            src: url('../fonts/dahlia-regular.woff') format('woff'),
-                 url('../fonts/dahlia-regular.otf') format('opentype');
-            font-weight: 400; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Dahlia';
-            src: url('../fonts/dahlia-medium.woff') format('woff'),
-                 url('../fonts/dahlia-medium.otf') format('opentype');
-            font-weight: 500; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Dahlia';
-            src: url('../fonts/dahlia-bold.woff') format('woff'),
-                 url('../fonts/dahlia-bold.otf') format('opentype');
-            font-weight: 700; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Dahlia Condensed';
-            src: url('../fonts/dahlia-regularcondensed.woff') format('woff'),
-                 url('../fonts/dahlia-regularcondensed.otf') format('opentype');
-            font-weight: 400; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Dahlia Condensed';
-            src: url('../fonts/dahlia-mediumcondensed.woff') format('woff'),
-                 url('../fonts/dahlia-mediumcondensed.otf') format('opentype');
-            font-weight: 500; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Dahlia Condensed';
-            src: url('../fonts/dahlia-boldcondensed.woff') format('woff'),
-                 url('../fonts/dahlia-boldcondensed.otf') format('opentype');
-            font-weight: 700; font-style: normal; font-display: swap;
-        }
+        @font-face { font-family:'Dahlia'; src:url('../fonts/dahlia-regular.woff') format('woff'),url('../fonts/dahlia-regular.otf') format('opentype'); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:'Dahlia'; src:url('../fonts/dahlia-medium.woff') format('woff'),url('../fonts/dahlia-medium.otf') format('opentype'); font-weight:500; font-style:normal; font-display:swap; }
+        @font-face { font-family:'Dahlia'; src:url('../fonts/dahlia-bold.woff') format('woff'),url('../fonts/dahlia-bold.otf') format('opentype'); font-weight:700; font-style:normal; font-display:swap; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }        :root {
-            --marron: #7D6B5C;
-            --cream: #F7F3EB;
-            --cream-paper: #F2EBD8;
-            --sage: #8B9F7A;
-            --sage-dark: #6B7F5A;
-            --purple: #7B5C8E;
-            --purple-dark: #5A4170;
-            --purple-light: #9E7EB9;
-            --brown: #846055;
-            --warm-black: #2C2520;
-            --body-text: #6B5B4E;
+        * { margin:0; padding:0; box-sizing:border-box; }
+        :root {
+            --marron:#7D6B5C; --cream:#F7F3EB; --cream-paper:#F2EBD8;
+            --sage:#8B9F7A; --sage-dark:#6B7F5A;
+            --purple:#7B5C8E; --purple-dark:#5A4170; --purple-light:#9E7EB9;
+            --brown:#846055; --warm-black:#2C2520; --body-text:#6B5B4E;
         }
-        body {
-            font-family: 'Dahlia', serif;
-            color: var(--warm-black);
-            line-height: 1.65;
-            background-color: var(--cream);
-            padding-top: 110px;
-        }
-        a { color: inherit; text-decoration: none; }
+        body { font-family:'Dahlia', serif; color:var(--warm-black); line-height:1.65; background-color:var(--cream); padding-top:110px; }
+        a { color:inherit; text-decoration:none; }
 
-        /* === NAV (centered hand-drawn logo + diamond nav) === */
+        /* === NAV (identique à la page d'accueil) === */
         nav {
-            background: #F7F3EB;
-            box-shadow: 0 2px 12px rgba(110, 41, 19, 0.08);
-            padding: 22px 32px 18px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 14px;
-            justify-content: center;
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
+            background:#F7F3EB;
+            box-shadow:0 2px 12px rgba(110,41,19,0.08);
+            padding:22px 32px 18px;
+            display:flex; flex-direction:column; align-items:center; gap:14px; justify-content:center;
+            position:fixed; top:0; left:0; right:0; z-index:1000;
         }
-        nav::after {
-            content: "";
-            position: absolute;
-            left: 0; right: 0;
-            bottom: -22px;
-            height: 22px;
-            background: linear-gradient(to bottom, rgba(247,243,235, 0.6), rgba(247,243,235, 0));
-            pointer-events: none;
-        }
-        .nav-logo {
-            font-family: 'Dahlia', serif;
-            font-style: normal;
-            font-weight: 800;
-            
-            font-size: 38px;
-            color: var(--purple);
-            letter-spacing: -0.5px;
-            line-height: 1;
-            text-transform: none;
-            transition: color 0.3s;
-        }
-        .nav-logo:hover { color: var(--purple-dark); }
-        .nav-links {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 16px;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .nav-links li {
-            display: flex;
-            align-items: center;
-            list-style: none;
-        }
-        .nav-links li:not(:first-child)::before {
-            content: "\25C6";
-            color: var(--brown);
-            font-size: 8px;
-            opacity: 0.6;
-            margin-right: 16px;
-            display: inline-block;
-        }
-        .nav-links a {
-            color: var(--brown);
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-size: 13px;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover { color: var(--purple); }
+        .nav-logo { font-family:'Dahlia',serif; font-weight:800; font-size:38px; color:var(--purple); letter-spacing:-0.5px; line-height:1; transition:color 0.3s; }
+        .nav-logo:hover { color:var(--purple-dark); }
+        .nav-links { display:flex; flex-direction:row; justify-content:center; align-items:center; gap:16px; font-size:13px; letter-spacing:2px; text-transform:uppercase; list-style:none; padding:0; margin:0; }
+        .nav-links li { display:flex; align-items:center; list-style:none; }
+        .nav-links li:not(:first-child)::before { content:"\25C6"; color:var(--brown); font-size:8px; opacity:0.6; margin-right:16px; display:inline-block; }
+        .nav-links a { color:var(--brown); font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px; transition:color 0.3s; }
+        .nav-links a:hover { color:var(--purple); }
 
-        /* === FOOTER === */
-        footer {
-            background: var(--brown);
-            color: var(--cream);
-            padding: 0.6rem 2rem;
-            text-align: center;
-            margin-top: 1.5rem;
-        }
-        footer > div {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 22px;
-            font-size: 13px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 0.3rem;
-        }
-        footer a {
-            color: var(--cream);
-            opacity: 0.85;
-            transition: color 0.3s, opacity 0.3s;
-            margin: 0;
-            font-size: 13px;
-        }
-        footer a:hover { color: var(--purple-light); opacity: 1; }
-        footer p {
-            font-size: 11px;
-            opacity: 0.55;
-            letter-spacing: 1px;
-            margin-top: 0.2rem;
-        }
+        /* === FICHE PRODUIT === */
+        .detail-section { padding:2.5rem 2rem 2rem; background-color:var(--cream); }
+        .detail-container { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+        .detail-image-container { position:relative; overflow:hidden; border-radius:180px 180px 12px 12px; }
+        .detail-image { width:100%; height:auto; max-height:760px; border-radius:180px 180px 12px 12px; object-fit:cover; object-position:center; background-color:var(--cream); transition:opacity 0.4s ease; display:block; }
+        .detail-image-hover { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; border-radius:180px 180px 12px 12px; opacity:0; }
+        .detail-image-container:hover .detail-image-main { opacity:0; }
+        .detail-image-container:hover .detail-image-hover { opacity:1; }
 
-        @media (max-width: 900px) {
-            body { padding-top: 100px; }
-            nav { padding: 14px 20px 12px; gap: 8px; }
-            .nav-logo { font-size: 28px; }
-            .nav-links { gap: 12px; flex-wrap: wrap; }
-            .nav-links a { font-size: 11px; letter-spacing: 1.5px; }
-            .nav-links li:not(:first-child)::before { margin-right: 12px; }
-            footer { padding: 0.5rem 1rem; }
-        }
+        .detail-info { padding-top:1rem; }
+        .detail-info h1 { font-family:'Dahlia',serif; font-weight:900; font-size:3.2rem; margin-bottom:1.2rem; color:var(--sage); line-height:1.1; }
+        .detail-price { font-size:1.35rem; color:var(--purple); margin-bottom:1.8rem; font-weight:700; }
+        .detail-description { font-size:1.15rem; line-height:1.9; margin-bottom:1.6rem; color:var(--body-text); font-weight:400; }
+        .detail-description strong { color:var(--marron); }
+
+        .btn-buy { display:inline-block; margin-top:0.8rem; padding:0.95rem 2.1rem; background:var(--purple); color:#fff; border:none; border-radius:6px; font-family:'Dahlia',serif; font-size:1.05rem; font-weight:700; cursor:pointer; transition:background 0.3s, transform 0.15s; }
+        .btn-buy:hover { background:var(--purple-dark); transform:translateY(-1px); }
+
+        /* === FOOTER (identique à la page d'accueil) === */
+        footer { background:var(--brown); color:var(--cream); padding:0.6rem 2rem; text-align:center; margin-top:2.5rem; }
+        footer > div { display:flex; justify-content:center; flex-wrap:wrap; gap:22px; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:0.3rem; }
+        footer a { color:var(--cream); opacity:0.85; transition:color 0.3s, opacity 0.3s; font-size:13px; }
+        footer a:hover { color:var(--purple-light); opacity:1; }
+        footer p { font-size:11px; opacity:0.55; letter-spacing:1px; margin-top:0.2rem; }
 
         @media (max-width: 768px) {
-            .product-hero { grid-template-columns: 1fr; }
-            .product-info h1 { font-size: 2.2rem; }
+            .nav-logo { font-size:30px; }
+            .detail-container { grid-template-columns:1fr; gap:1.8rem; }
+            .detail-image { max-height:420px; }
+            .detail-image-container, .detail-image, .detail-image-hover { border-radius:110px 110px 8px 8px; }
+            .detail-info { padding-top:0; }
+            .detail-info h1 { font-size:2.2rem; }
+            .detail-description { font-size:1.05rem; }
         }
     </style>
 </head>
@@ -237,58 +123,23 @@
     </nav>
 
     <main>
-        <div class="product-hero">
-            <div class="product-image-wrap">
-                <img src="../images/sirocco-detail.jpg" alt="La Sirocco - Tisane bio tonique à la menthe et réglisse de Grignan">
-            </div>
-            <div class="product-info">
-                <a href="/" class="back-link">&#8592; Retour aux tisanes</a>
-                <h1>La Sirocco</h1>
-                <p class="product-price">14,00&#8239;€ &mdash; 100g</p>
-                <p class="product-desc">
-                    Nommée d'après le vent méditerranéen, cette tisane aussi tonique que rafraîchissante est parfaite pour remplacer le café.
-                </p>
-                <p class="product-desc">
-                    À déguster du matin au soir, avec modération pour les personnes sujettes à l'hypertension.
-                </p>
-                <p class="product-desc">
-                    Composition 100% bio : Menthe, Réglisse
-                </p>
-                <a href="/" class="btn-buy">Commander sur la boutique</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Composition 100% bio</h2>
-            <div class="composition-grid">
-                <div class="plant-card">
-                    <h4>Menthe poivrée</h4>
-                    <p>Cultivée en Drôme provençale, la menthe poivrée est reconnue pour ses propriétés toniques et rafraîchissantes. Elle stimule naturellement l'organisme et favorise la concentration, tout en apportant une fraîcheur incomparable à chaque tasse.</p>
+        <section class="detail-section">
+            <div class="detail-container">
+                <div class="detail-image-container">
+                    <img src="../images/sirocco-detail.jpg" alt="La Sirocco - Tisane bio tonique à la menthe et réglisse de Grignan" class="detail-image detail-image-main">
+                    <img src="../images/sirocco-hover.jpg" alt="Gros plan sur les feuilles de menthe bio de La Sirocco" class="detail-image detail-image-hover" loading="lazy">
                 </div>
-                <div class="plant-card">
-                    <h4>Réglisse</h4>
-                    <p>La racine de réglisse apporte une douceur naturelle qui équilibre la vivacité de la menthe. En plus de son goût agréable, elle est reconnue pour ses propriétés apaisantes sur le système digestif et son action adoucissante sur la gorge.</p>
+                <div class="detail-info">
+                    <h1>La Sirocco</h1>
+                    <p class="detail-price">14,00€ - 100g</p>
+                    <p class="detail-description">Nommée d'après le vent méditerranéen, cette tisane aussi tonique que rafraîchissante est parfaite pour remplacer le café.</p>
+                    <p class="detail-description">À déguster du matin au soir, avec modération pour les personnes sujettes à l'hypertension.</p>
+                    <p class="detail-description">Composition 100% bio : Menthe, Réglisse</p>
+                    <p class="detail-description">Conseils de préparation : Mettre une cuillère à soupe du mélange dans l’eau bouillante et laisser infuser 5 à 10 minutes. Si vous la préférez froide, mettre l’infusion dans le réfrigérateur. Sa conservation ne peut excéder 48h.</p>
+                    <div id="product-component-page-sirocco" class="shopify-btn-container"></div>
                 </div>
             </div>
-        </div>
-
-        <div class="section">
-            <div class="note">
-                <p>La réglisse peut augmenter la tension artérielle chez les personnes sensibles. À consommer avec modération si vous êtes sujet(te) à l'hypertension. En cas de doute, consultez votre médecin.</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Conseils de préparation</h2>
-            <p>Faites chauffer de l'eau à environ 90&deg;C (frémissante, pas bouillante). Versez sur une cuillère à soupe de tisane par tasse (environ 3g). Laissez infuser 5 à 7 minutes. La Sirocco se savoure aussi bien chaude que glacée : en été, préparez une grande théière, laissez refroidir et servez avec des glaçons et une feuille de menthe fraîche.</p>
-
-            <h3>Quand la boire ?</h3>
-            <p>Le matin pour remplacer le café avec un boost naturel sans caféine. En début d'après-midi pour combattre le coup de mou. En été, glacée pour se désaltérer. Son absence de théine la rend compatible avec tous les moments de la journée, avec la seule réserve liée à la réglisse pour les personnes hypertendues.</p>
-        </div>
-
-        <div class="cta-section">
-            <a href="/" class="btn-buy">Ajouter au panier &mdash; 14,00&#8239;€</a>
-        </div>
+        </section>
     </main>
 
     <footer>
@@ -298,9 +149,118 @@
             <a href="/notre-univers.html">Notre Univers</a>
             <a href="/faq.html">FAQ</a>
             <a href="/contact.html">Contact</a>
+            <a href="/retractation.html">Rétractation</a>
             <a href="https://www.instagram.com/latisanedejo/" target="_blank">Instagram</a>
         </div>
         <p>&copy; 2026 La Tisane de Jo. Tous droits réservés.</p>
     </footer>
+
+    <!-- Shopify Buy Button SDK -->
+    <script type="text/javascript">
+    /*<![CDATA[*/
+    (function () {
+      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+      if (window.ShopifyBuy) {
+        if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); }
+      } else { loadScript(); }
+      function loadScript() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = scriptURL;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+        script.onload = ShopifyBuyInit;
+      }
+
+      var sharedOptions = {
+        "product": {
+          "styles": {
+            "product": {
+              "@media (min-width: 601px)": { "max-width": "calc(25% - 20px)", "margin-left": "20px", "margin-bottom": "50px" }
+            },
+            "title": { "font-family": "Dahlia, Georgia, serif" },
+            "button": {
+              "font-family": "Dahlia, Georgia, serif", "font-weight": "700",
+              "border-radius": "4px", "font-size": "15px", "padding": "12px 24px",
+              ":hover": { "background-color": "#5A4170" },
+              "background-color": "#7B5C8E",
+              ":focus": { "background-color": "#5A4170" }
+            },
+            "price": { "font-family": "Dahlia, Georgia, serif" },
+            "compareAt": { "font-family": "Dahlia, Georgia, serif" },
+            "unitPrice": { "font-family": "Dahlia, Georgia, serif" },
+            "description": { "font-family": "Dahlia, Georgia, serif" }
+          },
+          "contents": { "img": false, "title": false, "price": false },
+          "text": { "button": "Ajouter au panier" },
+          "googleFonts": []
+        },
+        "productSet": {
+          "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "-20px" } } }
+        },
+        "modalProduct": {
+          "contents": { "img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true },
+          "styles": {
+            "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
+            "button": {
+              "font-family": "Dahlia, Georgia, serif", "font-weight": "700",
+              "border-radius": "4px",
+              ":hover": { "background-color": "#5A4170" },
+              "background-color": "#7B5C8E",
+              ":focus": { "background-color": "#5A4170" }
+            },
+            "title": { "font-family": "Dahlia, Georgia, serif", "font-weight": "bold", "font-size": "26px", "color": "#6B5B4E" },
+            "price": { "font-family": "Dahlia, Georgia, serif", "font-weight": "normal", "font-size": "18px", "color": "#6B5B4E" },
+            "compareAt": { "font-family": "Dahlia, Georgia, serif", "font-weight": "normal", "font-size": "15.3px", "color": "#6B5B4E" },
+            "unitPrice": { "font-family": "Dahlia, Georgia, serif", "font-weight": "normal", "font-size": "15.3px", "color": "#6B5B4E" },
+            "description": { "font-family": "Dahlia, Georgia, serif", "font-weight": "normal", "font-size": "14px", "color": "#6B5B4E" }
+          },
+          "googleFonts": [],
+          "text": { "button": "Ajouter au panier" }
+        },
+        "option": {},
+        "cart": {
+          "styles": {
+            "button": {
+              "font-family": "Dahlia, Georgia, serif", "font-weight": "700",
+              "border-radius": "4px",
+              ":hover": { "background-color": "#5A4170" },
+              "background-color": "#7B5C8E",
+              ":focus": { "background-color": "#5A4170" }
+            }
+          },
+          "text": { "total": "Sous-total", "button": "Commander" },
+          "googleFonts": []
+        },
+        "toggle": {
+          "styles": {
+            "toggle": {
+              "font-family": "Dahlia, Georgia, serif", "font-weight": "700",
+              "background-color": "#7B5C8E",
+              ":hover": { "background-color": "#5A4170" },
+              ":focus": { "background-color": "#5A4170" }
+            }
+          },
+          "googleFonts": []
+        }
+      };
+
+      function ShopifyBuyInit() {
+        var client = ShopifyBuy.buildClient({
+          domain: '1b32ns-tw.myshopify.com',
+          storefrontAccessToken: 'f37045444ef326a682c6d404ea71f388',
+        });
+        ShopifyBuy.UI.onReady(client).then(function (ui) {
+          // La Sirocco
+          ui.createComponent('product', {
+            id: '14852838949195',
+            node: document.getElementById('product-component-page-sirocco'),
+            moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
+            options: sharedOptions,
+          });
+        });
+      }
+    })();
+    /*]]>*/
+    </script>
 </body>
 </html>
