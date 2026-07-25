@@ -19,9 +19,6 @@
     <meta name="twitter:description" content="Tisane bio digestive aux plantes : anis, réglisse, fenouil, romarin, thym, badiane. Recette de pharmacien. 14€/100g.">
     <meta name="twitter:image" content="https://www.latisanedejo.com/images/originale-detail.jpg">
     <link rel="canonical" href="https://www.latisanedejo.com/tisanes/originale.html">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,900&display=swap" rel="stylesheet">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -49,61 +46,73 @@
           "@type": "OfferShippingDetails",
           "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "FR" }
         }
-      },
-      "aggregateRating": null
+      }
     }
     </script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        @font-face { font-family:'Dahlia'; src:url('../fonts/dahlia-regular.woff') format('woff'),url('../fonts/dahlia-regular.otf') format('opentype'); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:'Dahlia'; src:url('../fonts/dahlia-medium.woff') format('woff'),url('../fonts/dahlia-medium.otf') format('opentype'); font-weight:500; font-style:normal; font-display:swap; }
+        @font-face { font-family:'Dahlia'; src:url('../fonts/dahlia-bold.woff') format('woff'),url('../fonts/dahlia-bold.otf') format('opentype'); font-weight:700; font-style:normal; font-display:swap; }
+
+        * { margin:0; padding:0; box-sizing:border-box; }
         :root {
-            --marron: #7D6B5C;
-            --cream: #F5F0E3;
-            --sage: #8B9F7A;
-            --purple: #8B5CC6;
-            --purple-dark: #7344B0;
-            --warm-black: #2C2520;
-            --dark-brown: #4A3F36;
+            --marron:#7D6B5C; --cream:#F7F3EB; --cream-paper:#F2EBD8;
+            --sage:#8B9F7A; --sage-dark:#6B7F5A;
+            --purple:#7B5C8E; --purple-dark:#5A4170; --purple-light:#9E7EB9;
+            --brown:#846055; --warm-black:#2C2520; --body-text:#6B5B4E;
         }
-        body { font-family: 'Fraunces', serif; color: var(--warm-black); line-height: 1.6; background-color: var(--cream); }
-        nav { background-color: #6B5B4E; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-weight: 900; font-size: 1.5rem; color: var(--cream); text-decoration: none; letter-spacing: 1px; }
-        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-        .nav-links a { color: var(--cream); text-decoration: none; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; }
-        .nav-links a:hover { color: var(--purple); }
+        body { font-family:'Dahlia', serif; color:var(--warm-black); line-height:1.65; background-color:var(--cream); padding-top:110px; }
+        a { color:inherit; text-decoration:none; }
 
-        .product-hero { max-width: 1100px; margin: 3rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-        .product-image-wrap { position: relative; overflow: hidden; border-radius: 120px 120px 10px 10px; }
-        .product-image-wrap img { width: 100%; height: auto; border-radius: 120px 120px 10px 10px; object-fit: cover; display: block; }
-        .product-info h1 { font-weight: 900; font-size: 3rem; color: var(--sage); margin-bottom: 0.5rem; font-variation-settings: 'WONK' 1, 'SOFT' 100; }
-        .product-price { font-size: 1.5rem; color: var(--marron); margin-bottom: 1.5rem; }
-        .product-desc { font-size: 1.15rem; line-height: 1.9; color: #6B5B4E; margin-bottom: 2rem; }
-        .product-desc strong { color: var(--marron); }
+        /* === NAV (identique à la page d'accueil) === */
+        nav {
+            background:#F7F3EB;
+            box-shadow:0 2px 12px rgba(110,41,19,0.08);
+            padding:22px 32px 18px;
+            display:flex; flex-direction:column; align-items:center; gap:14px; justify-content:center;
+            position:fixed; top:0; left:0; right:0; z-index:1000;
+        }
+        .nav-logo { font-family:'Dahlia',serif; font-weight:800; font-size:38px; color:var(--purple); letter-spacing:-0.5px; line-height:1; transition:color 0.3s; }
+        .nav-logo:hover { color:var(--purple-dark); }
+        .nav-links { display:flex; flex-direction:row; justify-content:center; align-items:center; gap:16px; font-size:13px; letter-spacing:2px; text-transform:uppercase; list-style:none; padding:0; margin:0; }
+        .nav-links li { display:flex; align-items:center; list-style:none; }
+        .nav-links li:not(:first-child)::before { content:"\25C6"; color:var(--brown); font-size:8px; opacity:0.6; margin-right:16px; display:inline-block; }
+        .nav-links a { color:var(--brown); font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px; transition:color 0.3s; }
+        .nav-links a:hover { color:var(--purple); }
 
-        .section { max-width: 900px; margin: 0 auto 3rem; padding: 0 2rem; }
-        .section h2 { font-weight: 900; font-size: 2rem; color: var(--marron); margin-bottom: 1rem; font-variation-settings: 'WONK' 1, 'SOFT' 100; }
-        .section h3 { font-size: 1.3rem; color: var(--sage); margin-bottom: 0.5rem; margin-top: 1.5rem; }
-        .section p { font-size: 1.05rem; line-height: 1.8; color: #6B5B4E; margin-bottom: 1rem; }
-        .section ul { list-style: none; padding: 0; }
-        .section ul li { padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 1.05rem; color: #6B5B4E; }
-        .section ul li::before { content: "🌿 "; }
+        /* === FICHE PRODUIT === */
+        .detail-section { padding:2.5rem 2rem 2rem; background-color:var(--cream); }
+        .detail-container { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+        .detail-image-container { position:relative; overflow:hidden; border-radius:180px 180px 12px 12px; }
+        .detail-image { width:100%; height:auto; max-height:760px; border-radius:180px 180px 12px 12px; object-fit:cover; object-position:center; background-color:var(--cream); transition:opacity 0.4s ease; display:block; }
+        .detail-image-hover { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; border-radius:180px 180px 12px 12px; opacity:0; }
+        .detail-image-container:hover .detail-image-main { opacity:0; }
+        .detail-image-container:hover .detail-image-hover { opacity:1; }
 
-        .composition-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
-        .plant-card { background: #fff; border-radius: 12px; padding: 1.5rem; }
-        .plant-card h4 { color: var(--sage); font-size: 1.1rem; margin-bottom: 0.3rem; }
-        .plant-card p { font-size: 0.95rem; line-height: 1.6; }
+        .detail-info { padding-top:1rem; }
+        .detail-info h1 { font-family:'Dahlia',serif; font-weight:900; font-size:3.2rem; margin-bottom:1.2rem; color:var(--sage); line-height:1.1; }
+        .detail-price { font-size:1.35rem; color:var(--purple); margin-bottom:1.8rem; font-weight:700; }
+        .detail-description { font-size:1.15rem; line-height:1.9; margin-bottom:1.6rem; color:var(--body-text); font-weight:400; }
+        .detail-description strong { color:var(--marron); }
 
-        .cta-section { text-align: center; padding: 3rem 2rem; }
-        .btn-buy { display: inline-block; padding: 1rem 3rem; background: var(--purple); color: #fff; border: none; border-radius: 4px; font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; text-decoration: none; cursor: pointer; transition: background 0.3s; }
-        .btn-buy:hover { background: var(--purple-dark); }
-        .back-link { display: inline-block; margin-bottom: 1rem; color: var(--purple); text-decoration: none; font-size: 0.95rem; }
+        .btn-buy { display:inline-block; margin-top:0.8rem; padding:0.95rem 2.1rem; background:var(--purple); color:#fff; border:none; border-radius:6px; font-family:'Dahlia',serif; font-size:1.05rem; font-weight:700; cursor:pointer; transition:background 0.3s, transform 0.15s; }
+        .btn-buy:hover { background:var(--purple-dark); transform:translateY(-1px); }
 
-        footer { background-color: #6B5B4E; color: var(--cream); padding: 2rem; text-align: center; margin-top: 3rem; }
-        footer a { color: var(--cream); text-decoration: none; margin: 0 1rem; opacity: 0.85; font-size: 0.95rem; }
-        footer p { opacity: 0.6; font-size: 0.85rem; margin-top: 1rem; }
+        /* === FOOTER (identique à la page d'accueil) === */
+        footer { background:var(--brown); color:var(--cream); padding:0.6rem 2rem; text-align:center; margin-top:2.5rem; }
+        footer > div { display:flex; justify-content:center; flex-wrap:wrap; gap:22px; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:0.3rem; }
+        footer a { color:var(--cream); opacity:0.85; transition:color 0.3s, opacity 0.3s; font-size:13px; }
+        footer a:hover { color:var(--purple-light); opacity:1; }
+        footer p { font-size:11px; opacity:0.55; letter-spacing:1px; margin-top:0.2rem; }
 
         @media (max-width: 768px) {
-            .product-hero { grid-template-columns: 1fr; }
-            .product-info h1 { font-size: 2.2rem; }
+            .nav-logo { font-size:30px; }
+            .detail-container { grid-template-columns:1fr; gap:1.8rem; }
+            .detail-image { max-height:420px; }
+            .detail-image-container, .detail-image, .detail-image-hover { border-radius:110px 110px 8px 8px; }
+            .detail-info { padding-top:0; }
+            .detail-info h1 { font-size:2.2rem; }
+            .detail-description { font-size:1.05rem; }
         }
     </style>
 </head>
@@ -118,65 +127,23 @@
     </nav>
 
     <main>
-        <div class="product-hero">
-            <div class="product-image-wrap">
-                <img src="../images/originale-detail.jpg" alt="L'Originale - Tisane bio digestive artisanale de Grignan, mélange de plantes séchées">
-            </div>
-            <div class="product-info">
-                <a href="/" class="back-link">&#8592; Retour aux tisanes</a>
-                <h1>L'Originale</h1>
-                <p class="product-price">14,00&#8239;€ &mdash; 100g</p>
-                <p class="product-desc">
-                    Comme son nom l'indique, c'est <strong>LA</strong> première tisane imaginée par Jo dans sa pharmacie de Chartres. Fruit de dizaines d'années d'expertise en phytothérapie, cette recette associe six plantes bio soigneusement sélectionnées pour faciliter la digestion à toute heure de la journée.
-                </p>
-                <p class="product-desc">
-                    Son goût est unique : l'anis et la badiane apportent une douceur anisée enveloppante, le fenouil une fraîcheur subtile, la réglisse une rondeur naturellement sucrée, et le romarin et le thym une touche aromatique provençale. Une tisane aussi réconfortante qu'efficace.
-                </p>
-                <a href="/" class="btn-buy">Commander sur la boutique</a>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>Composition 100% bio</h2>
-            <div class="composition-grid">
-                <div class="plant-card">
-                    <h4>Anis vert</h4>
-                    <p>Reconnu pour ses vertus carminatives, l'anis vert aide à réduire les ballonnements et facilite la digestion. Son parfum délicat donne le ton de l'infusion.</p>
+        <section class="detail-section">
+            <div class="detail-container">
+                <div class="detail-image-container">
+                    <img src="../images/originale-detail.jpg" alt="L'Originale - Tisane bio digestive artisanale de Grignan, mélange de plantes séchées" class="detail-image detail-image-main">
+                    <img src="../images/originale-hover.jpg" alt="Gros plan sur les plantes bio de L'Originale : anis étoilé, fenouil, romarin" class="detail-image detail-image-hover" loading="lazy">
                 </div>
-                <div class="plant-card">
-                    <h4>Réglisse</h4>
-                    <p>Naturellement sucrée, la réglisse apaise les muqueuses digestives et apporte une rondeur gourmande à l'ensemble du mélange.</p>
-                </div>
-                <div class="plant-card">
-                    <h4>Fenouil</h4>
-                    <p>Le fenouil est un allié classique du confort digestif. Il contribue à réduire les sensations de lourdeur après le repas.</p>
-                </div>
-                <div class="plant-card">
-                    <h4>Romarin</h4>
-                    <p>Plante emblématique de la Drôme provençale, le romarin stimule les fonctions hépatiques et biliaires pour une digestion optimale.</p>
-                </div>
-                <div class="plant-card">
-                    <h4>Thym</h4>
-                    <p>Le thym possède des propriétés antiseptiques naturelles et contribue au bon fonctionnement du système digestif.</p>
-                </div>
-                <div class="plant-card">
-                    <h4>Badiane (Anis étoilé)</h4>
-                    <p>La badiane, ou anis étoilé, complète harmonieusement le mélange avec son parfum puissant et ses propriétés digestives reconnues.</p>
+                <div class="detail-info">
+                    <h1>L'Originale</h1>
+                    <p class="detail-price">14,00€ - 100g</p>
+                    <p class="detail-description">Comme son nom l'indique, c'est <strong>LA</strong> première tisane imaginée par Jo dans sa pharmacie.</p>
+                    <p class="detail-description">Cette recette facilite la digestion à toute heure de la journée.</p>
+                    <p class="detail-description">Composition 100% bio : Anis, Réglisse, Fenouil, Romarin, Thym, Badiane</p>
+                    <p class="detail-description">Conseils de préparation : Mettre une cuillère à soupe du mélange dans l’eau bouillante et laisser infuser 5 à 10 minutes. Si vous la préférez froide, mettre l’infusion dans le réfrigérateur. Sa conservation ne peut excéder 48h.</p>
+                    <div id="product-component-page-originale" class="shopify-btn-container"></div>
                 </div>
             </div>
-        </div>
-
-        <div class="section">
-            <h2>Conseils de préparation</h2>
-            <p>Pour profiter pleinement des arômes et bienfaits de L'Originale, faites chauffer de l'eau frémissante (environ 90&deg;C, pas d'eau bouillante pour préserver les huiles essentielles). Versez sur une cuillère à soupe bien bombée de tisane par tasse (environ 3 à 4g). Laissez infuser 5 à 8 minutes selon l'intensité souhaitée. Se déguste chaude ou tiède, idéalement après les repas.</p>
-
-            <h3>Quand la boire ?</h3>
-            <p>L'Originale est parfaite après chaque repas pour faciliter la digestion. Elle se savoure aussi en fin d'après-midi comme pause bien-être, ou le soir pour terminer la journée en douceur. Son absence de théine permet de la consommer à tout moment sans risque pour le sommeil.</p>
-        </div>
-
-        <div class="cta-section">
-            <a href="/" class="btn-buy">Ajouter au panier &mdash; 14,00&#8239;€</a>
-        </div>
+        </section>
     </main>
 
     <footer>
@@ -186,9 +153,118 @@
             <a href="/notre-univers.html">Notre Univers</a>
             <a href="/faq.html">FAQ</a>
             <a href="/contact.html">Contact</a>
+            <a href="/retractation.html">Rétractation</a>
             <a href="https://www.instagram.com/latisanedejo/" target="_blank">Instagram</a>
         </div>
         <p>&copy; 2026 La Tisane de Jo. Tous droits réservés.</p>
     </footer>
+
+    <!-- Shopify Buy Button SDK -->
+    <script type="text/javascript">
+    /*<![CDATA[*/
+    (function () {
+      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+      if (window.ShopifyBuy) {
+        if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); }
+      } else { loadScript(); }
+      function loadScript() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = scriptURL;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+        script.onload = ShopifyBuyInit;
+      }
+
+      var sharedOptions = {
+        "product": {
+          "styles": {
+            "product": {
+              "@media (min-width: 601px)": { "max-width": "calc(25% - 20px)", "margin-left": "20px", "margin-bottom": "50px" }
+            },
+            "title": { "font-family": "Dahlia, Georgia, serif" },
+            "button": {
+              "font-family": "Dahlia, Georgia, serif", "font-weight": "700",
+              "border-radius": "4px", "font-size": "15px", "padding": "12px 24px",
+              ":hover": { "background-color": "#5A4170" },
+              "background-color": "#7B5C8E",
+              ":focus": { "background-color": "#5A4170" }
+            },
+            "price": { "font-family": "Dahlia, Georgia, serif" },
+            "compareAt": { "font-family": "Dahlia, Georgia, serif" },
+            "unitPrice": { "font-family": "Dahlia, Georgia, serif" },
+            "description": { "font-family": "Dahlia, Georgia, serif" }
+          },
+          "contents": { "img": false, "title": false, "price": false },
+          "text": { "button": "Ajouter au panier" },
+          "googleFonts": []
+        },
+        "productSet": {
+          "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "-20px" } } }
+        },
+        "modalProduct": {
+          "contents": { "img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true },
+          "styles": {
+            "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
+            "button": {
+              "font-family": "Dahlia, Georgia, serif", "font-weight": "700",
+              "border-radius": "4px",
+              ":hover": { "background-color": "#5A4170" },
+              "background-color": "#7B5C8E",
+              ":focus": { "background-color": "#5A4170" }
+            },
+            "title": { "font-family": "Dahlia, Georgia, serif", "font-weight": "bold", "font-size": "26px", "color": "#6B5B4E" },
+            "price": { "font-family": "Dahlia, Georgia, serif", "font-weight": "normal", "font-size": "18px", "color": "#6B5B4E" },
+            "compareAt": { "font-family": "Dahlia, Georgia, serif", "font-weight": "normal", "font-size": "15.3px", "color": "#6B5B4E" },
+            "unitPrice": { "font-family": "Dahlia, Georgia, serif", "font-weight": "normal", "font-size": "15.3px", "color": "#6B5B4E" },
+            "description": { "font-family": "Dahlia, Georgia, serif", "font-weight": "normal", "font-size": "14px", "color": "#6B5B4E" }
+          },
+          "googleFonts": [],
+          "text": { "button": "Ajouter au panier" }
+        },
+        "option": {},
+        "cart": {
+          "styles": {
+            "button": {
+              "font-family": "Dahlia, Georgia, serif", "font-weight": "700",
+              "border-radius": "4px",
+              ":hover": { "background-color": "#5A4170" },
+              "background-color": "#7B5C8E",
+              ":focus": { "background-color": "#5A4170" }
+            }
+          },
+          "text": { "total": "Sous-total", "button": "Commander" },
+          "googleFonts": []
+        },
+        "toggle": {
+          "styles": {
+            "toggle": {
+              "font-family": "Dahlia, Georgia, serif", "font-weight": "700",
+              "background-color": "#7B5C8E",
+              ":hover": { "background-color": "#5A4170" },
+              ":focus": { "background-color": "#5A4170" }
+            }
+          },
+          "googleFonts": []
+        }
+      };
+
+      function ShopifyBuyInit() {
+        var client = ShopifyBuy.buildClient({
+          domain: '1b32ns-tw.myshopify.com',
+          storefrontAccessToken: 'f37045444ef326a682c6d404ea71f388',
+        });
+        ShopifyBuy.UI.onReady(client).then(function (ui) {
+          // L'Originale
+          ui.createComponent('product', {
+            id: '10817207763275',
+            node: document.getElementById('product-component-page-originale'),
+            moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
+            options: sharedOptions,
+          });
+        });
+      }
+    })();
+    /*]]>*/
+    </script>
 </body>
 </html>
