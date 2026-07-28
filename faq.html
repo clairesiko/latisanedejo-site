@@ -46,43 +46,10 @@
       ]
     }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400;1,8..60,600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        @font-face {
-            font-family: 'Dahlia';
-            src: url('fonts/dahlia-regular.woff') format('woff'),
-                 url('fonts/dahlia-regular.otf') format('opentype');
-            font-weight: 400; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Dahlia';
-            src: url('fonts/dahlia-medium.woff') format('woff'),
-                 url('fonts/dahlia-medium.otf') format('opentype');
-            font-weight: 500; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Dahlia';
-            src: url('fonts/dahlia-bold.woff') format('woff'),
-                 url('fonts/dahlia-bold.otf') format('opentype');
-            font-weight: 700; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Dahlia Condensed';
-            src: url('fonts/dahlia-regularcondensed.woff') format('woff'),
-                 url('fonts/dahlia-regularcondensed.otf') format('opentype');
-            font-weight: 400; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Dahlia Condensed';
-            src: url('fonts/dahlia-mediumcondensed.woff') format('woff'),
-                 url('fonts/dahlia-mediumcondensed.otf') format('opentype');
-            font-weight: 500; font-style: normal; font-display: swap;
-        }
-        @font-face {
-            font-family: 'Dahlia Condensed';
-            src: url('fonts/dahlia-boldcondensed.woff') format('woff'),
-                 url('fonts/dahlia-boldcondensed.otf') format('opentype');
-            font-weight: 700; font-style: normal; font-display: swap;
-        }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }        :root {
             --marron: #7D6B5C;
@@ -98,7 +65,7 @@
             --body-text: #6B5B4E;
         }
         body {
-            font-family: 'Dahlia', serif;
+            font-family: 'Source Serif 4', serif;
             color: var(--warm-black);
             line-height: 1.65;
             background-color: var(--cream);
@@ -130,7 +97,7 @@
             pointer-events: none;
         }
         .nav-logo {
-            font-family: 'Dahlia', serif;
+            font-family: 'Source Serif 4', serif;
             font-style: normal;
             font-weight: 800;
             
@@ -220,11 +187,31 @@
             .nav-links li:not(:first-child)::before { margin-right: 12px; }
             footer { padding: 0.5rem 1rem; }
         }
+    
+        /* Charte 2026 : infos pratiques en Source Sans 3 */
+        .nav-links, .nav-links a, footer, footer a, footer p,
+        .btn, .btn-buy, .btn-primary, .btn-ghost, .btn-discover,
+        .detail-price, .product-price, .product-weight, .page-price,
+        .hint, label, input, textarea, .step-dot, .legal-note, .confirm-warning
+        { font-family: 'Source Sans 3', sans-serif; }
+
+        /* === TITRES — Insignia Serif (charte : dossier Polices/Titres) === */
+        @font-face {
+            font-family: 'Insignia Serif';
+            src: url('fonts/InsigniaSerifRegular.woff2') format('woff2'),
+                 url('fonts/InsigniaSerifRegular.woff') format('woff'),
+                 url('fonts/InsigniaSerifRegular.ttf') format('truetype');
+            font-weight: normal; font-style: normal; font-display: swap;
+        }
+        h1, h2, h3, h4,
+        .faq-section h1, .mot-de-jo-title {
+            font-family: 'Insignia Serif', Georgia, serif !important;
+        }
     </style>
 </head>
 <body>
     <nav>
-        <a href="/" class="nav-logo">La Tisane de Jo</a>
+        <a href="/" class="nav-logo" aria-label="La Tisane de Jo"><img src="images/logo.svg" alt="La Tisane de Jo" style="height:30px;display:block"></a>
         <ul class="nav-links">
             <li><a href="/">Accueil</a></li>
             <li><a href="/#tisanes">Nos Tisanes</a></li>
