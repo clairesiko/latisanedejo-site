@@ -36,7 +36,7 @@
 
         :root {
             --marron: #7D6B5C;          /* Terre — accent chaud, hover */
-            --cream: #F7F3EB;           /* Beige chaud — fond principal (brand book) */
+            --cream: #F2EADC;           /* Beige chaud — fond principal (brand book) */
             --sage: #8B9F7A;            /* Sauge — croix pharmacie, accent */
             --sage-dark: #6B7F5A;
             --argile: #8A7A6A;          /* Argile — sections alternées (brand book) */
@@ -202,7 +202,7 @@
         /* Hero Section - Accueil */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(44, 37, 32, 0.15), rgba(44, 37, 32, 0.25)),
+            background: linear-gradient(rgba(44, 37, 32, 0.12) 0%, rgba(44, 37, 32, 0.30) 45%, rgba(44, 37, 32, 0.68) 100%),
                         url('images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
@@ -1008,7 +1008,7 @@
             }
 
             .hero {
-                background: linear-gradient(rgba(44, 37, 32, 0.05), rgba(44, 37, 32, 0.15)),
+                background: linear-gradient(rgba(44, 37, 32, 0.10) 0%, rgba(44, 37, 32, 0.28) 45%, rgba(44, 37, 32, 0.70) 100%),
                             url('images/hero-bg.jpg');
                 background-size: cover;
                 background-position: center;
@@ -1317,7 +1317,7 @@
 
         /* === HEADER === */
         nav {
-            background: #F7F3EB !important;
+            background: #F2EADC !important;
             backdrop-filter: none !important;
             padding: 18px 32px 14px !important;
             box-shadow: 0 2px 12px rgba(110, 41, 19, 0.08) !important;
@@ -1339,7 +1339,7 @@
             right: 0 !important;
             bottom: -22px !important;
             height: 22px !important;
-            background: linear-gradient(to bottom, rgba(247,243,235, 0.6), rgba(247,243,235, 0)) !important;
+            background: linear-gradient(to bottom, rgba(242,234,220, 0.6), rgba(242,234,220, 0)) !important;
             pointer-events: none !important;
         }
         body:has(#page-accueil.active) nav::after {
@@ -1420,7 +1420,7 @@
             min-height: 620px !important;
             background:
                 radial-gradient(ellipse at center, rgba(44,37,32,0.0) 30%, rgba(44,37,32,0.34) 100%),
-                linear-gradient(to bottom, rgba(247,243,235,0.0) 55%, rgba(247,243,235,0.4) 100%),
+                linear-gradient(to bottom, rgba(242,234,220,0.0) 55%, rgba(242,234,220,0.4) 100%),
                 url('images/hero-bg.jpg') !important;
             background-size: cover !important;
             background-position: center 40% !important;
@@ -1453,7 +1453,7 @@
             line-height: 1 !important;
             letter-spacing: -2px !important;
             color: #8B9F7A !important;
-            margin-bottom: 26px !important;
+            margin-bottom: clamp(40px, 9vh, 110px) !important;
             max-width: none !important;
             text-shadow: 0 2px 24px rgba(44,37,32,0.45) !important;
         }
@@ -1517,7 +1517,7 @@
 
         /* === NEWSLETTER === */
         .newsletter-section {
-            background-color: #F7F3EB !important;
+            background-color: #F2EADC !important;
             border-top: none !important;
             padding: 3.5rem 2rem !important;
         }
@@ -1551,7 +1551,7 @@
         .detail-section,
         .faq-section,
         .newsletter-section {
-            background-color: #F7F3EB !important;
+            background-color: #F2EADC !important;
             position: relative !important;
         }
 
@@ -1569,7 +1569,7 @@
             border-bottom-left-radius: 16px !important;
             border-bottom-right-radius: 16px !important;
             border: none !important;
-            background-color: #F2EBD8 !important;
+            background-color: #E9DEC8 !important;
             height: auto !important;
             width: 100% !important;
             object-fit: cover !important;
@@ -1701,7 +1701,7 @@
                 justify-content: flex-start !important;
                 background-position: center 15% !important;
             }
-            .hero-tagline { font-size: clamp(42px, 10vw, 56px) !important; line-height: 1.05 !important; margin-bottom: 200px !important; }
+            .hero-tagline { font-size: clamp(42px, 10vw, 56px) !important; line-height: 1.05 !important; margin-bottom: clamp(40px, 9vh, 110px) !important; }
             .hero-subtitle { font-size: clamp(22px, 5.5vw, 24px) !important; line-height: 1.35 !important; }
             .hero-description { font-size: clamp(16px, 4.2vw, 16px) !important; line-height: 1.55 !important; max-width: 90% !important; }
         }
@@ -1731,6 +1731,42 @@
         .hero-tagline, .hero-subtitle {
             font-family: 'Source Serif 4', Georgia, serif !important;
             font-style: italic !important;
+        }
+    
+        /* === HERO : lisibilité (texte descendu + contraste) === */
+        .hero-bottom {
+            margin-top: auto !important;
+            margin-bottom: 9vh !important;
+        }
+        .hero-subtitle {
+            color: #FFFFFF !important;
+            font-weight: 600 !important;
+            text-shadow: 0 2px 14px rgba(20,15,12,0.85), 0 1px 3px rgba(20,15,12,0.6) !important;
+        }
+        .hero-description {
+            color: #F6F1E6 !important;
+            font-weight: 500 !important;
+            text-shadow: 0 2px 14px rgba(20,15,12,0.85), 0 1px 3px rgba(20,15,12,0.6) !important;
+        }
+        @media (max-width: 768px) {
+            .hero-bottom { margin-bottom: 6vh !important; }
+            .hero-tagline { margin-bottom: clamp(40px, 9vh, 110px) !important; }
+        }
+
+        /* === VIGNETTES : arche atténuée === */
+        .product-image {
+            aspect-ratio: 0.665 !important;
+            border-top-left-radius: 92px !important;
+            border-top-right-radius: 92px !important;
+            border-bottom-left-radius: 14px !important;
+            border-bottom-right-radius: 14px !important;
+            object-position: center center !important;
+        }
+        @media (max-width: 768px) {
+            .product-image {
+                border-top-left-radius: 62px !important;
+                border-top-right-radius: 62px !important;
+            }
         }
     </style>
     <script type="application/ld+json">
