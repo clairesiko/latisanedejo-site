@@ -334,3 +334,7 @@ main{flex:1 0 auto}
   .tile .btn{height:44px;padding:0 13px;font-size:12px;letter-spacing:.5px}
   .tile__buttons{gap:8px;flex-wrap:wrap}
 }
+/* Choix du format : le prix ne passe jamais à la ligne */
+.formats{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.formats label{padding:14px 16px}
+.formats label span{white-space:nowrap}

@@ -105,8 +105,9 @@
       var client = window.ShopifyBuy.buildClient({ domain: SHOP.domain, storefrontAccessToken: SHOP.storefrontAccessToken });
       clientRef = client;
       return window.ShopifyBuy.UI.onReady(client).then(function (ui) {
-        /* createComponent('cart') ne renvoie pas de promesse : on l'enveloppe */
-        return Promise.resolve(ui.createComponent('cart', {
+        /* createCart renvoie le panier une fois prêt. Un nouveau visiteur n'a pas encore de panier :
+           Shopify le crée au premier ajout. */
+        return ui.createCart({
           moneyFormat: SHOP.moneyFormat,
           options: {
             cart: {
@@ -153,17 +154,11 @@
             },
             toggle: { styles: { toggle: { 'display': 'none' } } }
           }
-        })).then(function () {
-          /* createComponent rend la main avant que le panier soit prêt : on attend qu'il ait un identifiant */
-          var c = ui.components.cart[0];
-          return new Promise(function (resolve, reject) {
-            var tries = 0;
-            (function wait() {
-              if (c && c.model && c.model.id) { updateBadge(c); return resolve(c); }
-              if (++tries > 75) return reject(new Error('panier indisponible'));
-              setTimeout(wait, 200);
-            })();
-          });
+        }).then(function (c) {
+          c = (c && typeof c.addVariantToCart === 'function') ? c : ui.components.cart[0];
+          if (!c) throw new Error('panier indisponible');
+          updateBadge(c);
+          return c;
         });
       });
     });
