@@ -50,7 +50,16 @@
     toast.querySelector('small').textContent = label;
     toast.classList.add('is-visible');
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () { toast.classList.remove('is-visible'); }, 4500);
+    hideToastLater();
+  }
+  /* Le message reste 6 secondes, et ne disparaît pas tant que la souris est dessus */
+  function hideToastLater() {
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove('is-visible'); }, 6000);
+  }
+  if (toast) {
+    toast.addEventListener('mouseenter', function () { clearTimeout(toastTimer); });
+    toast.addEventListener('mouseleave', function () { if (toast.classList.contains('is-visible')) hideToastLater(); });
   }
   if (toast) {
     toast.querySelector('button').addEventListener('click', function (e) {
@@ -79,6 +88,40 @@
     var n = 0;
     (items || []).forEach(function (i) { n += i.quantity || 0; });
     return n;
+  }
+  /* Après chaque affichage du panier : compteur + lien « Vider le panier » */
+  function onCartRender(cart) {
+    updateBadge(cart);
+    addEmptyButton(cart);
+    watchCart(cart);
+  }
+  function addEmptyButton(cart) {
+    var d = cart && cart.view && cart.view.document;
+    if (!d) return;
+    var checkout = d.querySelector('.shopify-buy__btn--cart-checkout');
+    if (!checkout || d.querySelector('.tdj-vider')) return;
+    var b = d.createElement('button');
+    b.type = 'button';
+    b.className = 'tdj-vider';
+    b.textContent = 'Vider le panier';
+    b.style.cssText = 'display:block;width:100%;margin:10px 0 0;padding:8px;border:0;background:transparent;color:#846055;' +
+      'font-family:"Source Sans 3",system-ui,sans-serif;font-size:13px;text-decoration:underline;text-underline-offset:3px;cursor:pointer';
+    b.addEventListener('click', function () {
+      b.disabled = true;
+      Promise.resolve(cart.empty()).then(function () {
+        if (typeof cart.updateCache === 'function') cart.updateCache((cart.model && cart.model.lineItems) || []);
+        cart.view.render();
+        updateBadge(cart);
+      }).catch(function () { b.disabled = false; showError(); });
+    });
+    checkout.parentNode.insertBefore(b, checkout.nextSibling);
+  }
+  /* Le panier se redessine parfois sans prévenir (+ / −) : on remet le lien si besoin */
+  function watchCart(cart) {
+    var d = cart && cart.view && cart.view.document;
+    if (!d || !d.body || cart.__watched || !('MutationObserver' in window)) return;
+    cart.__watched = true;
+    new MutationObserver(function () { addEmptyButton(cart); }).observe(d.body, { childList: true, subtree: true });
   }
   function updateBadge(cart) {
     if (!badge) return;
@@ -139,7 +182,7 @@
                 }
               },
               googleFonts: ['Source Sans 3'],
-              events: { afterRender: updateBadge }
+              events: { afterRender: onCartRender }
             },
             lineItem: {
               styles: {
@@ -239,6 +282,14 @@
     document.querySelectorAll('input[name="format"]').forEach(function (r) {
       r.addEventListener('change', function () { if (lbl && r.checked) lbl.textContent = r.getAttribute('data-price'); });
     });
+  }
+
+  /* Lien direct vers le panier : https://www.latisanedejo.com/?panier=1 ouvre le panier */
+  if (/[?&]panier=1(&|$)/.test(window.location.search)) {
+    getCart().then(function (cart) { setTimeout(function () { cart.open(); }, 300); }).catch(function () {});
+    if (window.history && history.replaceState) {
+      history.replaceState(null, '', window.location.pathname + window.location.search.replace(/[?&]panier=1(&|$)/, function (m, end) { return end ? m.charAt(0) : ''; }).replace(/\?$/, '') + window.location.hash);
+    }
   }
 
   /* Charge le panier en arrière-plan pour afficher le nombre d'articles */
