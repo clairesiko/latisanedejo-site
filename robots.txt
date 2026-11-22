@@ -4,7 +4,4 @@
 User-agent: *
 Allow: /
 
-# Block mockup files from being indexed
-Disallow: /mockups/
-
 Sitemap: https://www.latisanedejo.com/sitemap.xml

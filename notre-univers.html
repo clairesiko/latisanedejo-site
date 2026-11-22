@@ -1,278 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="L5175DETMYp3d90KAxwCMftEfJO47Iv58lHJL7n-ivM" />
-    <title>Notre Univers — La Tisane de Jo | Tisanes bio artisanales de Grignan</title>
-    <meta name="description" content="Découvrez l'histoire de La Tisane de Jo : une aventure familiale née de la passion de Jo, pharmacien à Chartres, pour les plantes bio. Tisanes artisanales cultivées en Drôme provençale à Grignan.">
-    <meta name="keywords" content="histoire tisane de jo, pharmacien plantes bio, Grignan, Drôme provençale, tisane artisanale famille, agriculture biologique locale">
-    <meta property="og:title" content="Notre Univers — L'histoire de La Tisane de Jo">
-    <meta property="og:description" content="Une aventure familiale née de la passion de Jo, pharmacien, pour les plantes bio. De Chartres à Grignan, découvrez notre histoire.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.latisanedejo.com/notre-univers.html">
-    <meta property="og:image" content="https://www.latisanedejo.com/images/histoire-familiale.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Notre Univers — La Tisane de Jo">
-    <meta name="twitter:description" content="Une aventure familiale née de la passion de Jo, pharmacien, pour les plantes bio. De Chartres à Grignan.">
-    <meta name="twitter:image" content="https://www.latisanedejo.com/images/histoire-familiale.jpg">
-    <link rel="canonical" href="https://www.latisanedejo.com/notre-univers.html">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "AboutPage",
-      "name": "Notre Univers — La Tisane de Jo",
-      "description": "L'histoire familiale de La Tisane de Jo, tisanes bio artisanales de Grignan en Drôme provençale.",
-      "url": "https://www.latisanedejo.com/notre-univers.html",
-      "mainEntity": {
-        "@type": "LocalBusiness",
-        "name": "La Tisane de Jo",
-        "description": "Tisanes bio artisanales imaginées par Jo, pharmacien passionné de plantes. Recettes familiales cultivées en Drôme provençale.",
-        "address": { "@type": "PostalAddress", "addressLocality": "Grignan", "addressRegion": "Drôme", "addressCountry": "FR" }
-      }
-    }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400;1,8..60,600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }        :root {
-            --marron: #7D6B5C;
-            --cream: #F2EADC;
-            --cream-paper: #E9DEC8;
-            --sage: #8B9F7A;
-            --sage-dark: #6B7F5A;
-            --purple: #7B5C8E;
-            --purple-dark: #5A4170;
-            --purple-light: #9E7EB9;
-            --brown: #846055;
-            --warm-black: #2C2520;
-            --body-text: #6B5B4E;
-        }
-        body {
-            font-family: 'Source Serif 4', serif;
-            color: var(--warm-black);
-            line-height: 1.65;
-            background-color: var(--cream);
-            padding-top: 110px;
-        }
-        a { color: inherit; text-decoration: none; }
-
-        /* === NAV (centered hand-drawn logo + diamond nav) === */
-        nav {
-            background: #F2EADC;
-            box-shadow: 0 2px 12px rgba(110, 41, 19, 0.08);
-            padding: 22px 32px 18px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 14px;
-            justify-content: center;
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-        }
-        nav::after {
-            content: "";
-            position: absolute;
-            left: 0; right: 0;
-            bottom: -22px;
-            height: 22px;
-            background: linear-gradient(to bottom, rgba(242,234,220, 0.6), rgba(242,234,220, 0));
-            pointer-events: none;
-        }
-        .nav-logo {
-            font-family: 'Source Serif 4', serif;
-            font-style: normal;
-            font-weight: 800;
-            
-            font-size: 38px;
-            color: var(--purple);
-            letter-spacing: -0.5px;
-            line-height: 1;
-            text-transform: none;
-            transition: color 0.3s;
-        }
-        .nav-logo:hover { color: var(--purple-dark); }
-        .nav-links {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 16px;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .nav-links li {
-            display: flex;
-            align-items: center;
-            list-style: none;
-        }
-        .nav-links li:not(:first-child)::before {
-            content: "\25C6";
-            color: var(--brown);
-            font-size: 8px;
-            opacity: 0.6;
-            margin-right: 16px;
-            display: inline-block;
-        }
-        .nav-links a {
-            color: var(--brown);
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-size: 13px;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover { color: var(--purple); }
-
-        /* === FOOTER === */
-        footer {
-            background: var(--brown);
-            color: var(--cream);
-            padding: 0.6rem 2rem;
-            text-align: center;
-            margin-top: 1.5rem;
-        }
-        footer > div {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 22px;
-            font-size: 13px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 0.3rem;
-        }
-        footer a {
-            color: var(--cream);
-            opacity: 0.85;
-            transition: color 0.3s, opacity 0.3s;
-            margin: 0;
-            font-size: 13px;
-        }
-        footer a:hover { color: var(--purple-light); opacity: 1; }
-        footer p {
-            font-size: 11px;
-            opacity: 0.55;
-            letter-spacing: 1px;
-            margin-top: 0.2rem;
-        }
-
-        @media (max-width: 900px) {
-            body { padding-top: 100px; }
-            nav { padding: 14px 20px 12px; gap: 8px; }
-            .nav-logo { font-size: 28px; }
-            .nav-links { gap: 12px; flex-wrap: wrap; }
-            .nav-links a { font-size: 11px; letter-spacing: 1.5px; }
-            .nav-links li:not(:first-child)::before { margin-right: 12px; }
-            footer { padding: 0.5rem 1rem; }
-        }
-
-        @media (max-width: 768px) {
-            .section-row, .section-row.reversed { grid-template-columns: 1fr; }
-            .convictions-grid { grid-template-columns: 1fr; }
-            .hero-small h1 { font-size: 2.2rem; }
-            .hero-small p { font-size: 1rem; line-height: 1.7; }
-            h2 { font-size: clamp(1.9rem, 7vw, 3.6rem); }
-            h3 { font-size: 1.4rem; }
-            .section p, .convictions p { font-size: 1rem; line-height: 1.7; }
-        }
-    
-        /* Charte 2026 : infos pratiques en Source Sans 3 */
-        .nav-links, .nav-links a, footer, footer a, footer p,
-        .btn, .btn-buy, .btn-primary, .btn-ghost, .btn-discover,
-        .detail-price, .product-price, .product-weight, .page-price,
-        .hint, label, input, textarea, .step-dot, .legal-note, .confirm-warning
-        { font-family: 'Source Sans 3', sans-serif; }
-
-        /* === TITRES — Insignia Serif (charte : dossier Polices/Titres) === */
-        @font-face {
-            font-family: 'Insignia Serif';
-            src: url('fonts/InsigniaSerifRegular.woff2') format('woff2'),
-                 url('fonts/InsigniaSerifRegular.woff') format('woff'),
-                 url('fonts/InsigniaSerifRegular.ttf') format('truetype');
-            font-weight: normal; font-style: normal; font-display: swap;
-        }
-        h1, h2, h3, h4,
-        .hero-small h1 {
-            font-family: 'Insignia Serif', Georgia, serif !important;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notre univers — La Tisane de Jo | Tisanes bio artisanales</title>
+<meta name="description" content="L'histoire de La Tisane de Jo : une aventure familiale née de la passion de Jo, pharmacien à Chartres, pour les plantes. Nos convictions : bio, local, vrac.">
+<link rel="canonical" href="https://www.latisanedejo.com/notre-univers.html">
+<meta name="google-site-verification" content="L5175DETMYp3d90KAxwCMftEfJO47Iv58lHJL7n-ivM" />
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="La Tisane de Jo">
+<meta property="og:title" content="Notre univers — La Tisane de Jo | Tisanes bio artisanales">
+<meta property="og:description" content="L'histoire de La Tisane de Jo : une aventure familiale née de la passion de Jo, pharmacien à Chartres, pour les plantes. Nos convictions : bio, local, vrac.">
+<meta property="og:url" content="https://www.latisanedejo.com/notre-univers.html">
+<meta property="og:image" content="https://www.latisanedejo.com/images/site/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F2EADC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,700&amp;display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/InsigniaSerifRegular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css?v=20261120">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "La Tisane de Jo", "legalName": "Tisanerie de Grignan", "url": "https://www.latisanedejo.com/", "logo": "https://www.latisanedejo.com/images/site/logo-violet.svg", "sameAs": ["https://www.instagram.com/latisanedejo/"], "address": {"@type": "PostalAddress", "streetAddress": "Chemin de la Motte", "postalCode": "26230", "addressLocality": "Grignan", "addressCountry": "FR"}}</script>
 </head>
 <body>
-    <nav>
-        <a href="/" class="nav-logo" aria-label="La Tisane de Jo"><img src="images/logo.svg" alt="La Tisane de Jo" style="height:30px;display:block"></a>
-        <ul class="nav-links">
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/#tisanes">Nos Tisanes</a></li>
-            <li><a href="/notre-univers.html">Notre Univers</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <div class="hero-small">
-            <h1>Notre Univers</h1>
-            <p>Derrière chaque tisane, une histoire de famille, un savoir-faire de pharmacien et un amour profond pour les plantes de notre Drôme provençale.</p>
-        </div>
-
-        <div class="section">
-            <div class="section-row">
-                <img src="images/histoire-familiale.jpg" alt="La famille de Jo réunie autour des plantes à Grignan, Drôme provençale" loading="lazy">
-                <div>
-                    <h2 style="color: var(--sage);">Une histoire familiale</h2>
-                    <p>Autour de José, le beau-père pharmacien à la retraite et passionné de plantes, toute la famille s'est réunie pour perpétuer son savoir-faire. C'est à Grignan, dans la Drôme, que la magie opère.</p>
-                    <p>En complément de la tisane préférée "L'Originale", la nouvelle génération imagine des recettes spéciales en s'inspirant des trésors botaniques de la Drôme provençale et du savoir-faire transmis par Jo au fil des années.</p>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="section-row reversed">
-                <img src="images/alchimie-plantes.jpg" alt="Sélection et assemblage artisanal des plantes bio pour les tisanes" loading="lazy">
-                <div>
-                    <h2 style="color: var(--purple);">L'alchimie des plantes</h2>
-                    <p>Ici pas de "pisse-mémé" mais des mélanges parfumés avec des bienfaits prouvés pour agir sur la qualité de notre digestion, de notre énergie, de notre respiration...</p>
-                    <p>Chaque recette est le fruit d'un travail minutieux : sélection rigoureuse des plantes, tests d'assemblage, ajustements des proportions jusqu'à trouver l'équilibre parfait entre goût et efficacité. Un processus artisanal qui prend du temps mais qui fait toute la différence.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="convictions">
-            <h2>Nos convictions</h2>
-            <div class="convictions-grid">
-                <div class="conviction">
-                    <h3>Bio</h3>
-                    <p>Nous sourçons des plantes issues à 100% de l'agriculture biologique. La culture conventionnelle des plantes est exposée à une forte pollution liée aux pesticides que nous souhaitons éviter.</p>
-                </div>
-                <div class="conviction">
-                    <h3>Local</h3>
-                    <p>Autant que possible, nous jouons local en Drôme provençale. Certaines de nos plantes, comme la badiane par exemple, ne sont pas cultivées en France et leurs origines sont toujours précisées dans la composition des tisanes.</p>
-                </div>
-                <div class="conviction">
-                    <h3>Vrac</h3>
-                    <p>Nous privilégions le vrac, la meilleure manière de préserver toute la richesse gustative et les propriétés des plantes.</p>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div>
-            <a href="/">Accueil</a>
-            <a href="/#tisanes">Nos Tisanes</a>
-            <a href="/notre-univers.html">Notre Univers</a>
-            <a href="/faq.html">FAQ</a>
-            <a href="/contact.html">Contact</a>
-<a href="/retractation.html">Rétractation</a>
-            <a href="https://www.instagram.com/latisanedejo/" target="_blank">Instagram</a>
-        </div>
-        <p>&copy; 2026 La Tisane de Jo. Tous droits réservés.</p>
-    </footer>
+<header class="site-header">
+  <button type="button" class="icon-btn menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-mobile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <a class="site-header__logo" href="index.html" aria-label="Accueil La Tisane de Jo"><img src="images/site/logo-violet.svg" alt="La Tisane de Jo" width="183" height="26"></a>
+  <nav class="site-nav" aria-label="Menu principal">
+      <a href="index.html">Accueil</a>
+      <a href="tisanes/index.html">Nos tisanes</a>
+      <a href="notre-univers.html" aria-current="page">Notre univers</a>
+  </nav>
+  <button type="button" class="icon-btn cart-btn" aria-label="Panier, vide"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-count" aria-hidden="true">0</span></button>
+</header>
+<div class="mobile-menu" id="menu-mobile">
+  <div class="mobile-menu__overlay"></div>
+  <nav class="mobile-menu__panel" aria-label="Menu principal">
+      <a href="index.html">Accueil<span aria-hidden="true">→</span></a>
+      <a href="tisanes/index.html">Nos tisanes<span aria-hidden="true">→</span></a>
+      <a href="notre-univers.html" aria-current="page">Notre univers<span aria-hidden="true">→</span></a>
+  </nav>
+</div>
+<div class="toast" role="status" aria-live="polite">
+  <span class="toast__check" aria-hidden="true">✓</span>
+  <span><strong>Ajouté au panier</strong><small></small></span>
+  <button type="button">Voir le panier</button>
+</div>
+<main>
+<h1 class="visually-hidden">Notre univers</h1>
+<section class="univers-row" aria-labelledby="histoire">
+  <img src="images/site/histoire-familiale.webp" alt="Histoire familiale de La Tisane de Jo - tradition et savoir-faire artisanal" width="560" height="560" loading="lazy">
+  <div>
+    <h2 id="histoire">Une histoire familiale</h2>
+    <p>Autour de José, le beau-père pharmacien à la retraite et passionné de plantes, toute la famille s'est réunie pour perpétuer son savoir-faire. C'est à Grignan, dans la Drôme, que la magie opère. En complément de la tisane préférée "L'Originale", la nouvelle génération imagine des recettes supercalifragilisticexpialidocious.</p>
+  </div>
+</section>
+<section class="univers-row univers-row--rev" aria-labelledby="alchimie">
+  <div>
+    <h2 id="alchimie">L'alchimie des plantes</h2>
+    <p>Ici pas de "pisse-mémé" mais des mélanges parfumés avec des bienfaits prouvés pour agir sur la qualité de notre digestion, de notre énergie, de notre respiration...</p>
+  </div>
+  <img class="cover" src="images/site/alchimie-plantes.webp" alt="L'alchimie des plantes bio - sélection et assemblage artisanal des tisanes" width="560" height="560" loading="lazy">
+</section>
+<section class="convictions" aria-labelledby="convictions">
+  <div class="convictions__inner">
+    <h2 id="convictions">Nos convictions</h2>
+    <div class="convictions__grid">
+      <div><h3>Bio</h3><p>Nous sourçons des plantes issues à 100% de l'agriculture biologique. La culture conventionnelle des plantes est exposée à une forte pollution liée aux pesticides que nous souhaitons éviter.</p></div>
+      <div><h3>Local</h3><p>Autant que possible, nous jouons local en Drôme provençale. Certaines de nos plantes, comme la badiane par exemple, ne sont pas cultivées en France et leurs origines sont toujours précisées dans la composition des tisanes.</p></div>
+      <div><h3>Vrac</h3><p>Nous privilégions le vrac, la meilleure manière de préserver toute la richesse gustative et les propriétés des plantes.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <nav aria-label="Liens de pied de page">
+      <a href="index.html">Accueil</a>
+      <a href="tisanes/index.html">Nos tisanes</a>
+      <a href="notre-univers.html">Notre univers</a>
+      <a href="ou-nous-trouver.html">Où nous trouver</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="retractation.html">Rétractation</a>
+      <a href="informations-legales.html">Informations légales</a>
+      <a class="ig" href="https://www.instagram.com/latisanedejo/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
+  </nav>
+  <p>© 2026 La Tisane de Jo. Tous droits réservés.</p>
+</footer>
+<script src="assets/site.js?v=20261120" defer></script>
 </body>
 </html>

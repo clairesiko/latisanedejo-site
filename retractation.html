@@ -1,223 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercer mon droit de rétractation — La Tisane de Jo</title>
-    <meta name="description" content="Exercez en ligne votre droit de rétractation de 14 jours sur votre commande La Tisane de Jo. Fonction de rétractation gratuite et confirmation immédiate par email.">
-    <meta name="robots" content="noindex, follow">
-    <link rel="canonical" href="https://www.latisanedejo.com/retractation.html">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400;1,8..60,600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-
-        * { margin:0; padding:0; box-sizing:border-box; }
-        :root {
-            --marron:#7D6B5C; --cream:#F2EADC; --cream-paper:#E9DEC8;
-            --sage:#8B9F7A; --sage-dark:#6B7F5A;
-            --purple:#7B5C8E; --purple-dark:#5A4170; --purple-light:#9E7EB9;
-            --brown:#846055; --warm-black:#2C2520; --body-text:#6B5B4E;
-        }
-        body { font-family:'Source Serif 4', serif; color:var(--warm-black); line-height:1.65; background-color:var(--cream); padding-top:110px; }
-        a { color:inherit; text-decoration:none; }
-
-        nav { background:#F2EADC; box-shadow:0 2px 12px rgba(110,41,19,0.08); padding:22px 32px 18px; display:flex; flex-direction:column; align-items:center; gap:14px; justify-content:center; position:fixed; top:0; left:0; right:0; z-index:1000; }
-        .nav-logo { font-family:'Source Serif 4', serif; font-weight:800; font-size:38px; color:var(--purple); letter-spacing:-0.5px; line-height:1; }
-        .nav-logo:hover { color:var(--purple-dark); }
-        .nav-links { display:flex; flex-direction:row; justify-content:center; align-items:center; gap:16px; font-size:13px; letter-spacing:2px; text-transform:uppercase; list-style:none; }
-        .nav-links li { display:flex; align-items:center; }
-        .nav-links li:not(:first-child)::before { content:"\25C6"; color:var(--brown); font-size:8px; opacity:0.6; margin-right:16px; }
-        .nav-links a { color:var(--brown); font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px; transition:color 0.3s; }
-        .nav-links a:hover { color:var(--purple); }
-
-        main { max-width:680px; margin:0 auto; padding:0 22px 40px; }
-        .page-header { text-align:center; padding:3rem 1rem 1.4rem; }
-        .page-header h1 { font-size:2.1rem; color:var(--purple-dark); font-weight:700; line-height:1.2; }
-        .page-header p { color:var(--body-text); margin-top:0.8rem; font-size:1.02rem; }
-
-        .legal-note { background:var(--cream-paper); border-left:4px solid var(--sage); border-radius:8px; padding:1rem 1.2rem; font-size:0.93rem; color:var(--body-text); margin-bottom:2rem; }
-        .legal-note strong { color:var(--warm-black); }
-
-        .steps { display:flex; gap:10px; justify-content:center; margin-bottom:1.8rem; }
-        .step-dot { display:flex; align-items:center; gap:8px; font-size:0.8rem; letter-spacing:1px; text-transform:uppercase; color:var(--body-text); opacity:0.5; }
-        .step-dot .num { width:26px; height:26px; border-radius:50%; background:var(--marron); color:#fff; display:flex; align-items:center; justify-content:center; font-size:0.85rem; }
-        .step-dot.active { opacity:1; }
-        .step-dot.active .num { background:var(--purple); }
-
-        .card { background:#fff; border:1px solid rgba(125,107,92,0.18); border-radius:14px; padding:1.8rem; box-shadow:0 4px 18px rgba(110,41,19,0.05); }
-        .form-group { margin-bottom:1.1rem; }
-        label { display:block; font-size:0.9rem; font-weight:600; color:var(--warm-black); margin-bottom:0.35rem; }
-        label .req { color:var(--purple); }
-        input, textarea { width:100%; font-family:'Source Serif 4', serif; font-size:1rem; color:var(--warm-black); background:var(--cream); border:1px solid rgba(125,107,92,0.3); border-radius:8px; padding:0.7rem 0.9rem; transition:border-color 0.2s; }
-        input:focus, textarea:focus { outline:none; border-color:var(--purple); }
-        textarea { min-height:90px; resize:vertical; }
-        .hint { font-size:0.82rem; color:var(--body-text); opacity:0.8; margin-top:0.3rem; }
-
-        .btn { font-family:'Source Serif 4', serif; font-size:0.95rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; border:none; border-radius:30px; padding:0.85rem 1.8rem; cursor:pointer; transition:transform 0.15s, background 0.2s; }
-        .btn-primary { background:var(--purple); color:#fff; }
-        .btn-primary:hover { background:var(--purple-dark); transform:translateY(-1px); }
-        .btn-ghost { background:transparent; color:var(--body-text); border:1px solid rgba(125,107,92,0.4); }
-        .btn-ghost:hover { border-color:var(--purple); color:var(--purple); }
-        .btn-row { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:0.6rem; }
-
-        .recap { background:var(--cream-paper); border-radius:10px; padding:1.2rem 1.3rem; margin-bottom:1.4rem; }
-        .recap h3 { font-size:1rem; color:var(--purple-dark); margin-bottom:0.7rem; }
-        .recap dl { display:grid; grid-template-columns:auto 1fr; gap:6px 16px; font-size:0.95rem; }
-        .recap dt { font-weight:600; color:var(--body-text); }
-        .recap dd { color:var(--warm-black); }
-        .confirm-warning { font-size:0.93rem; color:var(--warm-black); background:#fff; border:1px dashed var(--purple-light); border-radius:8px; padding:0.9rem 1rem; margin-bottom:1.3rem; }
-        .hidden { display:none; }
-
-        footer { background:var(--brown); color:var(--cream); padding:0.6rem 2rem; text-align:center; margin-top:2.5rem; }
-        footer > div { display:flex; justify-content:center; flex-wrap:wrap; gap:22px; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:0.3rem; }
-        footer a { color:var(--cream); opacity:0.85; transition:color 0.3s,opacity 0.3s; font-size:13px; }
-        footer a:hover { color:var(--purple-light); opacity:1; }
-        footer p { font-size:11px; opacity:0.55; letter-spacing:1px; margin-top:0.2rem; }
-
-        @media(max-width:600px){ .nav-logo{font-size:30px;} .page-header h1{font-size:1.7rem;} .card{padding:1.2rem;} }
-    
-        /* Charte 2026 : infos pratiques en Source Sans 3 */
-        .nav-links, .nav-links a, footer, footer a, footer p,
-        .btn, .btn-buy, .btn-primary, .btn-ghost, .btn-discover,
-        .detail-price, .product-price, .product-weight, .page-price,
-        .hint, label, input, textarea, .step-dot, .legal-note, .confirm-warning
-        { font-family: 'Source Sans 3', sans-serif; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercer mon droit de rétractation — La Tisane de Jo</title>
+<meta name="description" content="Exercez en ligne votre droit de rétractation de 14 jours sur une commande La Tisane de Jo. Gratuit, avec accusé de réception immédiat par email.">
+<link rel="canonical" href="https://www.latisanedejo.com/retractation.html">
+<meta name="google-site-verification" content="L5175DETMYp3d90KAxwCMftEfJO47Iv58lHJL7n-ivM" />
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="La Tisane de Jo">
+<meta property="og:title" content="Exercer mon droit de rétractation — La Tisane de Jo">
+<meta property="og:description" content="Exercez en ligne votre droit de rétractation de 14 jours sur une commande La Tisane de Jo. Gratuit, avec accusé de réception immédiat par email.">
+<meta property="og:url" content="https://www.latisanedejo.com/retractation.html">
+<meta property="og:image" content="https://www.latisanedejo.com/images/site/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F2EADC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,700&amp;display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/InsigniaSerifRegular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css?v=20261120">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "La Tisane de Jo", "legalName": "Tisanerie de Grignan", "url": "https://www.latisanedejo.com/", "logo": "https://www.latisanedejo.com/images/site/logo-violet.svg", "sameAs": ["https://www.instagram.com/latisanedejo/"], "address": {"@type": "PostalAddress", "streetAddress": "Chemin de la Motte", "postalCode": "26230", "addressLocality": "Grignan", "addressCountry": "FR"}}</script>
 </head>
 <body>
-<nav>
-    <a href="/" class="nav-logo" aria-label="La Tisane de Jo"><img src="images/logo.svg" alt="La Tisane de Jo" style="height:30px;display:block"></a>
-    <ul class="nav-links">
-        <li><a href="/">Accueil</a></li>
-        <li><a href="/#tisanes">Nos Tisanes</a></li>
-        <li><a href="/notre-univers.html">Notre Univers</a></li>
-    </ul>
-</nav>
-
+<header class="site-header">
+  <button type="button" class="icon-btn menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-mobile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <a class="site-header__logo" href="index.html" aria-label="Accueil La Tisane de Jo"><img src="images/site/logo-violet.svg" alt="La Tisane de Jo" width="183" height="26"></a>
+  <nav class="site-nav" aria-label="Menu principal">
+      <a href="index.html">Accueil</a>
+      <a href="tisanes/index.html">Nos tisanes</a>
+      <a href="notre-univers.html">Notre univers</a>
+  </nav>
+  <button type="button" class="icon-btn cart-btn" aria-label="Panier, vide"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-count" aria-hidden="true">0</span></button>
+</header>
+<div class="mobile-menu" id="menu-mobile">
+  <div class="mobile-menu__overlay"></div>
+  <nav class="mobile-menu__panel" aria-label="Menu principal">
+      <a href="index.html">Accueil<span aria-hidden="true">→</span></a>
+      <a href="tisanes/index.html">Nos tisanes<span aria-hidden="true">→</span></a>
+      <a href="notre-univers.html">Notre univers<span aria-hidden="true">→</span></a>
+  </nav>
+</div>
+<div class="toast" role="status" aria-live="polite">
+  <span class="toast__check" aria-hidden="true">✓</span>
+  <span><strong>Ajouté au panier</strong><small></small></span>
+  <button type="button">Voir le panier</button>
+</div>
 <main>
-    <div class="page-header">
-        <h1>Exercer mon droit de rétractation</h1>
-        <p>Vous avez changé d'avis ? Vous disposez de 14 jours pour vous rétracter, sans avoir à vous justifier.</p>
+<div class="page">
+  <h1>Exercer mon droit de rétractation</h1>
+  <p class="page__intro">Vous avez changé d'avis ? Vous disposez de 14 jours pour vous rétracter, sans avoir à vous justifier.</p>
+  <p>Conformément aux articles <a href="https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069565/LEGISCTA000032226842/" target="_blank" rel="noopener">L221-18 et suivants du Code de la consommation</a>, vous pouvez renoncer à votre commande dans un délai de 14 jours à compter de la réception de vos produits. Le remboursement intervient au plus tard 14 jours après réception de votre demande. Cette fonction est gratuite. Vous pouvez aussi nous écrire via notre <a href="contact.html">formulaire de contact</a>.</p>
+  <ol class="steps" aria-label="Étapes">
+    <li class="active" id="dot1"><span>1</span>Votre demande</li>
+    <li aria-hidden="true">—</li>
+    <li id="dot2"><span>2</span>Confirmation</li>
+  </ol>
+  <form class="form-card" action="https://formsubmit.co/0e60764f822b6f1b80ce68135147a019" method="POST">
+    <input type="hidden" name="_subject" value="⚠ Demande de rétractation — La Tisane de Jo">
+    <input type="hidden" name="_template" value="table">
+    <!-- NE PAS désactiver le captcha : FormSubmit n'envoie pas l'accusé de réception (_autoresponse) si le captcha est désactivé. Or cet accusé est obligatoire (art. L221-21-1). -->
+    <input type="hidden" name="_next" value="https://www.latisanedejo.com/retractation-confirmation.html">
+    <input type="hidden" name="_autoresponse" value="Bonjour,&#10;&#10;Nous accusons réception de votre demande de rétractation concernant votre commande La Tisane de Jo. Votre demande a bien été enregistrée à la date et l'heure d'envoi de cet email, qui fait office d'accusé de réception sur support durable.&#10;&#10;Conformément aux articles L221-18 et suivants du Code de la consommation, votre rétractation est prise en compte. Si vous avez déjà reçu vos produits, merci de nous les renvoyer ; le remboursement sera effectué au plus tard sous 14 jours à compter de la réception de cette demande (ou de la récupération des produits).&#10;&#10;Pour toute question, utilisez le formulaire de contact sur latisanedejo.com/contact.html&#10;&#10;La Tisane de Jo">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+    <div id="step1" style="display:flex;flex-direction:column;gap:18px">
+      <div class="form-row">
+        <div class="field"><label for="name">Nom et prénom *</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="email">Votre email *</label><input id="email" name="email" type="email" autocomplete="email" required><span class="hint">L'accusé de réception vous sera envoyé à cette adresse.</span></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="numero_commande">Numéro de commande *</label><input id="numero_commande" name="numero_commande" type="text" placeholder="ex. #1024" required><span class="hint">Indiqué dans votre email de confirmation de commande.</span></div>
+        <div class="field"><label for="date_commande">Date de la commande</label><input id="date_commande" name="date_commande" type="date"></div>
+      </div>
+      <div class="field"><label for="produits">Produits concernés</label><input id="produits" name="produits" type="text" placeholder="ex. L'Originale x2"></div>
+      <div class="field"><label for="motif">Motif (facultatif)</label><textarea id="motif" name="motif" rows="4" placeholder="Vous n'êtes pas obligé(e) d'indiquer un motif."></textarea></div>
+      <div><button type="button" class="btn btn--big" id="toStep2">Renoncer au contrat ici →</button></div>
     </div>
-
-    <div class="legal-note">
-        Conformément aux articles <strong>L221-18 et suivants du Code de la consommation</strong>, vous pouvez renoncer à votre commande dans un délai de <strong>14 jours</strong> à compter de la réception de vos produits. Le remboursement intervient au plus tard <strong>14 jours</strong> après réception de votre demande. Cette fonction est gratuite. Vous pouvez aussi nous écrire via notre <a href="/contact.html" style="color:#5A4170;text-decoration:underline">formulaire de contact</a>.
+    <div id="step2" class="hidden recap" style="flex-direction:column;gap:18px">
+      <div>
+        <h2 style="font-size:30px">Vérifiez votre demande</h2>
+        <dl>
+          <dt>Nom</dt><dd id="r_name">—</dd>
+          <dt>Email</dt><dd id="r_email">—</dd>
+          <dt>Commande</dt><dd id="r_cmd">—</dd>
+          <dt>Date</dt><dd id="r_date">—</dd>
+          <dt>Produits</dt><dd id="r_prod">—</dd>
+        </dl>
+      </div>
+      <p>En cliquant sur « Confirmer ma rétractation », vous exercez définitivement votre droit de rétractation pour cette commande. Un accusé de réception vous sera envoyé immédiatement par email.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <button type="submit" class="btn btn--big">Confirmer ma rétractation</button>
+        <button type="button" class="btn btn--big btn--ghost" id="backStep1">← Modifier</button>
+      </div>
     </div>
-
-    <div class="steps">
-        <div class="step-dot active" id="dot1"><span class="num">1</span> Votre demande</div>
-        <div class="step-dot" id="dot2"><span class="num">2</span> Confirmation</div>
-    </div>
-
-    <form class="card" action="https://formsubmit.co/0e60764f822b6f1b80ce68135147a019" method="POST">
-        <!-- Réglages FormSubmit -->
-        <input type="hidden" name="_subject" value="⚠ Demande de rétractation — La Tisane de Jo">
-        <input type="hidden" name="_template" value="table">
-        <!-- NE PAS désactiver le captcha : FormSubmit n'envoie pas l'accusé de réception (_autoresponse) si le captcha est désactivé. Or cet accusé est obligatoire (art. L221-21-1). -->
-        <input type="hidden" name="_next" value="https://www.latisanedejo.com/retractation-confirmation.html">
-        <input type="hidden" name="_autoresponse" value="Bonjour,&#10;&#10;Nous accusons réception de votre demande de rétractation concernant votre commande La Tisane de Jo. Votre demande a bien été enregistrée à la date et l'heure d'envoi de cet email, qui fait office d'accusé de réception sur support durable.&#10;&#10;Conformément aux articles L221-18 et suivants du Code de la consommation, votre rétractation est prise en compte. Si vous avez déjà reçu vos produits, merci de nous les renvoyer ; le remboursement sera effectué au plus tard sous 14 jours à compter de la réception de cette demande (ou de la récupération des produits).&#10;&#10;Pour toute question, utilisez le formulaire de contact sur latisanedejo.com/contact.html&#10;&#10;La Tisane de Jo">
-        <!-- anti-spam (honeypot) -->
-        <input type="text" name="_honey" style="display:none">
-
-        <!-- ÉTAPE 1 -->
-        <div id="step1">
-            <div class="form-group">
-                <label for="name">Nom et prénom <span class="req">*</span></label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Votre email <span class="req">*</span></label>
-                <input type="email" id="email" name="email" required>
-                <p class="hint">L'accusé de réception vous sera envoyé à cette adresse.</p>
-            </div>
-            <div class="form-group">
-                <label for="numero_commande">Numéro de commande <span class="req">*</span></label>
-                <input type="text" id="numero_commande" name="numero_commande" placeholder="ex. #1024" required>
-                <p class="hint">Indiqué dans votre email de confirmation de commande.</p>
-            </div>
-            <div class="form-group">
-                <label for="date_commande">Date de la commande</label>
-                <input type="date" id="date_commande" name="date_commande">
-            </div>
-            <div class="form-group">
-                <label for="produits">Produits concernés</label>
-                <input type="text" id="produits" name="produits" placeholder="ex. L'Originale x2">
-            </div>
-            <div class="form-group">
-                <label for="motif">Motif (facultatif)</label>
-                <textarea id="motif" name="motif" placeholder="Vous n'êtes pas obligé(e) d'indiquer un motif."></textarea>
-            </div>
-            <div class="btn-row">
-                <button type="button" class="btn btn-primary" id="toStep2">Renoncer au contrat ici →</button>
-            </div>
-        </div>
-
-        <!-- ÉTAPE 2 -->
-        <div id="step2" class="hidden">
-            <div class="recap">
-                <h3>Vérifiez votre demande</h3>
-                <dl>
-                    <dt>Nom</dt><dd id="r_name">—</dd>
-                    <dt>Email</dt><dd id="r_email">—</dd>
-                    <dt>Commande</dt><dd id="r_cmd">—</dd>
-                    <dt>Date</dt><dd id="r_date">—</dd>
-                    <dt>Produits</dt><dd id="r_prod">—</dd>
-                </dl>
-            </div>
-            <div class="confirm-warning">
-                En cliquant sur « Confirmer ma rétractation », vous exercez définitivement votre droit de rétractation pour cette commande. Un accusé de réception vous sera envoyé immédiatement par email.
-            </div>
-            <div class="btn-row">
-                <button type="submit" class="btn btn-primary">Confirmer ma rétractation</button>
-                <button type="button" class="btn btn-ghost" id="backStep1">← Modifier</button>
-            </div>
-        </div>
-    </form>
-</main>
-
-<footer>
-    <div>
-        <a href="/">Accueil</a>
-        <a href="/#tisanes">Nos Tisanes</a>
-        <a href="/notre-univers.html">Notre Univers</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/retractation.html">Rétractation</a>
-        <a href="https://www.instagram.com/latisanedejo/" target="_blank">Instagram</a>
-    </div>
-    <p>&copy; 2026 La Tisane de Jo. Tous droits réservés.</p>
-</footer>
-
+  </form>
+</div>
 <script>
-    var f = document.querySelector('form');
-    var step1 = document.getElementById('step1');
-    var step2 = document.getElementById('step2');
-    var dot1 = document.getElementById('dot1');
-    var dot2 = document.getElementById('dot2');
-
-    document.getElementById('toStep2').addEventListener('click', function () {
-        // valide les champs requis de l'étape 1
-        var required = ['name', 'email', 'numero_commande'];
-        for (var i = 0; i < required.length; i++) {
-            var el = document.getElementById(required[i]);
-            if (!el.value || !el.checkValidity()) { el.reportValidity(); el.focus(); return; }
-        }
-        var val = function (id) { return document.getElementById(id).value || '—'; };
-        document.getElementById('r_name').textContent = val('name');
-        document.getElementById('r_email').textContent = val('email');
-        document.getElementById('r_cmd').textContent = val('numero_commande');
-        document.getElementById('r_date').textContent = val('date_commande');
-        document.getElementById('r_prod').textContent = val('produits');
-        step1.classList.add('hidden'); step2.classList.remove('hidden');
-        dot1.classList.remove('active'); dot2.classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    document.getElementById('backStep1').addEventListener('click', function () {
-        step2.classList.add('hidden'); step1.classList.remove('hidden');
-        dot2.classList.remove('active'); dot1.classList.add('active');
-    });
+(function () {
+  var step1 = document.getElementById('step1'), step2 = document.getElementById('step2');
+  var dot1 = document.getElementById('dot1'), dot2 = document.getElementById('dot2');
+  document.getElementById('toStep2').addEventListener('click', function () {
+    var required = ['name', 'email', 'numero_commande'];
+    for (var i = 0; i < required.length; i++) {
+      var el = document.getElementById(required[i]);
+      if (!el.value || !el.checkValidity()) { el.reportValidity(); el.focus(); return; }
+    }
+    var val = function (id) { return document.getElementById(id).value || '—'; };
+    document.getElementById('r_name').textContent = val('name');
+    document.getElementById('r_email').textContent = val('email');
+    document.getElementById('r_cmd').textContent = val('numero_commande');
+    document.getElementById('r_date').textContent = val('date_commande');
+    document.getElementById('r_prod').textContent = val('produits');
+    step1.classList.add('hidden'); step2.classList.remove('hidden'); step2.style.display = 'flex';
+    dot1.classList.remove('active'); dot2.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  document.getElementById('backStep1').addEventListener('click', function () {
+    step2.classList.add('hidden'); step1.classList.remove('hidden');
+    dot2.classList.remove('active'); dot1.classList.add('active');
+  });
+})();
 </script>
+</main>
+<footer class="site-footer">
+  <nav aria-label="Liens de pied de page">
+      <a href="index.html">Accueil</a>
+      <a href="tisanes/index.html">Nos tisanes</a>
+      <a href="notre-univers.html">Notre univers</a>
+      <a href="ou-nous-trouver.html">Où nous trouver</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="retractation.html">Rétractation</a>
+      <a href="informations-legales.html">Informations légales</a>
+      <a class="ig" href="https://www.instagram.com/latisanedejo/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
+  </nav>
+  <p>© 2026 La Tisane de Jo. Tous droits réservés.</p>
+</footer>
+<script src="assets/site.js?v=20261120" defer></script>
 </body>
 </html>

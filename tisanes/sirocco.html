@@ -1,286 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="L5175DETMYp3d90KAxwCMftEfJO47Iv58lHJL7n-ivM" />
-    <title>La Sirocco — Tisane bio tonique à la menthe | La Tisane de Jo</title>
-    <meta name="description" content="La Sirocco de La Tisane de Jo : tisane bio tonique et rafraîchissante à la menthe et réglisse. Alternative naturelle au café, 100% bio. Cultivée en Drôme provençale. 14€/100g.">
-    <meta name="keywords" content="tisane menthe bio, infusion tonique, alternative café naturelle, menthe réglisse, tisane énergie, Grignan, Drôme">
-    <meta property="og:title" content="La Sirocco — Tisane bio tonique et rafraîchissante">
-    <meta property="og:description" content="Nommée d'après le vent méditerranéen, cette tisane tonique à la menthe et réglisse est l'alternative naturelle au café. 100% bio.">
-    <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.latisanedejo.com/tisanes/sirocco.html">
-    <meta property="og:image" content="https://www.latisanedejo.com/images/sirocco-detail.jpg">
-    <meta property="product:price:amount" content="14.00">
-    <meta property="product:price:currency" content="EUR">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="La Sirocco — Tisane bio tonique à la menthe | La Tisane de Jo">
-    <meta name="twitter:description" content="Tisane bio tonique et rafraîchissante à la menthe et réglisse. Alternative naturelle au café. 14€/100g.">
-    <meta name="twitter:image" content="https://www.latisanedejo.com/images/sirocco-detail.jpg">
-    <link rel="canonical" href="https://www.latisanedejo.com/tisanes/sirocco.html">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "La Sirocco",
-      "description": "Tisane bio tonique et rafraîchissante, nommée d'après le vent chaud méditerranéen. Cette infusion associe la menthe poivrée bio, réputée pour son effet vivifiant et sa fraîcheur incomparable, à la réglisse bio, qui apporte douceur et rondeur naturelle. Une alternative saine et naturelle au café, à déguster du matin au soir. Cultivée et assemblée en Drôme provençale.",
-      "image": [
-        "https://www.latisanedejo.com/images/sirocco-detail.jpg",
-        "https://www.latisanedejo.com/images/sirocco-card.jpg"
-      ],
-      "brand": { "@type": "Brand", "name": "La Tisane de Jo" },
-      "sku": "TDJ-SIROCCO-100",
-      "weight": { "@type": "QuantitativeValue", "value": "100", "unitCode": "GRM" },
-      "category": "Tisanes bio",
-      "material": "Plantes 100% issues de l'agriculture biologique",
-      "countryOfOrigin": { "@type": "Country", "name": "France" },
-      "offers": {
-        "@type": "Offer",
-        "price": "14.00",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/InStock",
-        "url": "https://www.latisanedejo.com/tisanes/sirocco.html",
-        "seller": { "@type": "Organization", "name": "La Tisane de Jo" }
-      }
-    }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,900;1,8..60,400;1,8..60,600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-
-        * { margin:0; padding:0; box-sizing:border-box; }
-        :root {
-            --marron:#7D6B5C; --cream:#F2EADC; --cream-paper:#E9DEC8;
-            --sage:#8B9F7A; --sage-dark:#6B7F5A;
-            --purple:#7B5C8E; --purple-dark:#5A4170; --purple-light:#9E7EB9;
-            --brown:#846055; --warm-black:#2C2520; --body-text:#6B5B4E;
-        }
-        body { font-family:'Source Serif 4', serif; color:var(--warm-black); line-height:1.65; background-color:var(--cream); padding-top:110px; }
-        a { color:inherit; text-decoration:none; }
-
-        /* === NAV (identique à la page d'accueil) === */
-        nav {
-            background:#F2EADC;
-            box-shadow:0 2px 12px rgba(110,41,19,0.08);
-            padding:22px 32px 18px;
-            display:flex; flex-direction:column; align-items:center; gap:14px; justify-content:center;
-            position:fixed; top:0; left:0; right:0; z-index:1000;
-        }
-        .nav-logo { font-family:'Source Serif 4', serif; font-weight:800; font-size:38px; color:var(--purple); letter-spacing:-0.5px; line-height:1; transition:color 0.3s; }
-        .nav-logo:hover { color:var(--purple-dark); }
-        .nav-links { display:flex; flex-direction:row; justify-content:center; align-items:center; gap:16px; font-size:13px; letter-spacing:2px; text-transform:uppercase; list-style:none; padding:0; margin:0; }
-        .nav-links li { display:flex; align-items:center; list-style:none; }
-        .nav-links li:not(:first-child)::before { content:"\25C6"; color:var(--brown); font-size:8px; opacity:0.6; margin-right:16px; display:inline-block; }
-        .nav-links a { color:var(--brown); font-weight:600; letter-spacing:2px; text-transform:uppercase; font-size:13px; transition:color 0.3s; }
-        .nav-links a:hover { color:var(--purple); }
-
-        /* === FICHE PRODUIT === */
-        .detail-section { padding:2.5rem 2rem 2rem; background-color:var(--cream); }
-        .detail-container { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
-        .detail-image-container { position:relative; overflow:hidden; border-radius:180px 180px 12px 12px; }
-        .detail-image { width:100%; height:auto; max-height:760px; border-radius:180px 180px 12px 12px; object-fit:cover; object-position:center; background-color:var(--cream); transition:opacity 0.4s ease; display:block; }
-        .detail-image-hover { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; border-radius:180px 180px 12px 12px; opacity:0; }
-        .detail-image-container:hover .detail-image-main { opacity:0; }
-        .detail-image-container:hover .detail-image-hover { opacity:1; }
-
-        .detail-info { padding-top:1rem; }
-        .detail-info h1 { font-family:'Source Serif 4', serif; font-weight:900; font-size:3.2rem; margin-bottom:1.2rem; color:var(--sage); line-height:1.1; }
-        .detail-price { font-size:1.35rem; color:var(--purple); margin-bottom:1.8rem; font-weight:700; }
-        .detail-description { font-size:1.15rem; line-height:1.9; margin-bottom:1.6rem; color:var(--body-text); font-weight:400; }
-        .detail-description strong { color:var(--marron); }
-
-        .btn-buy { display:inline-block; margin-top:0.8rem; padding:0.95rem 2.1rem; background:var(--purple); color:#fff; border:none; border-radius:6px; font-family:'Source Serif 4', serif; font-size:1.05rem; font-weight:700; cursor:pointer; transition:background 0.3s, transform 0.15s; }
-        .btn-buy:hover { background:var(--purple-dark); transform:translateY(-1px); }
-
-        /* === FOOTER (identique à la page d'accueil) === */
-        footer { background:var(--brown); color:var(--cream); padding:0.6rem 2rem; text-align:center; margin-top:2.5rem; }
-        footer > div { display:flex; justify-content:center; flex-wrap:wrap; gap:22px; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:0.3rem; }
-        footer a { color:var(--cream); opacity:0.85; transition:color 0.3s, opacity 0.3s; font-size:13px; }
-        footer a:hover { color:var(--purple-light); opacity:1; }
-        footer p { font-size:11px; opacity:0.55; letter-spacing:1px; margin-top:0.2rem; }
-
-        @media (max-width: 768px) {
-            .nav-logo { font-size:30px; }
-            .detail-container { grid-template-columns:1fr; gap:1.8rem; }
-            .detail-image { max-height:420px; }
-            .detail-image-container, .detail-image, .detail-image-hover { border-radius:110px 110px 8px 8px; }
-            .detail-info { padding-top:0; }
-            .detail-info h1 { font-size:2.2rem; }
-            .detail-description { font-size:1.05rem; }
-        }
-    
-        /* Charte 2026 : infos pratiques en Source Sans 3 */
-        .nav-links, .nav-links a, footer, footer a, footer p,
-        .btn, .btn-buy, .btn-primary, .btn-ghost, .btn-discover,
-        .detail-price, .product-price, .product-weight, .page-price,
-        .hint, label, input, textarea, .step-dot, .legal-note, .confirm-warning
-        { font-family: 'Source Sans 3', sans-serif; }
-
-        /* === TITRES — Insignia Serif (charte : dossier Polices/Titres) === */
-        @font-face {
-            font-family: 'Insignia Serif';
-            src: url('../fonts/InsigniaSerifRegular.woff2') format('woff2'),
-                 url('../fonts/InsigniaSerifRegular.woff') format('woff'),
-                 url('../fonts/InsigniaSerifRegular.ttf') format('truetype');
-            font-weight: normal; font-style: normal; font-display: swap;
-        }
-        h1, h2, h3, h4,
-        .detail-info h1 {
-            font-family: 'Insignia Serif', Georgia, serif !important;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Sirocco — Tisane bio menthe et réglisse | La Tisane de Jo</title>
+<meta name="description" content="La Sirocco : tisane bio tonique et rafraîchissante à la menthe et à la réglisse, pour remplacer le café. 14 € les 100 g, 8,50 € les 50 g.">
+<link rel="canonical" href="https://www.latisanedejo.com/tisanes/sirocco.html">
+<meta name="google-site-verification" content="L5175DETMYp3d90KAxwCMftEfJO47Iv58lHJL7n-ivM" />
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="La Tisane de Jo">
+<meta property="og:title" content="La Sirocco — Tisane bio menthe et réglisse | La Tisane de Jo">
+<meta property="og:description" content="La Sirocco : tisane bio tonique et rafraîchissante à la menthe et à la réglisse, pour remplacer le café. 14 € les 100 g, 8,50 € les 50 g.">
+<meta property="og:url" content="https://www.latisanedejo.com/tisanes/sirocco.html">
+<meta property="og:image" content="https://www.latisanedejo.com/images/site/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F2EADC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,700&amp;display=swap" rel="stylesheet">
+<link rel="preload" href="../fonts/InsigniaSerifRegular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css?v=20261120">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "La Tisane de Jo", "legalName": "Tisanerie de Grignan", "url": "https://www.latisanedejo.com/", "logo": "https://www.latisanedejo.com/images/site/logo-violet.svg", "sameAs": ["https://www.instagram.com/latisanedejo/"], "address": {"@type": "PostalAddress", "streetAddress": "Chemin de la Motte", "postalCode": "26230", "addressLocality": "Grignan", "addressCountry": "FR"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "La Sirocco", "description": "Nommée d'après le vent méditerranéen, cette tisane aussi tonique que rafraîchissante est parfaite pour remplacer le café.", "image": "https://www.latisanedejo.com/images/site/sirocco.webp", "brand": {"@type": "Brand", "name": "La Tisane de Jo"}, "offers": [{"@type": "Offer", "name": "La Sirocco 100 g", "price": "14.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.latisanedejo.com/tisanes/sirocco.html", "shippingDetails": {"@type": "OfferShippingDetails", "shippingRate": {"@type": "MonetaryAmount", "value": "5.50", "currency": "EUR"}, "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "FR"}}, "hasMerchantReturnPolicy": {"@type": "MerchantReturnPolicy", "applicableCountry": "FR", "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow", "merchantReturnDays": 14, "returnMethod": "https://schema.org/ReturnByMail", "merchantReturnLink": "https://www.latisanedejo.com/retractation.html"}}, {"@type": "Offer", "name": "La Sirocco 50 g", "price": "8.50", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://www.latisanedejo.com/tisanes/sirocco.html", "shippingDetails": {"@type": "OfferShippingDetails", "shippingRate": {"@type": "MonetaryAmount", "value": "5.50", "currency": "EUR"}, "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "FR"}}, "hasMerchantReturnPolicy": {"@type": "MerchantReturnPolicy", "applicableCountry": "FR", "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow", "merchantReturnDays": 14, "returnMethod": "https://schema.org/ReturnByMail", "merchantReturnLink": "https://www.latisanedejo.com/retractation.html"}}]}</script>
 </head>
 <body>
-    <nav>
-        <a href="/" class="nav-logo" aria-label="La Tisane de Jo"><img src="../images/logo.svg" alt="La Tisane de Jo" style="height:30px;display:block"></a>
-        <ul class="nav-links">
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/#tisanes">Nos Tisanes</a></li>
-            <li><a href="/notre-univers.html">Notre Univers</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section class="detail-section">
-            <div class="detail-container">
-                <div class="detail-image-container">
-                    <img src="../images/sirocco-detail.jpg" alt="La Sirocco - Tisane bio tonique à la menthe et réglisse de Grignan" class="detail-image detail-image-main">
-                    <img src="../images/sirocco-hover.jpg" alt="Gros plan sur les feuilles de menthe bio de La Sirocco" class="detail-image detail-image-hover" loading="lazy">
-                </div>
-                <div class="detail-info">
-                    <h1>La Sirocco</h1>
-                    <p class="detail-price">14,00€ - 100g</p>
-                    <p class="detail-description">Nommée d'après le vent méditerranéen, cette tisane aussi tonique que rafraîchissante est parfaite pour remplacer le café.</p>
-                    <p class="detail-description">À déguster du matin au soir, avec modération pour les personnes sujettes à l'hypertension.</p>
-                    <p class="detail-description">Composition 100% bio : Menthe, Réglisse</p>
-                    <p class="detail-description">Conseils de préparation : Mettre une cuillère à soupe du mélange dans l’eau bouillante et laisser infuser 5 à 10 minutes. Si vous la préférez froide, mettre l’infusion dans le réfrigérateur. Sa conservation ne peut excéder 48h.</p>
-                    <div id="product-component-page-sirocco" class="shopify-btn-container"></div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div>
-            <a href="/">Accueil</a>
-            <a href="/#tisanes">Nos Tisanes</a>
-            <a href="/notre-univers.html">Notre Univers</a>
-            <a href="/faq.html">FAQ</a>
-            <a href="/contact.html">Contact</a>
-            <a href="/retractation.html">Rétractation</a>
-            <a href="https://www.instagram.com/latisanedejo/" target="_blank">Instagram</a>
+<header class="site-header">
+  <button type="button" class="icon-btn menu-btn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-mobile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <a class="site-header__logo" href="../index.html" aria-label="Accueil La Tisane de Jo"><img src="../images/site/logo-violet.svg" alt="La Tisane de Jo" width="183" height="26"></a>
+  <nav class="site-nav" aria-label="Menu principal">
+      <a href="../index.html">Accueil</a>
+      <a href="../tisanes/index.html" aria-current="page">Nos tisanes</a>
+      <a href="../notre-univers.html">Notre univers</a>
+  </nav>
+  <button type="button" class="icon-btn cart-btn" aria-label="Panier, vide"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cart-count" aria-hidden="true">0</span></button>
+</header>
+<div class="mobile-menu" id="menu-mobile">
+  <div class="mobile-menu__overlay"></div>
+  <nav class="mobile-menu__panel" aria-label="Menu principal">
+      <a href="../index.html">Accueil<span aria-hidden="true">→</span></a>
+      <a href="../tisanes/index.html" aria-current="page">Nos tisanes<span aria-hidden="true">→</span></a>
+      <a href="../notre-univers.html">Notre univers<span aria-hidden="true">→</span></a>
+  </nav>
+</div>
+<div class="toast" role="status" aria-live="polite">
+  <span class="toast__check" aria-hidden="true">✓</span>
+  <span><strong>Ajouté au panier</strong><small></small></span>
+  <button type="button">Voir le panier</button>
+</div>
+<main>
+<div class="product">
+    <div class="product__visual tile--sirocco">
+      <img src="../images/site/sirocco.webp" alt="La Sirocco - Tisane bio tonique à la menthe et réglisse de Grignan" width="600" height="900">
+      <img class="hov" src="../images/site/sirocco-survol.webp" alt="Gros plan sur les feuilles de menthe bio de La Sirocco" width="600" height="750" loading="lazy">
+    </div>
+    <div class="product__info">
+      <a class="back" href="../tisanes/index.html">← Retour aux tisanes</a>
+      <h1>La Sirocco</h1>
+      <div class="product__desc">
+        <p>Nommée d'après le vent méditerranéen, cette tisane aussi tonique que rafraîchissante est parfaite pour remplacer le café.</p>
+        <p>À déguster du matin au soir, avec modération pour les personnes sujettes à l'hypertension.</p>
+      </div>
+      <p class="compo">Composition 100% bio : Menthe, Réglisse</p>
+      <fieldset class="formats">
+        <legend class="visually-hidden">Format</legend>
+        <label><span><input type="radio" name="format" checked data-gid="gid://shopify/ProductVariant/53603448062283" data-label="La Sirocco · 100 g" data-price="100 g · 14,00 €">100 g</span><span>14,00 €</span></label>
+        <label><span><input type="radio" name="format" data-gid="gid://shopify/ProductVariant/59382327050571" data-label="La Sirocco · 50 g" data-price="50 g · 8,50 €">50 g</span><span>8,50 €</span></label>
+      </fieldset>
+      <div class="buy">
+        <div class="qty" role="group" aria-label="Quantité">
+          <button type="button" aria-label="Diminuer la quantité">−</button>
+          <label for="qte" class="visually-hidden">Quantité</label>
+          <input id="qte" type="text" inputmode="numeric" value="1">
+          <button type="button" data-plus aria-label="Augmenter la quantité">+</button>
         </div>
-        <p>&copy; 2026 La Tisane de Jo. Tous droits réservés.</p>
-    </footer>
-
-    <!-- Shopify Buy Button SDK -->
-    <script type="text/javascript">
-    /*<![CDATA[*/
-    (function () {
-      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-      if (window.ShopifyBuy) {
-        if (window.ShopifyBuy.UI) { ShopifyBuyInit(); } else { loadScript(); }
-      } else { loadScript(); }
-      function loadScript() {
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = scriptURL;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-        script.onload = ShopifyBuyInit;
-      }
-
-      var sharedOptions = {
-        "product": {
-          "styles": {
-            "product": {
-              "@media (min-width: 601px)": { "max-width": "calc(25% - 20px)", "margin-left": "20px", "margin-bottom": "50px" }
-            },
-            "title": { "font-family": "Source Sans 3, Georgia, sans-serif" },
-            "button": {
-              "font-family": "Source Sans 3, Georgia, sans-serif", "font-weight": "700",
-              "border-radius": "4px", "font-size": "15px", "padding": "12px 24px",
-              ":hover": { "background-color": "#5A4170" },
-              "background-color": "#7B5C8E",
-              ":focus": { "background-color": "#5A4170" }
-            },
-            "price": { "font-family": "Source Sans 3, Georgia, sans-serif" },
-            "compareAt": { "font-family": "Source Sans 3, Georgia, sans-serif" },
-            "unitPrice": { "font-family": "Source Sans 3, Georgia, sans-serif" },
-            "description": { "font-family": "Source Sans 3, Georgia, sans-serif" }
-          },
-          "contents": { "img": false, "title": false, "price": false },
-          "text": { "button": "Ajouter au panier" },
-          "googleFonts": []
-        },
-        "productSet": {
-          "styles": { "products": { "@media (min-width: 601px)": { "margin-left": "-20px" } } }
-        },
-        "modalProduct": {
-          "contents": { "img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true },
-          "styles": {
-            "product": { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0px", "margin-bottom": "0px" } },
-            "button": {
-              "font-family": "Source Sans 3, Georgia, sans-serif", "font-weight": "700",
-              "border-radius": "4px",
-              ":hover": { "background-color": "#5A4170" },
-              "background-color": "#7B5C8E",
-              ":focus": { "background-color": "#5A4170" }
-            },
-            "title": { "font-family": "Source Sans 3, Georgia, sans-serif", "font-weight": "bold", "font-size": "26px", "color": "#6B5B4E" },
-            "price": { "font-family": "Source Sans 3, Georgia, sans-serif", "font-weight": "normal", "font-size": "18px", "color": "#6B5B4E" },
-            "compareAt": { "font-family": "Source Sans 3, Georgia, sans-serif", "font-weight": "normal", "font-size": "15.3px", "color": "#6B5B4E" },
-            "unitPrice": { "font-family": "Source Sans 3, Georgia, sans-serif", "font-weight": "normal", "font-size": "15.3px", "color": "#6B5B4E" },
-            "description": { "font-family": "Source Sans 3, Georgia, sans-serif", "font-weight": "normal", "font-size": "14px", "color": "#6B5B4E" }
-          },
-          "googleFonts": [],
-          "text": { "button": "Ajouter au panier" }
-        },
-        "option": {},
-        "cart": {
-          "styles": {
-            "button": {
-              "font-family": "Source Sans 3, Georgia, sans-serif", "font-weight": "700",
-              "border-radius": "4px",
-              ":hover": { "background-color": "#5A4170" },
-              "background-color": "#7B5C8E",
-              ":focus": { "background-color": "#5A4170" }
-            }
-          },
-          "text": { "total": "Sous-total", "button": "Commander" },
-          "googleFonts": []
-        },
-        "toggle": {
-          "styles": {
-            "toggle": {
-              "font-family": "Source Sans 3, Georgia, sans-serif", "font-weight": "700",
-              "background-color": "#7B5C8E",
-              ":hover": { "background-color": "#5A4170" },
-              ":focus": { "background-color": "#5A4170" }
-            }
-          },
-          "googleFonts": []
-        }
-      };
-
-      function ShopifyBuyInit() {
-        var client = ShopifyBuy.buildClient({
-          domain: '1b32ns-tw.myshopify.com',
-          storefrontAccessToken: 'f37045444ef326a682c6d404ea71f388',
-        });
-        ShopifyBuy.UI.onReady(client).then(function (ui) {
-          // La Sirocco
-          ui.createComponent('product', {
-            id: '14852838949195',
-            node: document.getElementById('product-component-page-sirocco'),
-            moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
-            options: sharedOptions,
-          });
-        });
-      }
-    })();
-    /*]]>*/
-    </script>
+        <button type="button" class="btn btn--big" data-buy>Ajouter au panier</button>
+      </div>
+      <section class="box" aria-labelledby="prepa">
+        <h2 id="prepa">Conseils de préparation</h2>
+        <p class="pictos">4G / 300ML / 5’ <svg width="12" height="16" viewBox="0 0 12 16" role="img" aria-label="minutes d'infusion"><rect x="0" y="0" width="12" height="2" fill="#5E4033"/><rect x="0" y="14" width="12" height="2" fill="#5E4033"/><path d="M1.5 2 L6 8 L1.5 14 M10.5 2 L6 8 L10.5 14" fill="none" stroke="#5E4033" stroke-width="1.4"/><path d="M3.2 4.2 H8.8 L6 7.6 Z" fill="#5E4033"/><path d="M2.4 14 L6 10.6 L9.6 14 Z" fill="#5E4033"/></svg></p>
+        <p>Mettre 4g du mélange dans 300mL à 90° et laisser infuser 5 minutes.</p>
+      </section>
+    </div>
+  </div>
+<section class="next tile--originale" aria-label="L'Originale">
+  <a class="tile__link" href="../tisanes/originale.html" aria-label="L'Originale"></a>
+  <img src="../images/site/originale.webp" alt="" width="160" height="240" loading="lazy">
+  <div class="next__info">
+    <p>L'Originale</p>
+    <em>Anis, Réglisse, Fenouil, Romarin, Thym, Badiane</em>
+    <div class="tile__buttons"><button type="button" class="btn" data-variant="gid://shopify/ProductVariant/53223764328779" data-label="L'Originale · 100 g">Ajouter 100 g · 14,00 €</button><button type="button" class="btn" data-variant="gid://shopify/ProductVariant/59382337929547" data-label="L'Originale · 50 g">Ajouter 50 g · 8,50 €</button></div>
+  </div>
+</section>
+<div class="buybar" aria-hidden="true">
+  <p class="buybar__price"><span data-buybar-label>100 g · 14,00 €</span></p>
+  <button type="button" class="btn" data-buy tabindex="-1">Ajouter au panier</button>
+</div>
+</main>
+<footer class="site-footer">
+  <nav aria-label="Liens de pied de page">
+      <a href="../index.html">Accueil</a>
+      <a href="../tisanes/index.html">Nos tisanes</a>
+      <a href="../notre-univers.html">Notre univers</a>
+      <a href="../ou-nous-trouver.html">Où nous trouver</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../retractation.html">Rétractation</a>
+      <a href="../informations-legales.html">Informations légales</a>
+      <a class="ig" href="https://www.instagram.com/latisanedejo/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg></a>
+  </nav>
+  <p>© 2026 La Tisane de Jo. Tous droits réservés.</p>
+</footer>
+<script src="../assets/site.js?v=20261120" defer></script>
 </body>
 </html>
