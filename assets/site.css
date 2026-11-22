@@ -317,3 +317,20 @@ main{flex:1 0 auto}
   body.buybar-on .toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
   .product ~ .site-footer,body:has(.buybar) .site-footer{padding-bottom:96px}
 }
+/* Fenêtres intermédiaires (tablette, navigateur réduit) — 22/11/2026 */
+@media (min-width:700px){
+  .mot{display:grid;grid-template-columns:minmax(220px,420px) minmax(0,1fr);gap:40px 72px}
+  .mot img{flex:none;width:100%;height:auto;aspect-ratio:1/1}
+}
+@media (min-width:700px) and (max-width:1099px){
+  .mot{grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:40px;padding:72px 32px}
+  .mot h2{font-size:48px}.mot blockquote p:first-child{font-size:23px}.mot blockquote p{font-size:17px}
+}
+@media (min-width:700px) and (max-width:1199px){
+  .tile{aspect-ratio:auto;min-height:620px;padding:32px 24px;gap:20px}
+  .tile__visual{min-height:320px}
+  .tile__info{flex-basis:auto;gap:12px}
+  .tile__info h2{font-size:48px}
+  .tile .btn{height:44px;padding:0 13px;font-size:12px;letter-spacing:.5px}
+  .tile__buttons{gap:8px;flex-wrap:wrap}
+}

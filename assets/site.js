@@ -46,6 +46,7 @@
   var toastTimer;
   function showToast(label) {
     if (!toast) return;
+    toast.querySelector('strong').textContent = 'Ajouté au panier';
     toast.querySelector('small').textContent = label;
     toast.classList.add('is-visible');
     clearTimeout(toastTimer);
@@ -104,7 +105,8 @@
       var client = window.ShopifyBuy.buildClient({ domain: SHOP.domain, storefrontAccessToken: SHOP.storefrontAccessToken });
       clientRef = client;
       return window.ShopifyBuy.UI.onReady(client).then(function (ui) {
-        return ui.createComponent('cart', {
+        /* createComponent('cart') ne renvoie pas de promesse : on l'enveloppe */
+        return Promise.resolve(ui.createComponent('cart', {
           moneyFormat: SHOP.moneyFormat,
           options: {
             cart: {
@@ -151,7 +153,7 @@
             },
             toggle: { styles: { toggle: { 'display': 'none' } } }
           }
-        }).then(function () {
+        })).then(function () {
           /* createComponent rend la main avant que le panier soit prêt : on attend qu'il ait un identifiant */
           var c = ui.components.cart[0];
           return new Promise(function (resolve, reject) {
@@ -170,10 +172,16 @@
   }
 
   function openCart() {
-    getCart().then(function (cart) { cart.open(); }).catch(goToShop);
+    getCart().then(function (cart) { cart.open(); }).catch(showError);
   }
-  function goToShop() {
-    window.location.href = 'https://' + SHOP.domain + '/cart';
+  /* En cas de souci réseau : message, sans quitter le site */
+  function showError() {
+    if (!toast) return;
+    toast.querySelector('strong').textContent = 'Le panier ne répond pas';
+    toast.querySelector('small').textContent = 'Merci de réessayer dans un instant.';
+    toast.classList.add('is-visible');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove('is-visible'); toast.querySelector('strong').textContent = 'Ajouté au panier'; }, 4500);
   }
   function addToCart(gid, qty, label, btn) {
     if (btn) btn.disabled = true;
@@ -184,8 +192,9 @@
     }).then(function (cart) {
       updateBadge(cart);
       showToast(label + (qty > 1 ? ' × ' + qty : ''));
-    }).catch(function () {
-      goToShop();
+    }).catch(function (e) {
+      if (window.console) console.error('Panier Shopify :', e);
+      showError();
     }).then(function () {
       if (btn) btn.disabled = false;
     });
