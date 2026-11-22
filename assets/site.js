@@ -53,7 +53,8 @@
     toastTimer = setTimeout(function () { toast.classList.remove('is-visible'); }, 4500);
   }
   if (toast) {
-    toast.querySelector('button').addEventListener('click', function () {
+    toast.querySelector('button').addEventListener('click', function (e) {
+      e.stopPropagation();
       toast.classList.remove('is-visible');
       openCart();
     });
@@ -157,6 +158,14 @@
         }).then(function (c) {
           c = (c && typeof c.addVariantToCart === 'function') ? c : ui.components.cart[0];
           if (!c) throw new Error('panier indisponible');
+          /* Le compteur suit aussi les + / − et les suppressions faits dans le panier */
+          if (typeof c.updateItem === 'function' && !c.__badgeHook) {
+            var origUpdate = c.updateItem;
+            c.updateItem = function () {
+              return origUpdate.apply(c, arguments).then(function (r) { updateBadge(c); return r; });
+            };
+            c.__badgeHook = true;
+          }
           updateBadge(c);
           return c;
         });
@@ -167,7 +176,7 @@
   }
 
   function openCart() {
-    getCart().then(function (cart) { cart.open(); }).catch(showError);
+    getCart().then(function (cart) { setTimeout(function () { cart.open(); }, 0); }).catch(showError);
   }
   /* En cas de souci réseau : message, sans quitter le site */
   function showError() {
@@ -195,7 +204,8 @@
     });
   }
 
-  if (cartBtn) cartBtn.addEventListener('click', openCart);
+  /* stopPropagation : Shopify ferme le panier à chaque clic sur la page, y compris le clic qui l'ouvre */
+  if (cartBtn) cartBtn.addEventListener('click', function (e) { e.stopPropagation(); openCart(); });
 
   /* Boutons directs : « Ajouter 100 g · 14,00 € » */
   document.querySelectorAll('[data-variant]').forEach(function (btn) {
