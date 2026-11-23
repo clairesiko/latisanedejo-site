@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Où nous trouver — La Tisane de Jo</title>
-<meta name="description" content="Où trouver les tisanes bio La Tisane de Jo. Tarifs professionnels sur demande.">
+<meta name="description" content="Où trouver les tisanes bio La Tisane de Jo. Professionnels : demandez nos tarifs.">
 <link rel="canonical" href="https://www.latisanedejo.com/ou-nous-trouver.html">
 <meta name="google-site-verification" content="L5175DETMYp3d90KAxwCMftEfJO47Iv58lHJL7n-ivM" />
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="La Tisane de Jo">
 <meta property="og:title" content="Où nous trouver — La Tisane de Jo">
-<meta property="og:description" content="Où trouver les tisanes bio La Tisane de Jo. Tarifs professionnels sur demande.">
+<meta property="og:description" content="Où trouver les tisanes bio La Tisane de Jo. Professionnels : demandez nos tarifs.">
 <meta property="og:url" content="https://www.latisanedejo.com/ou-nous-trouver.html">
 <meta property="og:image" content="https://www.latisanedejo.com/images/site/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -54,8 +54,28 @@
 <div class="page">
   <h1>Où nous trouver</h1>
   <p class="page__intro">Page en construction</p>
-  <p>Pour les tarifs pro, nous contacter à <a data-mail="moc.ojedenasital@erialc" href="contact.html">claire [at] latisanedejo.com</a></p>
+  <h2 id="pro" style="scroll-margin-top:110px">Professionnels</h2>
+  <p>Vous souhaitez proposer nos tisanes dans votre établissement ? Envoyez-nous votre demande : nous vous répondons avec nos tarifs professionnels et notre dépliant.</p>
+  <p class="notice hidden" id="merci" role="status">Merci, votre demande a bien été envoyée. Nous revenons vers vous très vite.</p>
+  <form class="form-card" action="https://formsubmit.co/0e60764f822b6f1b80ce68135147a019" method="POST">
+    <input type="hidden" name="_subject" value="Demande de devis pro — La Tisane de Jo">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://www.latisanedejo.com/ou-nous-trouver.html?merci=1#pro">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+    <div class="form-row">
+      <div class="field"><label for="pro_nom">Nom et prénom *</label><input id="pro_nom" name="nom" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="pro_etab">Établissement *</label><input id="pro_etab" name="etablissement" type="text" autocomplete="organization" required></div>
+    </div>
+    <div class="form-row">
+      <div class="field"><label for="pro_email">Email *</label><input id="pro_email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="pro_tel">Téléphone</label><input id="pro_tel" name="telephone" type="tel" autocomplete="tel"></div>
+    </div>
+    <div class="field"><label for="pro_ville">Ville *</label><input id="pro_ville" name="ville" type="text" autocomplete="address-level2" required></div>
+    <div class="field"><label for="pro_msg">Votre demande</label><textarea id="pro_msg" name="message" rows="4" placeholder="Type d'établissement, tisanes qui vous intéressent, quantités…"></textarea></div>
+    <div><button type="submit" class="btn btn--big">Envoyer ma demande</button></div>
+  </form>
 </div>
+<script>if (/[?&]merci=1/.test(location.search)) document.getElementById('merci').classList.remove('hidden');</script>
 </main>
 <footer class="site-footer">
   <nav aria-label="Liens de pied de page">
